@@ -1,0 +1,126 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+use yii\db\ActiveRecord;
+use yii\db\Expression;
+use yii\behaviors\TimestampBehavior;
+
+/**
+ * This is the model class for table "play".
+ *
+ * @property string $id
+ * @property string $year
+ * @property string $date
+ * @property integer $league_id
+ * @property integer $home_team_id
+ * @property integer $away_team_id
+ * @property integer $home_score_full
+ * @property integer $away_score_full
+ * @property integer $h_tid_posses
+ * @property integer $a_tid_posses
+ * @property integer $h_tid_shot_on_goal
+ * @property integer $a_tid_shot_on_goal
+ * @property integer $h_tid_foul
+ * @property integer $a_tid_foul
+ * @property integer $h_tid_corner
+ * @property integer $a_tid_corner
+ * @property integer $h_tid_offside
+ * @property integer $a_tid_offside
+ * @property integer $h_tid_yellow_cart
+ * @property integer $a_tid_yellow_cart
+ * @property integer $delay
+ * @property integer $h_tid_red_cart
+ * @property integer $a_tid_red_cart
+ */
+class Play extends ActiveRecord
+{
+
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+                // если вместо метки времени UNIX используется datetime:
+                'value' => new Expression('NOW()'),
+            ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'play';
+    }
+
+    public function getTeamHome()
+    {
+        return $this->hasOne(Team::className(), ['team_id' => 'home_team_id']);
+    }
+
+    public function getTeamAway()
+    {
+        return $this->hasOne(Team::className(), ['team_id' => 'away_team_id']);
+    }
+
+    public function getLeague()
+    {
+        return $this->hasOne(League::className(), ['id' => 'league_id']);
+    }
+
+    public function getid()
+    {
+        return $this->hasOne(Team::className(), ['team_id' => 'home_team_id']);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['year', 'date', 'delay'], 'safe'],
+            [['date', 'league_id', 'home_team_id', 'away_team_id', 'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal', 'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside', 'h_tid_yellow_cart', 'a_tid_yellow_cart'], 'required'],
+            [['league_id', 'home_team_id', 'away_team_id', 'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal', 'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside', 'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart', 'delay'], 'integer'],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'year' => 'Year',
+            'date' => 'Date',
+            'league_id' => 'League ID',
+            'home_team_id' => 'Home Team ID',
+            'away_team_id' => 'Away Team ID',
+            'home_score_full' => 'Home Score Full',
+            'away_score_full' => 'Away Score Full',
+            'h_tid_posses' => 'H Tid Posses',
+            'a_tid_posses' => 'A Tid Posses',
+            'h_tid_shot_on_goal' => 'H Tid Shot On Goal',
+            'a_tid_shot_on_goal' => 'A Tid Shot On Goal',
+            'h_tid_foul' => 'H Tid Foul',
+            'a_tid_foul' => 'A Tid Foul',
+            'h_tid_corner' => 'H Tid Corner',
+            'a_tid_corner' => 'A Tid Corner',
+            'h_tid_offside' => 'H Tid Offside',
+            'a_tid_offside' => 'A Tid Offside',
+            'h_tid_yellow_cart' => 'H Tid Yellow Cart',
+            'a_tid_yellow_cart' => 'A Tid Yellow Cart',
+            'h_tid_red_cart' => 'H Tid Red Cart',
+            'a_tid_red_cart' => 'A Tid Red Cart',
+            'delay' => 'Match Delayed',
+        ];
+    }
+}
