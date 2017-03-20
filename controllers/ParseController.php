@@ -142,61 +142,61 @@ class ParseController extends AppController
         /** Создаем объект phpQuery */
         $team = \phpQuery::newDocumentHTML($dom);
         $model = new Parse();
-
         $i = 0;
 
         /** Парсим данные с сайта - тур, названия команд, счёт, дата и ссылка!проходимся в цикле 9 или 10 раз - по количеству игр
          * в туре и записываем в массив $stat вызывая $play->parsePlay()*/
-        while ($i <= $k) {
+        while ($i <= $k){
 
             $this->stat[$i] = $model->parseLive($team, $i, $res);
             /** Если в массиве $this->stat в значении 'link', есть ссылка, что и в базе данных,
             то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
             слово 'live' то также этот матч не записываем в бд до его окончания */
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
-            if($is_link !== null && $this->stat[$i]['h_tid_posses'] !== '-' && strpos($this->stat[$i]['link'], 'live') == false){
+            if($is_link !== null && $this->stat[$i]['h_tid_posses'] !== '-'
+                && strpos($this->stat[$i]['link'], 'live') == false){
                 $i++;
 //                var_dump($is_link);
                 continue;
             }
             foreach ($this->stat as $link){
-                        /** "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
-                        $dom1[$i] = self::DOMEN . $link['link'];
-                        /** Эмулируем работу браузера с помощью curl*/
-                        $game[$i] = curl_get($dom1[$i]);
-                        /** Создаем объект phpQuery */
-                        $match[$i] = \phpQuery::newDocumentHTML($game[$i]);
-                        $pq_m[$i] = pq($match[$i]);
-                        /** Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
-                         * в туре и записываем в массив $stat[$i]. По принятой переменной $league определяем $time и $date.
-                        В завимости от них модель определяет каким образом "разбирать" дату и время в странице матча
-                        У матчей разных чемпионатов разный формат разбора даты и времени. В зависимости от принимаемых констант
-                        от дочернего контроллера устанавливаем переменные для парсинга*/
-                        if ($league == 'spain'){
-                            $time = 4;
-                            $date = 3;
-                        }elseif ($league == 'england'){
-                            $time = 7;
-                            $date = 6;
-                        }elseif ($league == 'germany'){
-                            $time = 6;
-                            $date = 5;
-                        }
-                        $this->stat[$i] = $model->parseStat($pq_m, $i, $time, $date);
-                        /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
-                        и записываем в this->stat[$i], для того, чтобы записать в базу данных (int) id команд,
-                         * учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
-                        $team_home[$i] = Team::find()->andWhere(['team_name' => $link['team_home']])->one();
-                        $this->stat[$i]['team_home'] = $team_home[$i]->team_id;
-                        $team_away[$i] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
-                        $this->stat[$i]['team_away'] = $team_away[$i]->team_id;
+                /** "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
+                $dom1[$i] = self::DOMEN . $link['link'];
+                /** Эмулируем работу браузера с помощью curl*/
+                $game[$i] = curl_get($dom1[$i]);
+                /** Создаем объект phpQuery */
+                $match[$i] = \phpQuery::newDocumentHTML($game[$i]);
+                $pq_m[$i] = pq($match[$i]);
+                /** Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
+                * в туре и записываем в массив $stat[$i]. По принятой переменной $league определяем $time и $date.
+                В завимости от них модель определяет каким образом "разбирать" дату и время в странице матча
+                У матчей разных чемпионатов разный формат разбора даты и времени. В зависимости от принимаемых констант
+                от дочернего контроллера устанавливаем переменные для парсинга*/
+                if ($league == 'spain'){
+                    $time = 4;
+                    $date = 3;
+                }elseif ($league == 'england'){
+                    $time = 7;
+                    $date = 6;
+                }elseif ($league == 'germany'){
+                    $time = 6;
+                    $date = 5;
                 }
+                $item[$i] = $model->parseStat($pq_m, $i, $time, $date);
+                /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
+                и записываем в this->stat[$i], для того, чтобы записать в базу данных (int) id команд,
+                * учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
+                $team_home[$i] = Team::find()->andWhere(['team_name' => $link['team_home']])->one();
+                $item[$i]['team_home'] = $team_home[$i]->team_id;
+                $team_away[$i] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
+                $item[$i]['team_away'] = $team_away[$i]->team_id;
+                /** вызываем метод, который запишет нужные данные в бд */
+                $array = $model->playInsert($item);
+            }
             $i++;
         }
-        /** вызываем метод, который запишет нужные данные в бд */
-        $this->stat = $model->playInsert($this->stat);
 
-            return $this->stat;
+        return $array;
 //            /** Если в массиве $this->stat в значении 'link', есть ссылка, что и в базе данных,
 //            то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
 //            слово 'live' то также этот матч не записываем в бд до его окончания */

@@ -32,36 +32,36 @@ AppAsset::register($this);
         <img src="/img/loader.gif" alt="Preloader image">
     </div>
 
+    <div class="wrapper">
+        <div class="navbar yamm navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <a class="navbar-brand black fa fa-futbol-o fa-spin fa-2x" href="<?= Url::to(['/']) ?>"></a>
 
-    <nav class="navbar">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <p><a class="navbar-brand black fa fa-futbol-o fa-spin fa-2x" href="<?= Url::to(['/']) ?>" alt="Главная страница"></a></p>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!--                Навигационный виджет NavX - лиги и команды-->
+                    <?php echo NavX::widget(
+                        [
+                            'activateParents' => true,
+                            'activateItems' => false,
+                            'options' => [
+                                'class' => 'nav nav-pills navbar-nav navbar-right black main-nav'
+                            ],
+                            'items' => Team::teamMenu(),
+                            'encodeLabels' => false,
+                        ]
+                    )?>
+                </div>
             </div>
-
-            <!--Навигационный виджет NavX - лиги и команды-->
-            <?php echo NavX::widget(
-                [
-                    'activateParents' => true,
-                    'activateItems' => false,
-                    'options' => [
-                        'class' => 'nav-pills navbar-nav navbar-right black main-nav'
-                    ],
-                    'items' => Team::teamMenu(),
-                'encodeLabels' => false,
-                ]
-            )?>
-
         </div>
-
-    </nav>
+    </div>
 
     <div class="team-content">
         <?php echo AlertWidget::widget()?>

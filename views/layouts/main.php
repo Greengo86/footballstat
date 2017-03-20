@@ -92,7 +92,7 @@ AppAsset::register($this);
             </div>
             <div class="row bottom-footer text-center-mobile">
                 <div class="col-sm-8">
-                    <p>&copy; 2016 All Rights Reserved. Powered by
+                    <p>&copy; 2016 All Rights Reserved. Powered by</p>
                 </div>
                 <div class="col-sm-4 text-right text-center-mobile">
                     <ul class="social-footer">
@@ -103,10 +103,6 @@ AppAsset::register($this);
             </div>
         </div>
     </footer>
-
-<script>
-
-</script>
 
 <!-- Holder for mobile navigation -->
 <div class="mobile-nav">
@@ -124,8 +120,6 @@ AppAsset::register($this);
     ]);
     Modal::end();
 ?>
-
-
 
 <?php $this->endBody() ?>
 </body>
