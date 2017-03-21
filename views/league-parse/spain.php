@@ -29,7 +29,7 @@
 //    echo 'heeey';
 //}
 
-//var_dump($result);
+var_dump($result);
 foreach ($result as $value){
-    var_dump($value);
+//    var_dump($value);
 }

@@ -239,40 +239,46 @@ class Parse extends Model
     }
     /**Сравниваем спаршенные данные с теми, что уже есть в базе данных!
      * Создаём такое условие, при котором мы не запишем в бд одинаковых матчей
-     * $array - принимаемый массив от контроллера со спаршенными данными*/
+     * $array - принимаемый массив от контроллера со спаршенными данными. Записываем данные в бд*/
     public function playInsert($array)
     {
 
-        foreach ($array as &$value){
+        foreach ($array as &$value) {
 
             /** Если игра перенесена, то тем значениям, что null присваиваем нули до тех пор пока игра не будет сыграна  */
-//            if($value['delay'] == 1){
-//                $value['h_tid_posses'] = 0;
-//                $value['a_tid_posses'] = 0;
-//                $value['h_tid_shot_on_goal'] = 0;
-//                $value['a_tid_shot_on_goal'] = 0;
-//                $value['h_tid_foul'] = 0;
-//                $value['a_tid_foul'] = 0;
-//                $value['h_tid_corner'] = 0;
-//                $value['a_tid_corner'] = 0;
-//                $value['h_tid_offside'] = 0;
-//                $value['a_tid_offside'] = 0;
-//                $value['h_tid_yellow_cart'] = 0;
-//                $value['a_tid_yellow_cart'] = 0;
-//                $value['h_tid_red_cart'] = 0;
-//                $value['a_tid_red_cart'] = 0;
-//
-//                /** Вызываем метод который записывает в бд подготовленные данные в случае когда матч перенесён */
-////                $this->myBatchInsert($value);
-//
-//            }
+            if ($value['delay'] == 1) {
+                $value['h_tid_posses'] = 0;
+                $value['a_tid_posses'] = 0;
+                $value['h_tid_shot_on_goal'] = 0;
+                $value['a_tid_shot_on_goal'] = 0;
+                $value['h_tid_foul'] = 0;
+                $value['a_tid_foul'] = 0;
+                $value['h_tid_corner'] = 0;
+                $value['a_tid_corner'] = 0;
+                $value['h_tid_offside'] = 0;
+                $value['a_tid_offside'] = 0;
+                $value['h_tid_yellow_cart'] = 0;
+                $value['a_tid_yellow_cart'] = 0;
+                $value['h_tid_red_cart'] = 0;
+                $value['a_tid_red_cart'] = 0;
 
-        /**Также выполняем поиск в значении $value['link']. Если там присутствует слово 'live',
-        то также этот матч не записываем в бд до его окончания. Если team_home и date,то матч уже в бд */
-//        if($value['h_tid_posses'] !== '-' && strpos($value['link'], 'live') == false){
-            /** Вызываем метод который записывает в бд подготовленные данные */
-//            $this->myBatchInsert($value);
-//            }
+                /** Записываем данные в любом случае. Здесь мы получаем массив, который необходимо поместить в бд,
+                 будь то перенесённые или сыгранный матч. Сюда попажают только сыгранные и не записанные в бд матчи*/
+                $conn = Yii::$app->db;
+                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
+                    'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
+                    'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
+                    'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
+                    [
+                        [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
+                            $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
+                            $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
+                            $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
+                            $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
+                        ]
+                    ])->execute();
+
+            }
         }
         return $array;
     }
@@ -280,23 +286,23 @@ class Parse extends Model
     /** Метод для записи в бд подготовленного массива
      * $value - подготовленный массив, передаваемый из playInsert()
      */
-    public function myBatchInsert($value)
-    {
-
-        $conn = Yii::$app->db;
-        $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
-            'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
-            'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
-            'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
-            [
-                [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
-                    $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
-                    $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
-                    $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
-                    $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
-                ]
-            ])->execute();
-    }
+//    public function myBatchInsert($value)
+//    {
+//
+//        $conn = Yii::$app->db;
+//        $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
+//            'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
+//            'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
+//            'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
+//            [
+//                [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
+//                    $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
+//                    $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
+//                    $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
+//                    $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
+//                ]
+//            ])->execute();
+//    }
 
 
     /** Парсим таблицу бомбардиров и ассистентов на странице чемпионатов. $frame - константа, в зависимости от которой будем парсить

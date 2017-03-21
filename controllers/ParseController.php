@@ -24,6 +24,7 @@ class ParseController extends AppController
 
     public $date = [];
     public $stat = [];
+    public $to_record = [];
 
 
     /** Экшен для парсинга матчей, которые завершились 2-3 назад - класс .block_body_nopadding:eq(1) */
@@ -149,14 +150,14 @@ class ParseController extends AppController
         while ($i <= $k){
 
             $this->stat[$i] = $model->parseLive($team, $i, $res);
-            /** Если в массиве $this->stat в значении 'link', есть ссылка, что и в базе данных,
+            /** Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
             то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
             слово 'live' то также этот матч не записываем в бд до его окончания */
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
-            if($is_link !== null && $this->stat[$i]['h_tid_posses'] !== '-'
-                && strpos($this->stat[$i]['link'], 'live') == false){
+            if($is_link !== null || $this->stat[$i]['h_tid_posses'] !== '-'
+                || strpos($this->stat[$i]['link'], 'live') == true){
                 $i++;
-//                var_dump($is_link);
+                echo 'Heeey';
                 continue;
             }
             foreach ($this->stat as $link){
@@ -182,21 +183,23 @@ class ParseController extends AppController
                     $time = 6;
                     $date = 5;
                 }
-                $item[$i] = $model->parseStat($pq_m, $i, $time, $date);
+                /** В массив $this->to_record записываем полные стат данные, которых ещё нет в бд  */
+                $this->to_record[$i] = $model->parseStat($pq_m, $i, $time, $date);
                 /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
-                и записываем в this->stat[$i], для того, чтобы записать в базу данных (int) id команд,
+                и дозаписываем в $this->to_record, для того, чтобы записать в базу данных (int) id команд,
                 * учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
                 $team_home[$i] = Team::find()->andWhere(['team_name' => $link['team_home']])->one();
-                $item[$i]['team_home'] = $team_home[$i]->team_id;
+                $this->to_record[$i]['team_home'] = $team_home[$i]->team_id;
                 $team_away[$i] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
-                $item[$i]['team_away'] = $team_away[$i]->team_id;
-                /** вызываем метод, который запишет нужные данные в бд */
-                $array = $model->playInsert($item);
+                $this->to_record[$i]['team_away'] = $team_away[$i]->team_id;
+
             }
             $i++;
         }
+        /** вызываем метод, который запишет подготовленные данные в бд */
+        $model->playInsert($this->to_record);
 
-        return $array;
+        return $this->stat;
 //            /** Если в массиве $this->stat в значении 'link', есть ссылка, что и в базе данных,
 //            то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
 //            слово 'live' то также этот матч не записываем в бд до его окончания */

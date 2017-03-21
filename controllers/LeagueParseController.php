@@ -57,8 +57,6 @@ class LeagueParseController extends ParseController
 
 
         return $this->render('spain', [
-//            'teamhome' => $team_home,
-//            'teamhomescore' => $team_home_score,
             'result' => $result,
         ]);
 
@@ -79,7 +77,7 @@ class LeagueParseController extends ParseController
         каким образом "разбирать" дату и время на странице матча.
         У матчей чемпионата Испании один формат, у остальных(Англии и Германии) другой*/
         $k = 9;
-        $result = parent::actionLive($url, $k, self::PLAY, self::PREMIRLIGA);
+        $result = parent::actionLive($url, $k, self::LIVE, self::PREMIRLIGA);
 
         return $this->render('england', [
 //            'teamhome' => $team_home,
@@ -105,7 +103,7 @@ class LeagueParseController extends ParseController
         поэтому модель будет парсить под формат чемпионата Англии. В завимости от неё модель определит
         каким образом "разбирать" дату и время на странице матча.
         У матчей чемпионата Испании один формат, у остальных(Англии и Германии) другой*/
-        $k = 4;
+        $k = 8;
 
         $result = parent::actionLive($url, $k, self::PLAY, self::BUNDESLIGA);
 
