@@ -514,11 +514,22 @@ hr.style3 {
 }
 
 /* Стили для главной страницы - Статистические факты*/
-.service .description{
+.owl-carousel .heading{
+    font-size: 20px;
+    text-align: center;
+}
+
+.owl-carousel .description{
     color: #ec2323;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.5;
-    font-weight: bolder;
+    font-weight: bold;
+    text-align: center;
+}
+
+.owl-carousel .description img{
+    margin: 0 auto;
+    max-width: 75%;
 }
 
 footer .container .row .col-sm-8 p {

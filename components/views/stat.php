@@ -239,60 +239,28 @@ $this->title = 'Footballstat';
 <div class="container">
     <div class="owl-carousel owl-theme">
         <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/heart-red.png" alt="" class="icon">
-            </div>
-            <h4 class="heading text-center">Самая забивающая команда</h4>
-            <p class="description text-center"><?php echo $team_goal?> <?php echo Html::img($team_embl_goal)?> : <br> <?php echo $team_max_goal?> гола за игру</p>
+            <h4 class="heading text-justify">Самая забивающая команда</h4>
+            <p class="description img-responsive"><?php echo $team_goal?> <?php echo Html::img($team_embl_goal)?> <br><?php echo $team_max_goal?> гола за игру</p>
         </div>
         <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/owngoal.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Самая пропускающая команда</h4>
-            <p class="description"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?> : <br> <?php echo $team_max_owngoal?> гола за игру</p>
+            <h4 class="heading text-justify">Самая пропускающая команда</h4>
+            <p class="description img-responsive"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?><br><?php echo $team_max_owngoal?> гола за игру</p>
         </div>
         <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/owngoal.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Самая пропускающая команда</h4>
-            <p class="description"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?> : <br> <?php echo $team_max_owngoal?> гола за игру</p>
+            <h4 class="heading text-justify">Больше всех подали угловых ударов</h4>
+            <p class="description img-responsive"><?php echo $team_corner?> <?php echo Html::img($team_embl_corner)?><br><?php echo $team_max_corner?> угловых за игру</p>
         </div>
         <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/owngoal.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Самая пропускающая команда</h4>
-            <p class="description"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?> : <br> <?php echo $team_max_owngoal?> гола за игру</p>
+            <h4 class="heading text-justify">Больше всех фолили на сопернике</h4>
+            <p class="description img-responsive"><?php echo $team_foul?> <?php echo Html::img($team_embl_foul)?><br><?php echo $team_max_foul?> фола за игру</p>
         </div>
         <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/owngoal.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Самая пропускающая команда</h4>
-            <p class="description"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?> : <br> <?php echo $team_max_owngoal?> гола за игру</p>
+            <h4 class="heading">Больше всех владеют мячом</h4>
+            <p class="description"><?php echo $team_posses?> <?php echo Html::img($team_embl_posses)?><br><?php echo $team_max_posses?> % за игру</p>
         </div>
         <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/owngoal.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Самая пропускающая команда</h4>
-            <p class="description"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?> : <br> <?php echo $team_max_owngoal?> гола за игру</p>
-        </div>
-        <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/owngoal.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Самая пропускающая команда</h4>
-            <p class="description"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?> : <br> <?php echo $team_max_owngoal?> гола за игру</p>
-        </div>
-        <div class="col-md-5">
-            <div class="icon-holder">
-                <img src="/img/icons/owngoal.png" alt="" class="icon">
-            </div>
-            <h4 class="heading">Самая пропускающая команда</h4>
-            <p class="description"><?php echo $team_own_goal?> <?php echo Html::img($team_embl_owngoal)?> : <br> <?php echo $team_max_owngoal?> гола за игру</p>
+            <h4 class="heading">Чаще всех получают жёлтые карточки</h4>
+            <p class="description"><?php echo $team_yelCart?> <?php echo Html::img($team_embl_yelCart)?><br><?php echo $team_max_yelCart?> карточки за игру</p>
         </div>
     </div>
 </div>
