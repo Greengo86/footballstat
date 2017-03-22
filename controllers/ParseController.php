@@ -154,10 +154,8 @@ class ParseController extends AppController
             то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
             слово 'live' то также этот матч не записываем в бд до его окончания */
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
-            if($is_link !== null || $this->stat[$i]['h_tid_posses'] !== '-'
-                || strpos($this->stat[$i]['link'], 'live') == true){
+            if($is_link !== null || strpos($this->stat[$i]['link'], 'live') == true){
                 $i++;
-                echo 'Heeey';
                 continue;
             }
             foreach ($this->stat as $link){
@@ -199,7 +197,7 @@ class ParseController extends AppController
         /** вызываем метод, который запишет подготовленные данные в бд */
         $model->playInsert($this->to_record);
 
-        return $this->stat;
+        return $this->to_record;
 //            /** Если в массиве $this->stat в значении 'link', есть ссылка, что и в базе данных,
 //            то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
 //            слово 'live' то также этот матч не записываем в бд до его окончания */

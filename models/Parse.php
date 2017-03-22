@@ -226,17 +226,17 @@ class Parse extends Model
 
     }
 
-    /** Метод, который определяет является ли игра новой! Ищём ссылку на матч в бд! Если такой ссылки нет($is_link==null),
-    то возвращаем false*/
-    public static function isNewPlay($array)
-    {
-
-        $is_link = Play::find()->asArray()->andWhere(['link' => $array['link']])->one();
-//        var_dump($array);
-
-        return $is_link ? false : true;
-
-    }
+//    /** Метод, который определяет является ли игра новой! Ищём ссылку на матч в бд! Если такой ссылки нет($is_link==null),
+//    то возвращаем false*/
+//    public static function isNewPlay($array)
+//    {
+//
+//        $is_link = Play::find()->asArray()->andWhere(['link' => $array['link']])->one();
+////        var_dump($array);
+//
+//        return $is_link ? false : true;
+//
+//    }
     /**Сравниваем спаршенные данные с теми, что уже есть в базе данных!
      * Создаём такое условие, при котором мы не запишем в бд одинаковых матчей
      * $array - принимаемый массив от контроллера со спаршенными данными. Записываем данные в бд*/
@@ -277,7 +277,6 @@ class Parse extends Model
                             $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
                         ]
                     ])->execute();
-
             }
         }
         return $array;
