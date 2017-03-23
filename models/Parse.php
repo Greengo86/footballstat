@@ -75,7 +75,7 @@ class Parse extends Model
      * По принятым переменным $time_stat и $date_stat определяем каким образом разобрать дату и время.
     У матчей разных чемпионатов разные параметры парсинга времени и даты! Значения $time_stat, $date_stat -
     для каждого чемпионата будут свои*/
-    public function parseStat($pq_m, $i, $time_stat, $date_stat)
+    public function parseStat($pq_m, $i, $league)
     {
 
         $this->stat['h_tid_posses'] = $pq_m[$i]->find('.stats_item:eq(3) .stats_inf:eq(0)')->text();
@@ -108,9 +108,24 @@ class Parse extends Model
         У матчей разных чемпионатов разный формат разбора даты и времени. В зависимости от принимаемых значений
         устанавливаем переменные для разбора даты и времени, т.к. они разные в строке-заголовке спаршеной страницы*/
         $this->stat['year'] = '20' . explode(' ', explode('.', $head_date)[2])[0];
-        $time = explode(' ', $head_date)[$time_stat];
+
+        /**По принятой переменной $league определяем $time и $date. В завимости от них определяеv каким образом
+        "разбирать" дату и время на странице матча/ У матчей разных чемпионатов разный формат разбора даты и времен.
+         В зависимости от принимаемых констант от LeagueParseController устанавливаем переменные для парсинга в опред. лигах*/
+        if ($league == 'spain'){
+            $time = 4;
+            $date = 3;
+        }elseif ($league == 'england'){
+            $time = 7;
+            $date = 6;
+        }elseif ($league == 'germany'){
+            $time = 6;
+            $date = 5;
+        }
+
+        $time = explode(' ', $head_date)[$time];
 //        var_dump($time);
-        $date = substr_replace((explode(' ', $head_date)[$date_stat]), $this->stat['year'], 6);
+        $date = substr_replace((explode(' ', $head_date)[$date]), $this->stat['year'], 6);
 
         $this->stat['datetime'] = Yii::$app->formatter->asDatetime($date . $time, 'php:Y-m-d H:i:s');
 

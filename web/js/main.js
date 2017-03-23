@@ -228,12 +228,25 @@ jQuery(function($) {
     });
 
     /** Функция для работы слайдера статистических фактов на главной странице*/
-    $(document).ready(function(){
-        $('.owl-carousel').owlCarousel({
-            items:4,
-            nav:true,
-            loop:true,
-            dots:false
-		});
+
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items:4,
+        nav:true,
+        loop:true,
+        dots:false,
+        responsive:{
+            1800:{
+                items:5
+            }
+        }
+    });
+    owl.on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY>0) {
+            owl.trigger('next.owl');
+        } else {
+            owl.trigger('prev.owl');
+        }
+        e.preventDefault();
     });
 });

@@ -530,11 +530,12 @@ hr.style3 {
     line-height: 1.5;
     font-weight: bold;
     text-align: center;
+    margin-top: 20px;
 }
 
 .owl-carousel .description img{
     margin: 0 auto;
-    max-width: 75%;
+    max-width: 40%;
 }
 
 footer .container .row .col-sm-8 p {

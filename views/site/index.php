@@ -53,7 +53,11 @@ $this->title = 'Footballstat';
         //if ($this->beginCache('stat', ['duration' => $duration, 'dependency' => $dependency])) {
         //    StatWidget::begin(['champ' => '1']);
         //    StatWidget::end();
+        StatWidget::begin(['champ' => '1']);
+        StatWidget::end();
         StatWidget::begin(['champ' => '2']);
+        StatWidget::end();
+        StatWidget::begin(['champ' => '3']);
         StatWidget::end();
         //    $this->endCache();
         //}

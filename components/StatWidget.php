@@ -39,94 +39,98 @@ class StatWidget extends Widget
     const AWAY_RED_CART = 'a_tid_red_cart';
 
 
-    public $statHome;
-    public $statAway;
     public $score;
     public $champ;
+    public $league;
     public $team;
-    public $play;
     public $team_max;
     public $team_embl;
 
 
-    public  function init()
+    public function init()
     {
 
         parent::init();
 
-        $this->play['home'] = Play::find()->asArray()->with('teamHome', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
-        $this->play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
-        $this->play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
+        $play['home'] = Play::find()->asArray()->with('teamHome', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
+        $play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
+        $play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
 
         $model = new Team();
 
 //        Получаем список статистических показателей дома и на выезде - Голы в матче
-        $goalHome = $model->statGoalHome($this->play['home'], self::HOME_GOAL);
-        $goalAway = $model->statGoalAway($this->play['away'], self::AWAY_GOAL);
+        $goalHome = $model->statGoalHome($play['home'], self::HOME_GOAL);
+        $goalAway = $model->statGoalAway($play['away'], self::AWAY_GOAL);
 
 //        Пропушённые голы
-        $goalOwnHome = $model->statGoalOwnHome($this->play['home'], self::AWAY_GOAL);
-        $goalOwnAway = $model->statGoalOwnAway($this->play['away'], self::HOME_GOAL);
+        $goalOwnHome = $model->statGoalOwnHome($play['home'], self::AWAY_GOAL);
+        $goalOwnAway = $model->statGoalOwnAway($play['away'], self::HOME_GOAL);
 
 //        Угловые
-        $cornerHome = $model->statCornerHome($this->play['home'], self::HOME_CORNER);
-        $cornerAway = $model->statCornerAway($this->play['away'], self::AWAY_CORNER);
+        $cornerHome = $model->statCornerHome($play['home'], self::HOME_CORNER);
+        $cornerAway = $model->statCornerAway($play['away'], self::AWAY_CORNER);
 
 //        Фолы
-        $foulHome = $model->statFoulHome($this->play['home'], self::HOME_FOUL);
-        $foulAway = $model->statFoulAway($this->play['away'], self::AWAY_FOUL);
+        $foulHome = $model->statFoulHome($play['home'], self::HOME_FOUL);
+        $foulAway = $model->statFoulAway($play['away'], self::AWAY_FOUL);
 
 //        Процент владения мячом
-        $possesHome = $model->statPossesHome($this->play['home'], self::HOME_POSSESSION);
-        $possesAway = $model->statPossesAway($this->play['away'], self::AWAY_POSSESSION);
+        $possesHome = $model->statPossesHome($play['home'], self::HOME_POSSESSION);
+        $possesAway = $model->statPossesAway($play['away'], self::AWAY_POSSESSION);
 
 //       Оффсайды
-        $offsideHome = $model->statOffsideHome($this->play['home'], self::HOME_OFFSIDE);
-        $offsideAway = $model->statOffsideAway($this->play['away'], self::AWAY_OFFSIDE);
+        $offsideHome = $model->statOffsideHome($play['home'], self::HOME_OFFSIDE);
+        $offsideAway = $model->statOffsideAway($play['away'], self::AWAY_OFFSIDE);
 
 //        Жёлтые карточки
-        $yelCartHome = $model->statYelCartHome($this->play['home'], self::HOME_YELLOW_CART);
-        $yelCartAway = $model->statYelCartAway($this->play['away'], self::AWAY_YELLOW_CART);
+        $yelCartHome = $model->statYelCartHome($play['home'], self::HOME_YELLOW_CART);
+        $yelCartAway = $model->statYelCartAway($play['away'], self::AWAY_YELLOW_CART);
 
 //        суммируем значения дома и на выезде для каждой команды
 //        Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
-        $this->score['goal'] = $model->statSum($goalHome, $goalAway, $this->play['count']);
-        $this->score['corner'] = $model->statSum($cornerHome, $cornerAway, $this->play['count']);
-        $this->score['foul'] = $model->statSum($foulHome, $foulAway, $this->play['count']);
-        $this->score['posses'] = $model->statSum($possesHome, $possesAway, $this->play['count']);
-        $this->score['offside'] = $model->statSum($offsideHome, $offsideAway, $this->play['count']);
-        $this->score['yelCart'] = $model->statSum($yelCartHome, $yelCartAway, $this->play['count']);
-        $this->score['ownGoal'] = $model->statOwnGoalSum($goalOwnHome, $goalOwnAway, $this->play['count']);
+        $this->score['goal'] = $model->statSum($goalHome, $goalAway, $play['count']);
+        $this->score['corner'] = $model->statSum($cornerHome, $cornerAway, $play['count']);
+        $this->score['foul'] = $model->statSum($foulHome, $foulAway, $play['count']);
+        $this->score['posses'] = $model->statSum($possesHome, $possesAway, $play['count']);
+        $this->score['offside'] = $model->statSum($offsideHome, $offsideAway, $play['count']);
+        $this->score['yelCart'] = $model->statSum($yelCartHome, $yelCartAway, $play['count']);
+        $this->score['ownGoal'] = $model->statOwnGoalSum($goalOwnHome, $goalOwnAway, $play['count']);
 
         //Определяем команду, с наибольшим коэфициентом
         $this->team['goal'] = $model->statMaxTeam($this->score['goal']);
         //Вычисляем максимальное значение в массиве
         $this->team_max['goal'] = $model->statMax($this->score['goal']);
-        $this->team_embl['goal'] = $model->teamEmbl($this->play['home'], $this->team['goal']);
+        $this->team_embl['goal'] = $model->teamEmbl($play['home'], $this->team['goal']);
 
         $this->team['ownGoal'] = $model->statMaxTeam($this->score['ownGoal']);
         $this->team_max['ownGoal'] = $model->statMax($this->score['ownGoal']);
-        $this->team_embl['ownGoal'] = $model->teamEmbl($this->play['home'], $this->team['ownGoal']);
+        $this->team_embl['ownGoal'] = $model->teamEmbl($play['home'], $this->team['ownGoal']);
 
         $this->team['corner'] = $model->statMaxTeam($this->score['corner']);
         $this->team_max['corner'] = $model->statMax($this->score['corner']);
-        $this->team_embl['corner'] = $model->teamEmbl($this->play['home'], $this->team['corner']);
+        $this->team_embl['corner'] = $model->teamEmbl($play['home'], $this->team['corner']);
 
         $this->team['foul'] = $model->statMaxTeam($this->score['foul']);
         $this->team_max['foul'] = $model->statMax($this->score['foul']);
-        $this->team_embl['foul'] = $model->teamEmbl($this->play['home'], $this->team['foul']);
+        $this->team_embl['foul'] = $model->teamEmbl($play['home'], $this->team['foul']);
 
         $this->team['posses'] = $model->statMaxTeam($this->score['posses']);
         $this->team_max['posses'] = $model->statMax($this->score['posses']);
-        $this->team_embl['posses'] = $model->teamEmbl($this->play['home'], $this->team['posses']);
+        $this->team_embl['posses'] = $model->teamEmbl($play['home'], $this->team['posses']);
 
         $this->team['offside'] = $model->statMaxTeam($this->score['offside']);
         $this->team_max['offside'] = $model->statMax($this->score['offside']);
-        $this->team_embl['offside'] = $model->teamEmbl($this->play['home'], $this->team['offside']);
+        $this->team_embl['offside'] = $model->teamEmbl($play['home'], $this->team['offside']);
 
         $this->team['yelCart'] = $model->statMaxTeam($this->score['yelCart']);
         $this->team_max['yelCart'] = $model->statMax($this->score['yelCart']);
-        $this->team_embl['yelCart'] = $model->teamEmbl($this->play['home'], $this->team['yelCart']);
+        $this->team_embl['yelCart'] = $model->teamEmbl($play['home'], $this->team['yelCart']);
+
+        //Получаем название лиги из массива $play['home'] в первой же игре
+        foreach ($play['home'] as $land){
+            $this->league['league'] = $land['league']['league'];
+            break;
+        }
 
     }
 
@@ -155,8 +159,8 @@ class StatWidget extends Widget
             'team_max_yelCart' => $this->team_max['yelCart'],
             'team_embl_yelCart' => $this->team_embl['yelCart'],
             //Из вида site/index передаём название чемпионата
-            'champ' => $this->play['home'][1]['league']['league'],
-            'score' => $this->score['ownGoal'],
+            'champ' => $this->champ,
+            'league' => $this->league,
         ]);
     }
 
