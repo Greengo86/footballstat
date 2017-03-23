@@ -230,9 +230,10 @@ jQuery(function($) {
     /** Функция для работы слайдера статистических фактов на главной странице*/
     $(document).ready(function(){
         $('.owl-carousel').owlCarousel({
-        	items:4,
-        	nav:true,
-			loop:true
+            items:4,
+            nav:true,
+            loop:true,
+            dots:false
 		});
     });
 });

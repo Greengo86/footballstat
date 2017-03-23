@@ -20,6 +20,7 @@ use yii\db\ActiveRecord;
 class StatWidget extends Widget
 {
 
+    /** Константы, определённые для более простого определения того статистического показателя, который нужно запросить */
     const HOME_GOAL = 'home_score_full';
     const AWAY_GOAL = 'away_score_full';
     const HOME_POSSESSION = 'h_tid_posses';
@@ -56,10 +57,6 @@ class StatWidget extends Widget
         $this->play['home'] = Play::find()->asArray()->with('teamHome', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
         $this->play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
         $this->play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
-
-//        $playHome = Play::find()->asArray()->with('teamHome', 'league')->indexBy('id')->all();
-//        $playAway = Play::find()->asArray()->with('teamAway', 'league')->indexBy('id')->all();
-//        $playCount = Play::find()->orderBy('id')->count();
 
         $model = new Team();
 
@@ -160,7 +157,6 @@ class StatWidget extends Widget
             //Из вида site/index передаём название чемпионата
             'champ' => $this->play['home'][1]['league']['league'],
             'score' => $this->score['ownGoal'],
-
         ]);
     }
 

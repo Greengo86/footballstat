@@ -179,7 +179,7 @@ a.clickable:hover { text-decoration:none; }
     margin: 0 auto;
 }
 
- /*кнопка модального окна */
+/*кнопка модального окна */
 #match .btn {
     color: #b22c29;
 }
@@ -519,6 +519,11 @@ hr.style3 {
     text-align: center;
 }
 
+.owl-carousel .block-head{
+    height: 95px;
+    display: block;
+}
+
 .owl-carousel .description{
     color: #ec2323;
     font-size: 20px;
@@ -649,6 +654,3 @@ th {
 .item td:first-child {
     text-align: left;
 }
-
-
-

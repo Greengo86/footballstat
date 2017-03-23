@@ -41,12 +41,22 @@ $this->title = 'Footballstat';
     </div>
 </section>
 
-<?php
-//Подключаем и кешируем виджет StatWidget
-//if ($this->beginCache('stat', ['duration' => $duration, 'dependency' => $dependency])) {
-    StatWidget::begin(['champ' => '1']);
-    StatWidget::end();
-//    $this->endCache();
-//}
-?>
 
+<section id="services" class="section section-padded">
+    <div class="container">
+        <div class="row text-center title">
+            <h2 class="black">Статистические факты</h2>
+            <h4 class="light muted">Самое интересное из Ведущих Европейских чемпионатов</h4>
+        </div>
+        <?php
+        //Подключаем и кешируем виджет StatWidget
+        //if ($this->beginCache('stat', ['duration' => $duration, 'dependency' => $dependency])) {
+        //    StatWidget::begin(['champ' => '1']);
+        //    StatWidget::end();
+        StatWidget::begin(['champ' => '2']);
+        StatWidget::end();
+        //    $this->endCache();
+        //}
+        ?>
+    </div>
+</section>
