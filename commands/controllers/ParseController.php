@@ -168,16 +168,6 @@ class ParseController extends AppController
                 $pq_m[$i] = pq($match[$i]);
                 /** Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
                  * в туре и записываем в массив $stat[$i]*/
-                if ($league == 'spain'){
-                    $time = 4;
-                    $date = 3;
-                }elseif ($league == 'england'){
-                    $time = 7;
-                    $date = 6;
-                }elseif ($league == 'germany'){
-                    $time = 6;
-                    $date = 5;
-                }
                 /** В массив $this->to_record записываем полные стат данные, которых ещё нет в бд  */
                 $this->to_record[$i] = $model->parseStat($pq_m, $i, $league);
                 /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
