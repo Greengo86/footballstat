@@ -1,6 +1,5 @@
 <?php
 
-use yii\helpers\Html;
 
 $this->title =  $champ . '|Лучшие Бомбардиры и Ассистенты: ';?>
 
@@ -46,7 +45,7 @@ $this->title =  $champ . '|Лучшие Бомбардиры и Ассистен
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($scorer['assis'] as $k => $value) :?>
+                        <?php foreach ($scorer['assist'] as $k => $value) : ?>
                             <?php echo "<tr>";?>
                             <?php echo "<td>$value[0]</td>";?>
                             <?php echo "<td>$value[1]</td>";?>

@@ -1,28 +1,22 @@
 <?php
 /**Парсим результаты матчей и статистику с http://soccer365.ru */
 
-namespace app\controllers;
+namespace app\commands\controllers;
 
-use app\models\Parse;
 use Yii;
+use app\models\Parse;
 use app\models\Team;
 use app\models\Play;
+use yii\console\Controller;
 
 
-class ParseController extends AppController
+class ParseController extends Controller
 {
 
     /** Основной url сайта с которого будем парсить*/
     const DOMEN = 'http://soccer365.ru';
 
-    /**  Константы для методов парсинга бомбардиров и ассистентов на странице результатов чемпионата */
-    const SCORERS = 0;
-    const ASSIST = 1;
-    /**  счётчик с которого мы начинаем отчёт кол-ва array_push */
-    const COUNT = 1;
 
-
-    public $date = [];
     public $stat = [];
     public $to_record = [];
 
@@ -138,7 +132,7 @@ class ParseController extends AppController
     {
 
         /** Эмулируем работу браузера с помощью curl*/
-        $dom = curl_get($url);
+        $dom = \curl_get($url);
 
         /** Создаем объект phpQuery */
         $team = \phpQuery::newDocumentHTML($dom);
@@ -233,27 +227,4 @@ class ParseController extends AppController
 
     }
 
-    public function actionScorer($url)
-    {
-
-        /** Эмулируем работу браузера с помощью curl*/
-        $dom = curl_get($url);
-
-        /** Создаем объект phpQuery */
-        $score = \phpQuery::newDocumentHTML($dom);
-        $score = pq($score);
-
-        $model = new Parse();
-
-        /**Вызываем метод модели parse для парсинга данных о бомбардирах! self::COUNT - счётчик с которого мы начинаем
-        отчёт кол-ва array_push- 1. Посл. параметр - счётчик кол-ва раз сколько мы будем вызывать arrayPush.
-        3 - для бомбардиров(голы, голы с пенальти, кол-во сыгранных матчей),2 - для ассистентов (ассисты, кол-во сыгранных матчей)*/
-        $table['score'] = $model->scorers($score, self::SCORERS, self::COUNT, 3);
-
-        //Вызываем метод модели parse для парсинга данных о ассистентах
-        $table['assis'] = $model->scorers($score, self::ASSIST, self::COUNT, 2);
-
-        return $table;
-
-    }
 }

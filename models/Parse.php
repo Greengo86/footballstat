@@ -13,9 +13,9 @@ class Parse extends Model
     public $href;
     public $team_home;
     public $team_away;
-    public $scorer;
-    public $goals;
-    public $count;
+
+    public static $scorer;
+    public static $count;
 
     /** Метод для определения чемпионата! Ищем в спарсенной строке и в зависимости от неё подготавливаем переменную
      * для базы данных для записи матча*/
@@ -319,50 +319,49 @@ class Parse extends Model
 //    }
 
 
-    /** Парсим таблицу бомбардиров и ассистентов на странице чемпионатов. $frame - константа, в зависимости от которой будем парсить
-    бомбардиров(если $frame = 0) и ассистентов (если $frame = 1)*/
-    public function scorers($score, $frame, $n, $y)
+    /** Парсим таблицу бомбардиров и ассистентов на странице чемпионатов. $frame - константа,
+     * в зависимости от которой будем парсить бомбардиров(если $frame = 0) и ассистентов (если $frame = 1)*/
+    public static function scorers($score, $frame, $n, $y)
     {
 
         //Проходимся в цикле с шагом +2 (1, 3, 5..)для span, т.к. четные span выдают пустыне строки и записываем в массив имена игроков
         $i = 1;
         while ($i <= 24){
-            $this->scorer[$i] =
+            self::$scorer[$i] =
                 [$score->find('.page_main_content .comp_column .live_comptt_bd:eq(' . $frame . ') .comptt_table_bd .comptt_table_player span:eq(' . $i . ')')->text()];
             $i+=2;
         }
 
         //Затем меняя счётчик $j меняем данные для парсинга стат.показателей и дописываем в уже существующий массив с именами игроков
-        $this->count = 0;
-        foreach($this->scorer as $k => $value){
+        self::$count = 0;
+        foreach (self::$scorer as $k => $value) {
 
             $n =1;
-            $this->arrayPush($k, $score, $frame, $n, $y);
+            self::arrayPush($k, $score, $frame, $n, $y);
 
         }
 
-        return $this->scorer;
-
+        return self::$scorer;
     }
 
     /** Метод для дополенения массива из метода scorers
      * var $frame - если $frame = 0 - бомбардиры, если $frame = 1 - ассистенты
-     * var $k - ключи массива $this->scorer
+     * var $k - ключи массива $scorer
      * var $score - объект phpQuery, принимаемый из контроллера
      * $n - счётчик с которого мы начинаем отчёт кол-ва array_push.
      * $y - счётчик кол-ва раз сколько мы будем вызывать arrayPush. 3 - для бомбардиров(голы, голы с пенальти, кол-во сыгранных матчей),
      * 2 - для ассистентов (ассисты, кол-во сыгранных матчей)*/
-    public function arrayPush($k, $score, $frame, $n, $y = null)
+    public static function arrayPush($k, $score, $frame, $n, $y = null)
     {
         if ($n <= $y){
 
-            array_Push($this->scorer[$k], $score->find('.page_main_content .comp_column .live_comptt_bd:eq(' . $frame . ') .comptt_table_bd .comptt_table_plitem:eq(' . $this->count . ')')->text());
+            array_Push(self::$scorer[$k], $score->find('.page_main_content .comp_column .live_comptt_bd:eq(' . $frame . ') .comptt_table_bd .comptt_table_plitem:eq(' . self::$count . ')')->text());
             $n++;
-            $this->count++;
-            $this->arrayPush($k, $score, $frame, $n, $y);
+            self::$count++;
+            self::arrayPush($k, $score, $frame, $n, $y);
         }
 
-        return $this->scorer;
+        return self::$scorer;
 
     }
 

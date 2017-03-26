@@ -66,7 +66,6 @@ class Team extends ActiveRecord
     /**
      * @return array
      * Метод для формирования массива для вывода меню на главной странице.
-     * Пока запрашиваем только команды из Испании
      */
 
     public static function teamMenu(){
@@ -103,21 +102,21 @@ class Team extends ActiveRecord
                         ['label' => 'Команды',
                         'items' => $arraySpain],
                         ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 1]],
-                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/league-parse/scorers', 'id' => 1]]]
+                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 1]]]
                     ];
         $item[] = ['label' => 'Германия',
                     'items' => [
                         ['label' => 'Команды',
                         'items' => $arrayGermany],
                         ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 3]],
-                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/league-parse/scorers', 'id' => 3]]]
+                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 3]]]
                     ];
         $item[] = ['label' => 'Англия',
                     'items' => [
                         ['label' => 'Команды',
                         'items' => $arrayEngland],
                         ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 2]],
-                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/league-parse/scorers', 'id' => 2]]]
+                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 2]]]
                 ];
         $item[] = Yii::$app->user->isGuest ?
                     ['label' => 'Вход', 'url' => ['/admin']] :

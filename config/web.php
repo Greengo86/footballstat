@@ -69,7 +69,7 @@ $config = [
                 'team/<id:\d+>/<t:\d+>' => 'team/team',
                 'play/champ/<id:\d+>' => 'play/champ',
                 'play/match/<id:\d+>' => 'play/match',
-                'league-parse/scorers/<id:\d+>' => 'league-parse/scorers',
+                'best/scorers/<id:\d+>' => 'scorer/scorers',
             ],
         ],
     ],

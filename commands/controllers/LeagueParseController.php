@@ -1,28 +1,27 @@
 <?php
 
-namespace app\controllers;
+namespace app\commands\controllers;
 
-use app\models\Parse;
 use yii\filters\AccessControl;
 
 
 class LeagueParseController extends ParseController
 {
 
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-        ];
-    }
+//    public function behaviors()
+//    {
+//        return [
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'rules' => [
+//                    [
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
+//        ];
+//    }
 
     /**  LIVE - .block_header:eq(0) - недавно сыгранные матчи */
     const LIVE = 0;
@@ -54,6 +53,7 @@ class LeagueParseController extends ParseController
         У матчей чемпионата Испании один формат, у остальных(Англии и Германии) другой*/
         $k = 9;
         $result = parent::actionLive($url, $k, self::PLAY, self::PRIMERA);
+        echo 'heeey';
 
 
         return $this->render('spain', [
@@ -114,40 +114,6 @@ class LeagueParseController extends ParseController
 //            'teamaway' => $team_away,
             'result' => $result,
         ]);
-
-    }
-
-    /** Экшен для показа списка бомбардиров и ассистентов. $id - № id чемпионата */
-    public function actionScorers()
-    {
-
-        $this->layout = 'main';
-        /** @var  $id - id чемпионата */
-        $id = \Yii::$app->request->get('id');
-        /** Определяем ссылку, где будем парсить таблицу по переменной id */
-        $url = '';
-        switch ($id){
-            case 1:
-                $url = 'soccer365.ru/competitions/16/';
-                break;
-            case 2:
-                $url = 'soccer365.ru/competitions/12/';
-                break;
-            case 3:
-                $url = 'soccer365.ru/competitions/17/';
-                break;
-        }
-
-        //Определяем лигу где парсим данные вызывая статический метод scorersChamp
-        $champ = parse::scorersChamp($id);
-
-        $scorer = parent::actionScorer($url);
-
-        return $this->render('@app/views/play/scorers.php', [
-            'scorer' => $scorer,
-            'champ' => $champ
-        ]);
-
     }
 
 }
