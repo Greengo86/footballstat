@@ -17,11 +17,16 @@ class Parse extends Model
     public static $scorer;
     public static $count;
 
-    /** Метод для определения чемпионата! Ищем в спарсенной строке и в зависимости от неё подготавливаем переменную
-     * для базы данных для записи матча*/
-    public static function parseChamp($pq_m){
 
-        $champ = trim($pq_m->find('.live_body #game_events .block_header')->text(), "\x00..\x1F");
+    /**
+     * @param $team - объект phpQuery переданный из контреллера
+     * @return int - возвращаю Лигу в виде целого числа
+     * Метод для определения чемпионата! Ищем в спарсенной строке и в зависимости от неё
+     * подготавливаем переменную для базы данных для записи матча
+     */
+    public static function parseChamp($team){
+
+        $champ = trim($team->find('.live_body #game_events .block_header')->text(), "\x00..\x1F");
 
         $champ = explode(', ', $champ)[0];
 
@@ -36,10 +41,14 @@ class Parse extends Model
 
     }
 
-
-    /** Парсим данные с сайта - тур, названия команд, счёт, дата и ссылка! проходимся в цикле 10 раз - по количеству игр
-     * в туре и записываем в массив $stat вызывая $play->parsePlay(), применяя функцию trim()
-     * для обрезания ненужных пробелов и символов
+    /**
+     * @param $team - объект phpQuery переданный из контреллера
+     * @param $i - счётчик переходов по матчам по количеству игр в туре.10 - Испания, Англия, 9 - Германия
+     * @param $res - Что парсим, зависит от передаваемой константы: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад или
+     * тур, который проходит в данных момент
+     * @return mixed - возвращаем массив $this->stat[] c названием команд, счётом, ссылкой на подробную статистику, дату, год
+     * Парсим данные с сайта - тур, названия команд, счёт, дата и ссылка проходимся в цикле 10 раз - по количеству игр
+     * в туре и записываем в массив $stat вызывая $play->parsePlay(), применяя функцию trim() для обрезания ненужных пробелов и символов
      * parseLive В зависимости от параметра $res парсит недавно сыгранные матчи которые находятся в классе
      * .block_header:eq(0) или сыгранные 2-3 назад, которые находятся в классе .block_header:eq(1) на странице рез-тов
      */
@@ -69,36 +78,40 @@ class Parse extends Model
         return $this->stat;
     }
 
-    /** Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
+    /**
+     * @param $team - объект phpQuery переданный из контреллера
+     * @param $i - счётчик переходов по матчам по количеству игр в туре
+     * @param $league - В завимости от неё определяем каким образом "разбираем" дату и время на странице матча
+     * У матчей чемпионата Испании один формат, у остальных(Англии и Германии) другой
+     * @return mixed - возвращаем массив $this->stat
+     * Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
      * в туре и записываем в массив $stat вызывая $play->parseStat(),применяя функцию trim() для обрезания ненужных
      * пробелов и символов. Используется только для парсинга статистики.
      * По принятым переменным $time_stat и $date_stat определяем каким образом разобрать дату и время.
-    У матчей разных чемпионатов разные параметры парсинга времени и даты! Значения $time_stat, $date_stat -
-    для каждого чемпионата будут свои*/
-    public function parseStat($pq_m, $i, $league)
+     */
+    public function parseStat($team, $i, $league)
     {
 
-        $this->stat['h_tid_posses'] = $pq_m[$i]->find('.stats_item:eq(3) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_posses'] = $pq_m[$i]->find('.stats_item:eq(3) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_shot_on_goal'] = $pq_m[$i]->find('.stats_item:eq(1) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_shot_on_goal'] = $pq_m[$i]->find('.stats_item:eq(1) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_foul'] = $pq_m[$i]->find('.stats_item:eq(5) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_foul'] = $pq_m[$i]->find('.stats_item:eq(5) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_corner'] = $pq_m[$i]->find('.stats_item:eq(4) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_corner'] = $pq_m[$i]->find('.stats_item:eq(4) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_offside'] = $pq_m[$i]->find('.stats_item:eq(6) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_offside'] = $pq_m[$i]->find('.stats_item:eq(6) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_yellow_cart'] = $pq_m[$i]->find('.stats_item:eq(7) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_yellow_cart'] = $pq_m[$i]->find('.stats_item:eq(7) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_red_cart'] = $pq_m[$i]->find('.stats_item:eq(8) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_red_cart'] = $pq_m[$i]->find('.stats_item:eq(8) .stats_inf:eq(1)')->text();
-        /** Определения чемпионата! Ищем в спарсенной строке и в зависимости от неё подготавливаем переменную
-         * для базы данных*/
-        $this->stat['league_id'] = $this->parseChamp($pq_m[$i]);
-        $head_date = trim($pq_m[$i]->find('.live_body #game_events .block_header')->text(), "\x00..\x1F");
-        /** Если в спаршенной строке 'date'- не дата, а 'Перенесен' - записываем в поле delay - 1 true, если дата, то 0 - false */
+        $this->stat['h_tid_posses'] = $team[$i]->find('.stats_item:eq(3) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_posses'] = $team[$i]->find('.stats_item:eq(3) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_shot_on_goal'] = $team[$i]->find('.stats_item:eq(1) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_shot_on_goal'] = $team[$i]->find('.stats_item:eq(1) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_foul'] = $team[$i]->find('.stats_item:eq(5) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_foul'] = $team[$i]->find('.stats_item:eq(5) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_corner'] = $team[$i]->find('.stats_item:eq(4) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_corner'] = $team[$i]->find('.stats_item:eq(4) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_offside'] = $team[$i]->find('.stats_item:eq(6) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_offside'] = $team[$i]->find('.stats_item:eq(6) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_yellow_cart'] = $team[$i]->find('.stats_item:eq(7) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_yellow_cart'] = $team[$i]->find('.stats_item:eq(7) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_red_cart'] = $team[$i]->find('.stats_item:eq(8) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_red_cart'] = $team[$i]->find('.stats_item:eq(8) .stats_inf:eq(1)')->text();
+        /* Определения чемпионата! Ищем в спарсенной строке и в зависимости от неё подготавливаем переменную для базы данных*/
+        $this->stat['league_id'] = $this->parseChamp($team[$i]);
+        $head_date = trim($team[$i]->find('.live_body #game_events .block_header')->text(), "\x00..\x1F");
+        /*Если в спаршенной строке 'date'- не дата, а 'Перенесен' - записываем в поле delay - 1 true, если дата, то 0 - false */
         $this->stat['delay'] = $this->stat['date'] == 'Перенесен' ? 1 : 0;
-        /**  Формируем year разбиваем по пробелу, а и по точке и берём только год
+        /* Формируем year разбиваем по пробелу, а и по точке и берём только год
          * $time снова обрезаем по пробелу и берём ту часть, где время
          * date снова обрезаем по пробелу и берём дату в формает "05.02.17" и заменяем
          * функцией substr_replace часть строки начиная с 6-ой позиции подставляя год в нужном формате
@@ -109,8 +122,8 @@ class Parse extends Model
         устанавливаем переменные для разбора даты и времени, т.к. они разные в строке-заголовке спаршеной страницы*/
         $this->stat['year'] = '20' . explode(' ', explode('.', $head_date)[2])[0];
 
-        /**По принятой переменной $league определяем $time и $date. В завимости от них определяеv каким образом
-        "разбирать" дату и время на странице матча/ У матчей разных чемпионатов разный формат разбора даты и времен.
+        /*По принятой переменной $league определяем $time и $date. В завимости от них определяеv каким образом
+        "разбираем" дату и время на странице матча/ У матчей разных чемпионатов разный формат разбора даты и времен.
          В зависимости от принимаемых констант от LeagueParseController устанавливаем переменные для парсинга в опред. лигах*/
         if ($league == 'spain'){
             $time = 4;
@@ -238,7 +251,6 @@ class Parse extends Model
         $this->stat['datetime'] = Yii::$app->formatter->asDatetime($date . $time, 'php:Y-m-d H:i:s');
 
         return $this->stat;
-
     }
 
 //    /** Метод, который определяет является ли игра новой! Ищём ссылку на матч в бд! Если такой ссылки нет($is_link==null),
@@ -252,15 +264,19 @@ class Parse extends Model
 //        return $is_link ? false : true;
 //
 //    }
-    /**Сравниваем спаршенные данные с теми, что уже есть в базе данных!
-     * Создаём такое условие, при котором мы не запишем в бд одинаковых матчей
-     * $array - принимаемый массив от контроллера со спаршенными данными. Записываем данные в бд*/
+
+    /**
+     * @param $array - принимаемый массив от контроллера со спаршенными данными. Записываем данные в бд
+     * @return mixed - возвращаем массив, который мы записали в бд. Возвращаем только для отладки, т.к метод для
+     * консольного контроллера
+     * Метод для записи матча в бд. Если игра перенесена($value['delay'] == 1), то показатели заполняем 0
+     */
     public function playInsert($array)
     {
 
         foreach ($array as &$value) {
 
-            /** Если игра перенесена, то тем значениям, что null присваиваем нули до тех пор пока игра не будет сыграна  */
+            /* Если игра перенесена, то тем значениям, что null присваиваем нули до тех пор пока игра не будет сыграна */
             if ($value['delay'] == 1) {
                 $value['h_tid_posses'] = 0;
                 $value['a_tid_posses'] = 0;
@@ -277,7 +293,7 @@ class Parse extends Model
                 $value['h_tid_red_cart'] = 0;
                 $value['a_tid_red_cart'] = 0;
 
-                /** Записываем данные в любом случае. Здесь мы получаем массив, который необходимо поместить в бд,
+                /*Записываем данные в любом случае. Здесь мы получаем массив, который необходимо поместить в бд,
                 будь то перенесённые или сыгранный матч. Сюда попажают только сыгранные и не записанные в бд матчи*/
                 $conn = Yii::$app->db;
                 $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
@@ -319,8 +335,16 @@ class Parse extends Model
 //    }
 
 
-    /** Парсим таблицу бомбардиров и ассистентов на странице чемпионатов. $frame - константа,
-     * в зависимости от которой будем парсить бомбардиров(если $frame = 0) и ассистентов (если $frame = 1)*/
+    /**
+     * @param $score - объект phpQuery, принимаемый из контроллера
+     * @param $frame - если $frame = 0 - бомбардиры, если $frame = 1 - ассистенты
+     * @param $n - счётчик с которого мы начинаем отчёт кол-ва array_push.
+     * @param $y - счётчик кол-ва раз сколько мы будем вызывать arrayPush. 3 - для бомбардиров(голы, голы с пенальти, кол-во сыгранных матчей),
+     * 2 - для ассистентов (ассисты, кол-во сыгранных матчей)
+     * @return mixed - подготовленный массив self::$scorer[]
+     * Парсим таблицу бомбардиров и ассистентов на странице чемпионатов. $frame - константа,
+     * в зависимости от которой будем парсить бомбардиров(если $frame = 0) и ассистентов (если $frame = 1)
+     */
     public static function scorers($score, $frame, $n, $y)
     {
 
@@ -344,13 +368,14 @@ class Parse extends Model
         return self::$scorer;
     }
 
-    /** Метод для дополенения массива из метода scorers
-     * var $frame - если $frame = 0 - бомбардиры, если $frame = 1 - ассистенты
-     * var $k - ключи массива $scorer
-     * var $score - объект phpQuery, принимаемый из контроллера
-     * $n - счётчик с которого мы начинаем отчёт кол-ва array_push.
-     * $y - счётчик кол-ва раз сколько мы будем вызывать arrayPush. 3 - для бомбардиров(голы, голы с пенальти, кол-во сыгранных матчей),
-     * 2 - для ассистентов (ассисты, кол-во сыгранных матчей)*/
+    /**
+     * @param $score - объект phpQuery, принимаемый из контроллера
+     * @param $frame - если $frame = 0 - бомбардиры, если $frame = 1 - ассистенты
+     * @param $n - счётчик с которого мы начинаем отчёт кол-ва array_push.
+     * @param $y - счётчик кол-ва раз сколько мы будем вызывать arrayPush. 3 - для бомбардиров(голы, голы с пенальти,
+     * кол-во сыгранных матчей),2 - для ассистентов (ассисты, кол-во сыгранных матчей!
+     * @return mixed - подготовленный массив self::$scorer[] для вывода во view! Бомбардиры и ассисенты
+     * Метод для дополенения массива из метода scorers для вывода во views бомбардиров и ассистентов*/
     public static function arrayPush($k, $score, $frame, $n, $y = null)
     {
         if ($n <= $y){
@@ -365,7 +390,11 @@ class Parse extends Model
 
     }
 
-    //Метод для определения чемпионата! Для view Бомбардиров и Ассистентов
+    /**
+     * @param $id - id чеимпионата
+     * @return string - возвращаем строку с названием чемпионата
+     * Метод для определения чемпионата! Для view Бомбардиров и Ассистентов
+     */
     public static function scorersChamp($id)
     {
 

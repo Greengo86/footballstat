@@ -121,12 +121,21 @@ class ParseController extends Controller
 
     }
 
-    /*Экшен для парсинга матчей! Класс .block_body_nopadding:eq($res) зависит от принимаемой переменной $res
-    0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 дня назад. По принятой переменной $league определяем $time и $date.
-    В завимости от них модель определяет каким образом "разбирать" дату и время на странице матча
-    У матчей разных чемпионатов разные параметры парсинга времени и даты! Значения $time_stat, $date_stat -
-    для каждого чемпионата будут свои*/
-    public function actionLive($url, $k, $res, $league)
+    /**
+     * @param $url - ссылка на страничку, с которой будем парсить данные чемионата
+     * @param $i - счётчик переходов по матчам по количеству игр в туре.10 - Испания, Англия, 9 - Германия
+     * @param $res - - Что парсим, зависит от передаваемой константы: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад или
+     * тур, который проходит в данных момент
+     * @param $league - В завимости от неё определяем каким образом "разбираем" дату и время на странице матча
+     * У матчей чемпионата Испании один формат, у остальных(Англии и Германии) другой
+     * @return array - возвращаем массив - $this->to_record, который нужно записать в бд. Если NULL, то данне записывать не нужно
+     * Экшен для парсинга матчей! Класс .block_body_nopadding:eq($res) зависит от принимаемой переменной $res
+     * 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 дня назад. По принятой переменной $league определяем $time и $date.
+     * В завимости от них модель определяет каким образом "разбирать" дату и время на странице матча
+     * У матчей разных чемпионатов разные параметры парсинга времени и даты! Значения $time_stat, $date_stat -
+     * для каждого чемпионата будут свои
+     */
+    public function actionLive($url, $i, $res, $league)
     {
 
         /*Эмулируем работу браузера с помощью curl*/
@@ -135,11 +144,11 @@ class ParseController extends Controller
         /* Создаем объект phpQuery */
         $team = \phpQuery::newDocumentHTML($dom);
         $model = new Parse();
-        $i = 0;
+        $k = 0;
 
         /* Парсим данные с сайта - тур, названия команд, счёт, дата и ссылка!проходимся в цикле 9 или 10 раз - по количеству игр
          в туре и записываем в массив $stat вызывая $play->parsePlay()*/
-        while ($i <= $k){
+        while ($k <= $i){
 
             $this->stat[$i] = $model->parseLive($team, $i, $res);
             /* Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
@@ -147,31 +156,31 @@ class ParseController extends Controller
             слово 'live' то также этот матч не записываем в бд до его окончания */
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
             if($is_link !== null || strpos($this->stat[$i]['link'], 'live') == true){
-                $i++;
+                $k++;
                 continue;
             }
             foreach ($this->stat as $link){
                 /* "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
-                $dom1[$i] = self::DOMEN . $link['link'];
+                $dom1[$k] = self::DOMEN . $link['link'];
                 /* Эмулируем работу браузера с помощью curl*/
-                $game[$i] = curl_get($dom1[$i]);
+                $game[$k] = curl_get($dom1[$k]);
                 /* Создаем объект phpQuery */
-                $match[$i] = \phpQuery::newDocumentHTML($game[$i]);
-                $pq_m[$i] = pq($match[$i]);
+                $match[$k] = \phpQuery::newDocumentHTML($game[$k]);
+                $team[$k] = pq($match[$k]);
                 /* Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
-                в туре и записываем в массив $stat[$i]*/
+                в туре и записываем в массив $stat[$k]*/
                 /* В массив $this->to_record записываем полные стат данные, которых ещё нет в бд  */
-                $this->to_record[$i] = $model->parseStat($pq_m, $i, $league);
+                $this->to_record[$k] = $model->parseStat($team, $k, $league);
                 /* Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
                 и дозаписываем в $this->to_record, для того, чтобы записать в базу данных (int) id команд,
                 учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
-                $team_home[$i] = Team::find()->andWhere(['team_name' => $link['team_home']])->one();
-                $this->to_record[$i]['team_home'] = $team_home[$i]->team_id;
-                $team_away[$i] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
-                $this->to_record[$i]['team_away'] = $team_away[$i]->team_id;
+                $team_home[$k] = Team::find()->andWhere(['team_name' => $link['team_home']])->one();
+                $this->to_record[$k]['team_home'] = $team_home[$k]->team_id;
+                $team_away[$k] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
+                $this->to_record[$k]['team_away'] = $team_away[$k]->team_id;
 
             }
-            $i++;
+            $k++;
         }
         /* вызываем метод, который запишет подготовленные данные в бд */
         $model->playInsert($this->to_record);

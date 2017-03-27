@@ -12,8 +12,6 @@ $this->title = 'Footballstat';
 //echo debug($scorehome);
 //echo debug($scoreaway);
 //echo debug($score);
-//echo debug($cornerhome);
-//echo debug($corneraway);
 
 ?>
 
@@ -21,7 +19,7 @@ $this->title = 'Footballstat';
     <div class="container">
         <div class="row intro-tables">
             <?php
-            /** Выводим поочерёдно TableWidget для 3-ех чемпионатов и каждый из них кешируем */
+            /* Выводим поочерёдно TableWidget для 3-ех чемпионатов и каждый из них кешируем */
             $duration = 0;
             $dependency = [
                 'class' => 'yii\caching\DbDependency',
