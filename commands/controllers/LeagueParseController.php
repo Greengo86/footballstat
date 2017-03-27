@@ -37,10 +37,12 @@ class LeagueParseController extends ParseController
     public $germany = [];
     public $layout = false;
 
-
+    /**
+     * @return string - подготовленный массив, который состоит из матчей Испанской Примеры
+     * Передаём во view для отладки консольного приложения
+     */
     public function actionSpain()
     {
-
 
         /* url странички с которой будем парсить - в данном случае "Испания"*/
         $url = 'soccer365.ru/competitions/16/';
@@ -57,12 +59,14 @@ class LeagueParseController extends ParseController
         return $this->render('spain', [
             'result' => $result,
         ]);
-
     }
 
+    /**
+     * @return string - подготовленный массив, который состоит из матчей Английской Премьер Лиги
+     * Передаём во view для отладки консольного приложения
+     */
     public function actionEngland()
     {
-
 
         /* url странички с которой будем парсить - в данном случае "Англия" - даём ссылку со сдвигом временной
         зоны на 3 часа - для временной зоны Европа/Москва*/
@@ -78,16 +82,14 @@ class LeagueParseController extends ParseController
         $result = parent::actionLive($url, $i, self::LIVE, self::PREMIRLIGA);
 
         return $this->render('england', [
-//            'teamhome' => $team_home,
-//            'teamhomescore' => $team_home_score,
-//            'teamaway' => $team_away,
-//            'teamawayscore' => $team_away_score,
-//            'date' => $date,
             'result' => $result,
         ]);
-
     }
 
+    /**
+     * @return string - подготовленный массив, который состоит из матчей Немецкой БундесЛиги
+     * Передаём во view для отладки консольного приложения
+     */
     public function actionGermany()
     {
 
@@ -106,9 +108,6 @@ class LeagueParseController extends ParseController
         $result = parent::actionLive($url, $i, self::PLAY, self::BUNDESLIGA);
 
         return $this->render('germany', [
-//            'teamhome' => $team_home,
-//            'teamhomescore' => $team_home_score,
-//            'teamaway' => $team_away,
             'result' => $result,
         ]);
     }

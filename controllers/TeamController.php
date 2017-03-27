@@ -6,19 +6,18 @@ use app\models\Play;
 use Yii;
 use app\models\Team;
 use app\models\TeamSearch;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yii\web\HttpException;
 
 /**
  * TeamController implements the CRUD actions for Team model.
  */
-class TeamController extends AppController {
-
+class TeamController extends AppController
+{
 
     public $stat;
     public $home;
     public $away;
-    public static $array;
 
     /**
      * @inheritdoc
@@ -44,13 +43,17 @@ class TeamController extends AppController {
                     'delete' => ['POST'],
                 ],
             ],
-    ];
+        ];
     }
 
     /**
-     * Displays a single Team model.
-     * @param integer $id
-     * @return mixed
+     * $id - id чемпионата
+     * $t - id команды
+     * @return string - передаём в вид team $id - id команды, $t id чемпионата, матчи команды дома - $teamHome и
+     * на выезде $teamAway, последние 3 матча дома $limitHome и на выезде $limitAway, кол-во матчей дома $playCountHome и
+     * количество матчей команды на выезде $playCountAway. Массив $stat[] содержит средние статистические значения
+     * @throws HttpException - выдаём исключение, если такой команды не найдено
+     * Экшен, который формирует среднеарифметические статистические показатели каждой команды во всех лигах
      */
     public function actionTeam()
     {
@@ -69,7 +72,7 @@ class TeamController extends AppController {
 
         //Вычисляем средние значения результативности дома, на выезде и общие. Сумму значений делим на количество проведённых матчей
         $model = new Team();
-        foreach ($teamHome as $home){
+        foreach ($teamHome as $home) {
 
             $this->stat['score_home_full'] += $model->average($home['home_score_full'], $playCountHome);
             $this->home['home_score_full'] += $home['home_score_full'];
@@ -96,7 +99,7 @@ class TeamController extends AppController {
             $this->home['h_tid_red_cart'] += $home['h_tid_red_cart'];
         }
 
-        foreach ($teamAway as $away){
+        foreach ($teamAway as $away) {
 
             $this->stat['score_away_full'] += $model->average($away['away_score_full'], $playCountAway);
             $this->away['away_score_full'] += $away['away_score_full'];
@@ -131,13 +134,12 @@ class TeamController extends AppController {
             $this->stat['red_full'] = $model->averageFull($this->home['h_tid_red_cart'], $this->away['a_tid_red_cart'], $playCountHome, $playCountAway);
         }
 
-//        if(empty($team)){
-//            throw new HttpException('404', 'Указанный Вами команда отсутствует');
-//        }
+        if (empty($teamHome) || empty($teamAway)) {
+            throw new HttpException('404', 'Указанный Вами команда отсутствует');
+        }
 
         return $this->render('team', [
-            'teamhome' => $teamHome,
-            'teamaway' => $teamAway,
+            'teamHome' => $teamHome,
             'limitHome' => $limitHome,
             'limitAway' => $limitAway,
             'id' => $id,

@@ -9,18 +9,17 @@
 namespace app\components;
 
 
-use yii\helpers\Html;
+
 use Yii;
 use yii\base\Widget;
 use app\models\Play;
 use app\models\Team;
-use yii\caching\DbDependency;
 use yii\db\ActiveRecord;
 
 class StatWidget extends Widget
 {
 
-    /** Константы, определённые для более простого определения того статистического показателя, который нужно запросить */
+    /* Константы, определённые для более простого определения того статистического показателя, который нужно запросить */
     const HOME_GOAL = 'home_score_full';
     const AWAY_GOAL = 'away_score_full';
     const HOME_POSSESSION = 'h_tid_posses';
@@ -127,7 +126,7 @@ class StatWidget extends Widget
         $this->team_embl['yelCart'] = $model->teamEmbl($play['home'], $this->team['yelCart']);
 
         //Получаем название лиги из массива $play['home'] в первой же игре
-        foreach ($play['home'] as $land){
+        foreach ($play['home'] as $land) {
             $this->league['league'] = $land['league']['league'];
             break;
         }
@@ -158,8 +157,9 @@ class StatWidget extends Widget
             'team_yelCart' => $this->team['yelCart'],
             'team_max_yelCart' => $this->team_max['yelCart'],
             'team_embl_yelCart' => $this->team_embl['yelCart'],
-            //Из вида site/index передаём название чемпионата
+            //Из вида site/index передаём название чемпионата, в виде числа [1, 2, 3]
             'champ' => $this->champ,
+            //Передаём Лигу в текстовом виде
             'league' => $this->league,
         ]);
     }

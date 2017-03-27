@@ -13,11 +13,13 @@ class ScorerController extends AppController
     /** счётчик с которого мы начинаем отчёт кол-ва array_push! */
     const COUNT = 1;
 
-    /* Экшен для показа списка бомбардиров и ассистентов. $id - № id чемпионата */
+    /**
+     * @return string - передаём во views массив $table c данными о бомбардирах и ассисентах и champ лигу где парсим
+     * Экшен для показа списка бомбардиров и ассистентов. $id - № id чемпионата
+     */
     public function actionScorers()
     {
 
-        $this->layout = 'main';
         /* @var  $id - получаем id чемпионата из массива _GET */
         $id = \Yii::$app->request->get('id');
         /* Определяем ссылку, где будем парсить таблицу по переменной id */

@@ -37,14 +37,14 @@ class ParseController extends Controller
 
         /* Парсим данные с сайта - тур, названия команд, счёт, дата и ссылка! проходимся в цикле 10 раз - по количеству игр
         в туре и записываем в массив $stat вызывая $play->parsePlay()*/
-        while ($i <= 3){
+        while ($i <= 3) {
             $next_game = $team->find('.block_body_nopadding:eq(1) .game_block:eq(' . $i . ')')->html();
-            if( !empty($next_game) ){
+            if (!empty($next_game)) {
                 $this->stat[$i] = $model->parsePlay($team, $i);
 
                 /*Из предыдущего массива берём ссылкы матчи и проходимся по ним по очереди, парся статистику */
-                foreach ($this->stat as $link){
-                    if(is_array($this->stat) && !null == $link){
+                foreach ($this->stat as $link) {
+                    if (is_array($this->stat) && !null == $link) {
                         /*Склеиваем домен(главная страница сайта) и ссылку на каждый отдельный матч */
 //                        var_dump($link['href'][$i]);
                         $dom1[$i] = self::DOMEN . $link['href'];
@@ -148,18 +148,18 @@ class ParseController extends Controller
 
         /* Парсим данные с сайта - тур, названия команд, счёт, дата и ссылка!проходимся в цикле 9 или 10 раз - по количеству игр
          в туре и записываем в массив $stat вызывая $play->parsePlay()*/
-        while ($k <= $i){
+        while ($k <= $i) {
 
             $this->stat[$i] = $model->parseLive($team, $i, $res);
             /* Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
             то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
             слово 'live' то также этот матч не записываем в бд до его окончания */
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
-            if($is_link !== null || strpos($this->stat[$i]['link'], 'live') == true){
+            if ($is_link !== null || strpos($this->stat[$i]['link'], 'live') == true) {
                 $k++;
                 continue;
             }
-            foreach ($this->stat as $link){
+            foreach ($this->stat as $link) {
                 /* "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
                 $dom1[$k] = self::DOMEN . $link['link'];
                 /* Эмулируем работу браузера с помощью curl*/

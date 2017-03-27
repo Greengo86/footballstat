@@ -9,10 +9,10 @@ $part = array_chunk($table, 7, 1);
 
 <div class="col-md-4">
     <div class="intro-table">
-        <h5 class="white heading text-center"><?php echo $champ?></h5>
+        <h5 class="white heading text-center"><?php echo $champ ?></h5>
         <div class="owl-testimonials bottom">
             <!--    Выводим в цикле($part[0], $part[1], $part[2],$part[n],) последовательно части ранее разбитого массива в разные части слайдера в таблицу, разделённого на части по 7 команд-->
-            <?php foreach ($part as $key => $value1) :?>
+            <?php foreach ($part as $key => $value1) : ?>
                 <div class="item">
                     <table>
                         <thead>
@@ -24,8 +24,8 @@ $part = array_chunk($table, 7, 1);
                         </tr>
                         </thead>
                         <tbody>
-                        <!--                        Выводим в таблицу Команду, кол-во игр, очки, разницу забитых и пропущенных мячей-->
-                        <?php foreach ($part[$key] as $team => $value ) :
+                        Выводим в таблицу Команду, кол-во игр, очки, разницу забитых и пропущенных мячей
+                        <?php foreach ($part[$key] as $team => $value) :
                             echo "<tr>";
                             echo "<td>$team</td>";
                             echo "<td>$value[games]</td>";
@@ -33,7 +33,7 @@ $part = array_chunk($table, 7, 1);
                             echo "<td>$value[goal]</td>";
                             echo "<td>$value[ownGoal]</td>";
                             echo "</tr>"; ?>
-                        <?php endforeach;?>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

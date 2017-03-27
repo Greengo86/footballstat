@@ -33,18 +33,20 @@ class PlayController extends Controller
     }
 
     /**
-     * Lists all Play models.
-     * @return mixed
+     * @param $id - id чемпионата
+     * @return string - возвращаем, массив игр - $play, id чемпионата и количество сыгранных туров
+     * всего в чемпионате - $playCount
+     * @throws HttpException - Исключение в том случае, если таких матчей не найдено
+     * Экшен для показа последних 20 матчей чемпионата, который(чемпионат) определяем по $id
      */
-
     public function actionChamp($id)
     {
 
-        $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit(20)->where(['league_id' => $id])->orderBy(['date' => SORT_DESC])->all();
+        $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit(20)->where(['league_id' => $id])->orderBy(['date' => SORT_ASC])->all();
         //Получаем количество сыгранных матчей для формирования меню для перехода по турам!
-        $playCount = Play::find()->orderBy('id')->count();
+        $playCount = Play::find()->where(['league_id' => $id])->orderBy('id')->count();
 
-        if(empty($play)){
+        if (empty($play)) {
             throw new HttpException('404', 'Указанная Вами лига отсутствует');
         }
 
@@ -57,14 +59,15 @@ class PlayController extends Controller
 
 
     /**
-     * Displays a single Play match.
-     * @param string $id
-     * @return mixed
+     * @param string $id - id матча! поле id в таблице play в бд
+     * @return mixed - возвращаем в массиве матч $match и $id
+     * Экшен показа одного матча
      */
     public function actionMatch($id)
     {
         $match = Play::find()->asArray()->with('teamHome', 'teamAway', 'league')->where(['id' => $id])->one();
 
+        /* Отключаем лейаут для показа матча, т.к. будем показывать в модальном окне*/
         $this->layout = false;
 
         return $this->render('match', [
@@ -74,10 +77,12 @@ class PlayController extends Controller
     }
 
     /**
-     * Displays a matchtour.
+     * @param string $id - id чемпионата
      * $t - номер тура
-     * @param string $id
-     * @return mixed
+     * @return mixed - возвращаем массив с играми в туре - $tour, кол-во сыгранных матчей $playCount,
+     * номер тура $t и id чемпионата - $id
+     * @throws HttpException - выдаём исключение, если такого тура не найдено
+     * Экшен показа тура чемпионата
      */
     public function actionTour()
     {
@@ -86,15 +91,12 @@ class PlayController extends Controller
         $id = Yii::$app->request->get('id');
         $t = Yii::$app->request->get('t');
         $tOff = (int)$t * 10 - 10;
-        //Получаем выборку необходимого тура! Номер тура определяем по переменной $t из массива GET
+        //Получаем выборку необходимого тура! Номер тура определяем по переменной $t из массива _GET
         $tour = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit(10)->offset($tOff)->where(['league_id' => $id])->all();
         //Получаем количество сыгранных матчей для формирования меню для перехода по турам!
-        $playCount = Play::find()->orderBy('id')->count();
+        $playCount = Play::find()->where(['league_id' => $id])->orderBy('id')->count();
 
-//        $team = Team::find()->andWhere(['team_name' => 'Валенсия'])->one();
-//        var_dump($team->team_id);
-
-        if(empty($tour)){
+        if (empty($tour)) {
             throw new HttpException('404', 'Указанный Вами тур отсутствует');
         }
 
@@ -104,56 +106,6 @@ class PlayController extends Controller
             'id' => $id,
             't' => $t,
         ]);
-    }
-
-    /**
-     * Creates a new Play model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new Play();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Updates an existing Play model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
-    }
-
-    /**
-     * Deletes an existing Play model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
     }
 
     /**

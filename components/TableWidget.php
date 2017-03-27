@@ -6,8 +6,9 @@ namespace app\components;
 
 use app\models\Team;
 use app\models\Play;
+use yii\base\Widget;
 
-class TableWidget extends \yii\base\Widget
+class TableWidget extends Widget
 {
 
     const HOME_GOAL = 'home_score_full';
@@ -27,14 +28,10 @@ class TableWidget extends \yii\base\Widget
         $this->play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
 
         /** Записываем в переменную $this->champ используя цикл foreach строку с названием выводимой Лиги */
-        foreach ($this->play['home'] as $game){
+        foreach ($this->play['home'] as $game) {
             $this->champ = $game['league']['league'];
             break;
         }
-
-//        $playHome = Play::find()->asArray()->with('teamHome', 'league')->indexBy('id')->all();
-//        $playAway = Play::find()->asArray()->with('teamAway', 'league')->indexBy('id')->all();
-//        $playCount = Play::find()->orderBy('id')->count();
 
         $model = new Team();
 

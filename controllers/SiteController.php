@@ -59,26 +59,14 @@ class SiteController extends AppController
     /**
      * Displays homepage.
      *
-     * @return string
+     * @return string - рендерим view index, где подключаем виджеты Stat И Table
      */
-//    public function actionIndex()
-//    {
-//
-//        $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->all();
-//        $playCount = Play::find()->orderBy('id')->count();
-//
-//        return $this->render('index', [
-//            'play' => $play,
-//            'playCount' => $playCount,
-//        ]);
-//    }
-
-      public function actionIndex()
-      {
-        //Просто рендерим вид index, в котором подключаем виджет Stat
+    public function actionIndex()
+    {
+        //Просто рендерим вид index, в котором подключаем виджет Stat и Table
         return $this->render('index', [
         ]);
-      }
+    }
 
     /**
      * Login action.
@@ -116,31 +104,4 @@ class SiteController extends AppController
         return $this->goHome();
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }

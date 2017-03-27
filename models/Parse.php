@@ -24,17 +24,18 @@ class Parse extends Model
      * Метод для определения чемпионата! Ищем в спарсенной строке и в зависимости от неё
      * подготавливаем переменную для базы данных для записи матча
      */
-    public static function parseChamp($team){
+    public static function parseChamp($team)
+    {
 
         $champ = trim($team->find('.live_body #game_events .block_header')->text(), "\x00..\x1F");
 
         $champ = explode(', ', $champ)[0];
 
-        if(preg_match('/Примера/', $champ)){
+        if (preg_match('/Примера/', $champ)) {
             $league = 1;
-        }elseif(preg_match('/Премьер лига/', $champ)){
+        } elseif (preg_match('/Премьер лига/', $champ)) {
             $league = 2;
-        }elseif(preg_match('/Бундеслига/', $champ)) {
+        } elseif (preg_match('/Бундеслига/', $champ)) {
             $league = 3;
         }
         return $league;
@@ -57,7 +58,7 @@ class Parse extends Model
 
         $this->stat['tour'] = trim($team->find('.block_header:eq(' . $res . ')')->text(), "\x00..\x1F");
 
-        foreach ($team->find('.block_body_nopadding:eq(' . $res . ')') as $game){
+        foreach ($team->find('.block_body_nopadding:eq(' . $res . ')') as $game) {
 
             $game = pq($game);
 
@@ -70,7 +71,7 @@ class Parse extends Model
             $this->stat['team_home'] = substr($game->find('.game_block:eq(' . $i . ') .game_ht:eq(0) .game_team:eq(0)')->text(), 2);
             $this->stat['team_home_score'] = trim($game->find('.game_block:eq(' . $i . ') .game_ht:eq(0) .game_goals:eq(0)')->text(), "\x00..\x1F");
             /** Обрезаем полученые результаты в виде строки - 2 символа в конце строки у 'team_away' */
-            $this->stat['team_away'] = substr($game->find('.game_block:eq(' . $i . ') .game_at:eq(0) .game_team:eq(0)')->text(),0, -2);
+            $this->stat['team_away'] = substr($game->find('.game_block:eq(' . $i . ') .game_at:eq(0) .game_team:eq(0)')->text(), 0, -2);
             $this->stat['team_away_score'] = trim($game->find('.game_block:eq(' . $i . ') .game_at:eq(0) .game_goals:eq(0)')->text(), "\x00..\x1F");
 
         }
@@ -125,13 +126,13 @@ class Parse extends Model
         /*По принятой переменной $league определяем $time и $date. В завимости от них определяеv каким образом
         "разбираем" дату и время на странице матча/ У матчей разных чемпионатов разный формат разбора даты и времен.
          В зависимости от принимаемых констант от LeagueParseController устанавливаем переменные для парсинга в опред. лигах*/
-        if ($league == 'spain'){
+        if ($league == 'spain') {
             $time = 4;
             $date = 3;
-        }elseif ($league == 'england'){
+        } elseif ($league == 'england') {
             $time = 7;
             $date = 6;
-        }elseif ($league == 'germany'){
+        } elseif ($league == 'germany') {
             $time = 6;
             $date = 5;
         }
@@ -350,17 +351,17 @@ class Parse extends Model
 
         //Проходимся в цикле с шагом +2 (1, 3, 5..)для span, т.к. четные span выдают пустыне строки и записываем в массив имена игроков
         $i = 1;
-        while ($i <= 24){
+        while ($i <= 24) {
             self::$scorer[$i] =
                 [$score->find('.page_main_content .comp_column .live_comptt_bd:eq(' . $frame . ') .comptt_table_bd .comptt_table_player span:eq(' . $i . ')')->text()];
-            $i+=2;
+            $i += 2;
         }
 
         //Затем меняя счётчик $j меняем данные для парсинга стат.показателей и дописываем в уже существующий массив с именами игроков
         self::$count = 0;
         foreach (self::$scorer as $k => $value) {
 
-            $n =1;
+            $n = 1;
             self::arrayPush($k, $score, $frame, $n, $y);
 
         }
@@ -378,7 +379,7 @@ class Parse extends Model
      * Метод для дополенения массива из метода scorers для вывода во views бомбардиров и ассистентов*/
     public static function arrayPush($k, $score, $frame, $n, $y = null)
     {
-        if ($n <= $y){
+        if ($n <= $y) {
 
             array_Push(self::$scorer[$k], $score->find('.page_main_content .comp_column .live_comptt_bd:eq(' . $frame . ') .comptt_table_bd .comptt_table_plitem:eq(' . self::$count . ')')->text());
             $n++;
@@ -398,7 +399,7 @@ class Parse extends Model
     public static function scorersChamp($id)
     {
 
-        switch ($id){
+        switch ($id) {
             case 1:
                 $champ = 'Испания';
                 break;
