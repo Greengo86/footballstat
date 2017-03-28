@@ -27,7 +27,7 @@ class TableWidget extends Widget
         $this->play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
         $this->play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
 
-        /** Записываем в переменную $this->champ используя цикл foreach строку с названием выводимой Лиги */
+        /** Записываем в переменную $this->champ используя цикл foreach строку с названием выводимой во view Лиги */
         foreach ($this->play['home'] as $game) {
             $this->champ = $game['league']['league'];
             break;
@@ -38,11 +38,11 @@ class TableWidget extends Widget
 //        Получаем список статистических показателей дома и на выезде - Голы в матче
         $goalHome = $model->statGoalHome($this->play['home'], self::HOME_GOAL);
         $goalAway = $model->statGoalAway($this->play['away'], self::AWAY_GOAL);
-//
+
 //        Пропушённые голы
         $goalOwnHome = $model->statGoalOwnHome($this->play['home'], self::AWAY_GOAL);
         $goalOwnAway = $model->statGoalOwnAway($this->play['away'], self::HOME_GOAL);
-//
+
 //        Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
         $this->score['goal'] = $model->statSum($goalHome, $goalAway);
         $this->score['ownGoal'] = $model->statOwnGoalSum($goalOwnHome, $goalOwnAway);

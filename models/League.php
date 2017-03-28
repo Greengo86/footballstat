@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "league".
@@ -10,7 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $league
  */
-class League extends \yii\db\ActiveRecord
+class League extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -20,7 +20,8 @@ class League extends \yii\db\ActiveRecord
         return 'league';
     }
 
-    public function getPlays(){
+    public function getPlays()
+    {
         return $this->hasMany(League::className(), ['league_id' => 'id']);
     }
 

@@ -144,15 +144,10 @@ class Team extends ActiveRecord
         return $this->hasOne(Play::className(), ['home_team_id' => 'team_id']);
     }
 
-//    public function getPlayAway(){
-//        return $this->hasMany(Play::className(), ['away_team_id' => 'team_id']);
-//    }
 
     /**
-     * Вернём среднее арифметическое для каждого статического показателя команды
-     */
-    /**
      * @return int
+     * Вернём среднее арифметическое для каждого статического показателя команды
      */
     public function average($stat, $qty)
     {
@@ -162,50 +157,6 @@ class Team extends ActiveRecord
     public function averageFull($statHome, $statAway, $qtyHome, $qtyAway = 0)
     {
         return round(($statHome + $statAway) / ($qtyHome + $qtyAway), 2);
-    }
-
-    public function statGoalHome($playHome, $value){
-
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $this->goalHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $this->goalHome;
-
-    }
-
-    public function statGoalAway($playAway, $value){
-
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playAway as $game) {
-            $this->goalAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $this->goalAway;
-
-    }
-
-    public function statGoalOwnHome($playHome, $value){
-
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $this->goalOwnHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $this->goalOwnHome;
-
-    }
-
-    public function statGoalOwnAway($playAway, $value){
-
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playAway as $game) {
-            $this->goalOwnAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $this->goalOwnAway;
-
     }
 
     public function statFoulHome($playHome, $value){
@@ -327,9 +278,86 @@ class Team extends ActiveRecord
         }
 
         return $foo;
+    }
+
+//    Методы для формирования турнирных таблиц для каждого чемпионата на главной странице
+    /**
+     * @param $playHome - массив проведёных домашних матчей
+     * @param $value - статистическое значение. В данном случае home_score_full - забитые мячи домашней команды
+     * @return mixed - сформированный массив из ключа(команды) и значения (забитые мячи)
+     */
+    public function statGoalHome($playHome, $value)
+    {
+
+        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+        foreach ($playHome as $game) {
+            $this->goalHome[$game['teamHome']['team_name']] += $game[$value];
+        }
+
+        return $this->goalHome;
 
     }
 
+    /**
+     * @param $playAway - массив проведёных гостевых матчей
+     * @param $value - статистическое значение. В данном случае away_score_full - забитые мячи домашней команды
+     * @return mixed - сформированный массив из ключа(команды) и значения (забитые мячи)
+     */
+    public function statGoalAway($playAway, $value)
+    {
+
+        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+        foreach ($playAway as $game) {
+            $this->goalAway[$game['teamAway']['team_name']] += $game[$value];
+        }
+
+        return $this->goalAway;
+
+    }
+
+    /**
+     * @param $playHome - массив проведёных домашних матчей
+     * @param $value - статистическое значение. В данном случае away_score_full - забитые мячи домашней команды
+     * В данном методе подсчитываем голы пропущёные дома, поэтому принимаем значение away_score_full
+     * @return mixed - сформированный массив из ключа(команды) и значения (пропущенные мячи)
+     */
+    public function statGoalOwnHome($playHome, $value)
+    {
+
+        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+        foreach ($playHome as $game) {
+            $this->goalOwnHome[$game['teamHome']['team_name']] += $game[$value];
+        }
+
+        return $this->goalOwnHome;
+
+    }
+
+    /**
+     * @param $playAway - массив проведёных гостевых матчей
+     * @param $value - статистическое значение. В данном случае home_score_full - забитые мячи домашней команды
+     * В данном методе подсчитываем голы пропущёные дома, поэтому принимаем значение home_score_full
+     * @return mixed - сформированный массив из ключа(команды) и значения (пропущенные мячи)
+     */
+    public function statGoalOwnAway($playAway, $value)
+    {
+
+        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+        foreach ($playAway as $game) {
+            $this->goalOwnAway[$game['teamAway']['team_name']] += $game[$value];
+        }
+
+        return $this->goalOwnAway;
+
+    }
+
+    /**
+     * @param $scoreHome
+     * @param $scoreAway
+     * @param int $count
+     * @return mixed
+     * Подсчитываем сумму забитых мячей
+     */
     public function statSum($scoreHome, $scoreAway, $count=0){
 
         //суммируем значения дома и на выезде для каждой команды
@@ -346,18 +374,19 @@ class Team extends ActiveRecord
         }else
         //Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
         foreach ($this->score as &$value){
-            //Вычисляем количество сыгранных туров
+            //Вычисляем количество сыгранных матчей
             $value = $value / round($count/10);
             $value = round($value, 2);
         }
         return $this->score;
     }
 
-    public function statOwnGoalSum($scoreHome, $scoreAway, $count=0){
+    public function statOwnGoalSum($scoreOwnHome, $scoreOwnAway, $count = 0)
+    {
 
         //суммируем значения дома и на выезде для каждой команды
-        foreach ($scoreHome as $k => $home){
-            foreach ($scoreAway as $n => $away){
+        foreach ($scoreOwnHome as $k => $home) {
+            foreach ($scoreOwnAway as $n => $away) {
                 if ($k == $n){
                     $this->ownGoal[$k] = $home + $away;
                 }
@@ -374,7 +403,6 @@ class Team extends ActiveRecord
                 $value = round($value, 2);
             }
         return $this->ownGoal;
-
     }
 
 //    public function statSumMatch($array, $count){
@@ -424,6 +452,12 @@ class Team extends ActiveRecord
     //        [Гранада] => 2
 //        )
 
+    /**
+     * @param $playHome
+     * @param $goal
+     * @param $ownGoal
+     * @return mixed - возвращаем сформированный отсортированный массив, для вывода в таблицу каждого из чемпионатов
+     */
     public function getTable($playHome, $goal, $ownGoal){
         //        Получаем отсортированный массив в виде Команда => значение: игры => X, очки => X, голы => X, пропголы => X
         foreach ($playHome as $game){
