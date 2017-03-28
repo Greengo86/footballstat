@@ -9,7 +9,6 @@
 namespace app\components;
 
 
-
 use Yii;
 use yii\base\Widget;
 use app\models\Play;
@@ -58,12 +57,12 @@ class StatWidget extends Widget
         $model = new Team();
 
 //        Получаем список статистических показателей дома и на выезде - Голы в матче
-        $goalHome = $model->statGoalHome($play['home'], self::HOME_GOAL);
-        $goalAway = $model->statGoalAway($play['away'], self::AWAY_GOAL);
+        $goalHome = team::statGoalHome($play['home'], self::HOME_GOAL);
+        $goalAway = team::statGoalAway($play['away'], self::AWAY_GOAL);
 
 //        Пропушённые голы
-        $goalOwnHome = $model->statGoalOwnHome($play['home'], self::AWAY_GOAL);
-        $goalOwnAway = $model->statGoalOwnAway($play['away'], self::HOME_GOAL);
+        $goalOwnHome = team::statGoalOwnHome($play['home'], self::AWAY_GOAL);
+        $goalOwnAway = team::statGoalOwnAway($play['away'], self::HOME_GOAL);
 
 //        Угловые
         $cornerHome = $model->statCornerHome($play['home'], self::HOME_CORNER);
@@ -87,43 +86,43 @@ class StatWidget extends Widget
 
 //        суммируем значения дома и на выезде для каждой команды
 //        Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
-        $this->score['goal'] = $model->statSum($goalHome, $goalAway, $play['count']);
-        $this->score['corner'] = $model->statSum($cornerHome, $cornerAway, $play['count']);
-        $this->score['foul'] = $model->statSum($foulHome, $foulAway, $play['count']);
-        $this->score['posses'] = $model->statSum($possesHome, $possesAway, $play['count']);
-        $this->score['offside'] = $model->statSum($offsideHome, $offsideAway, $play['count']);
-        $this->score['yelCart'] = $model->statSum($yelCartHome, $yelCartAway, $play['count']);
-        $this->score['ownGoal'] = $model->statOwnGoalSum($goalOwnHome, $goalOwnAway, $play['count']);
+        $this->score['goal'] = team::statSum($goalHome, $goalAway, $play['count']);
+        $this->score['corner'] = team::statSum($cornerHome, $cornerAway, $play['count']);
+        $this->score['foul'] = team::statSum($foulHome, $foulAway, $play['count']);
+        $this->score['posses'] = team::statSum($possesHome, $possesAway, $play['count']);
+        $this->score['offside'] = team::statSum($offsideHome, $offsideAway, $play['count']);
+        $this->score['yelCart'] = team::statSum($yelCartHome, $yelCartAway, $play['count']);
+        $this->score['ownGoal'] = team::statOwnGoalSum($goalOwnHome, $goalOwnAway, $play['count']);
 
         //Определяем команду, с наибольшим коэфициентом
-        $this->team['goal'] = $model->statMaxTeam($this->score['goal']);
+        $this->team['goal'] = team::statMaxTeam($this->score['goal']);
         //Вычисляем максимальное значение в массиве
-        $this->team_max['goal'] = $model->statMax($this->score['goal']);
-        $this->team_embl['goal'] = $model->teamEmbl($play['home'], $this->team['goal']);
+        $this->team_max['goal'] = team::statMax($this->score['goal']);
+        $this->team_embl['goal'] = team::teamEmbl($play['home'], $this->team['goal']);
 
-        $this->team['ownGoal'] = $model->statMaxTeam($this->score['ownGoal']);
-        $this->team_max['ownGoal'] = $model->statMax($this->score['ownGoal']);
-        $this->team_embl['ownGoal'] = $model->teamEmbl($play['home'], $this->team['ownGoal']);
+        $this->team['ownGoal'] = team::statMaxTeam($this->score['ownGoal']);
+        $this->team_max['ownGoal'] = team::statMax($this->score['ownGoal']);
+        $this->team_embl['ownGoal'] = team::teamEmbl($play['home'], $this->team['ownGoal']);
 
-        $this->team['corner'] = $model->statMaxTeam($this->score['corner']);
-        $this->team_max['corner'] = $model->statMax($this->score['corner']);
-        $this->team_embl['corner'] = $model->teamEmbl($play['home'], $this->team['corner']);
+        $this->team['corner'] = team::statMaxTeam($this->score['corner']);
+        $this->team_max['corner'] = team::statMax($this->score['corner']);
+        $this->team_embl['corner'] = team::teamEmbl($play['home'], $this->team['corner']);
 
-        $this->team['foul'] = $model->statMaxTeam($this->score['foul']);
-        $this->team_max['foul'] = $model->statMax($this->score['foul']);
-        $this->team_embl['foul'] = $model->teamEmbl($play['home'], $this->team['foul']);
+        $this->team['foul'] = team::statMaxTeam($this->score['foul']);
+        $this->team_max['foul'] = team::statMax($this->score['foul']);
+        $this->team_embl['foul'] = team::teamEmbl($play['home'], $this->team['foul']);
 
-        $this->team['posses'] = $model->statMaxTeam($this->score['posses']);
-        $this->team_max['posses'] = $model->statMax($this->score['posses']);
-        $this->team_embl['posses'] = $model->teamEmbl($play['home'], $this->team['posses']);
+        $this->team['posses'] = team::statMaxTeam($this->score['posses']);
+        $this->team_max['posses'] = team::statMax($this->score['posses']);
+        $this->team_embl['posses'] = team::teamEmbl($play['home'], $this->team['posses']);
 
-        $this->team['offside'] = $model->statMaxTeam($this->score['offside']);
-        $this->team_max['offside'] = $model->statMax($this->score['offside']);
-        $this->team_embl['offside'] = $model->teamEmbl($play['home'], $this->team['offside']);
+        $this->team['offside'] = team::statMaxTeam($this->score['offside']);
+        $this->team_max['offside'] = team::statMax($this->score['offside']);
+        $this->team_embl['offside'] = team::teamEmbl($play['home'], $this->team['offside']);
 
-        $this->team['yelCart'] = $model->statMaxTeam($this->score['yelCart']);
-        $this->team_max['yelCart'] = $model->statMax($this->score['yelCart']);
-        $this->team_embl['yelCart'] = $model->teamEmbl($play['home'], $this->team['yelCart']);
+        $this->team['yelCart'] = team::statMaxTeam($this->score['yelCart']);
+        $this->team_max['yelCart'] = team::statMax($this->score['yelCart']);
+        $this->team_embl['yelCart'] = team::teamEmbl($play['home'], $this->team['yelCart']);
 
         //Получаем название лиги из массива $play['home'] в первой же игре
         foreach ($play['home'] as $land) {
