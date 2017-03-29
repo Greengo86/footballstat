@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="befce524-f27b-4010-94b0-3405c9b2f0bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/champ/1.png" afterPath="$PROJECT_DIR$/web/img/champ/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/champ/2.png" afterPath="$PROJECT_DIR$/web/img/champ/2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/img/champ/3.png" afterPath="$PROJECT_DIR$/web/img/champ/3.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/TableWidget.php" afterPath="$PROJECT_DIR$/components/TableWidget.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/views/table.php" afterPath="$PROJECT_DIR$/components/views/table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/StatWidget.php" afterPath="$PROJECT_DIR$/components/StatWidget.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Team.php" afterPath="$PROJECT_DIR$/models/Team.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/index.php" afterPath="$PROJECT_DIR$/views/site/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="Parse.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Parse.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3019">
+            <state relative-caret-position="6714">
               <caret line="374" column="54" lean-forward="false" selection-start-line="374" selection-start-column="54" selection-end-line="374" selection-end-column="54" />
               <folding>
                 <element signature="e#31#50#0#PHP" expanded="true" />
@@ -44,7 +44,7 @@
       <file leaf-file-name="LeagueParseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
+            <state relative-caret-position="1530">
               <caret line="85" column="11" lean-forward="false" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
               <folding />
             </state>
@@ -54,7 +54,7 @@
       <file leaf-file-name="ParseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/controllers/ParseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="684">
               <caret line="135" column="40" lean-forward="false" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
               <folding>
                 <element signature="e#109#117#0#PHP" expanded="true" />
@@ -67,7 +67,7 @@
       <file leaf-file-name="ScorerController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/ScorerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="378">
               <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
@@ -77,8 +77,8 @@
       <file leaf-file-name="Team.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Team.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="484" column="36" lean-forward="false" selection-start-line="484" selection-start-column="36" selection-end-line="484" selection-end-column="36" />
+            <state relative-caret-position="846">
+              <caret line="250" column="18" lean-forward="false" selection-start-line="250" selection-start-column="18" selection-end-line="250" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -87,7 +87,7 @@
       <file leaf-file-name="TableWidget.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/TableWidget.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
+            <state relative-caret-position="655">
               <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
               <folding>
                 <element signature="e#36#56#0#PHP" expanded="true" />
@@ -99,7 +99,7 @@
       <file leaf-file-name="table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/views/table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="54">
               <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
               <folding>
                 <element signature="e#7#31#0#PHP" expanded="true" />
@@ -108,16 +108,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/site/index.php">
+      <file leaf-file-name="StatWidget.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/StatWidget.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-              <folding>
-                <element signature="e#1440#1481#0#PHP" expanded="true" />
-                <marker date="1490794029407" expanded="true" signature="602:634" ph="SELECT MAX(c... play" />
-                <marker date="1490794029407" expanded="true" signature="654:843" ph="..." />
-              </folding>
+            <state relative-caret-position="1163">
+              <caret line="84" column="23" lean-forward="false" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,7 +181,6 @@
         <option value="$PROJECT_DIR$/commands/controllers/LeagueParseController.php" />
         <option value="$PROJECT_DIR$/commands/controllers/ParseController.php" />
         <option value="$PROJECT_DIR$/components/views/stat.php" />
-        <option value="$PROJECT_DIR$/components/StatWidget.php" />
         <option value="$PROJECT_DIR$/web/css/custom.css" />
         <option value="$PROJECT_DIR$/controllers/PlayController.php" />
         <option value="$PROJECT_DIR$/views/play/champ.php" />
@@ -197,9 +192,10 @@
         <option value="$PROJECT_DIR$/models/Parse.php" />
         <option value="$PROJECT_DIR$/views/play/scorers.php" />
         <option value="$PROJECT_DIR$/components/views/table.php" />
-        <option value="$PROJECT_DIR$/models/Team.php" />
         <option value="$PROJECT_DIR$/views/site/index.php" />
         <option value="$PROJECT_DIR$/components/TableWidget.php" />
+        <option value="$PROJECT_DIR$/models/Team.php" />
+        <option value="$PROJECT_DIR$/components/StatWidget.php" />
       </list>
     </option>
   </component>
@@ -286,10 +282,10 @@
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="102" />
+    <option name="y" value="114" />
+    <option name="width" value="1456" />
+    <option name="height" value="898" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -389,18 +385,11 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
       <method />
     </configuration>
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application">
@@ -416,23 +405,10 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
+      <command value="run-script" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
       <method />
     </configuration>
     <configuration default="false" name="footstat" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" singleton="true" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="footballstat-server" start_url="http://footballstat/league-parse/spain">
@@ -469,6 +445,8 @@
       <workItem from="1490624092732" duration="11566000" />
       <workItem from="1490688875167" duration="1891000" />
       <workItem from="1490698570741" duration="18575000" />
+      <workItem from="1490798771649" duration="630000" />
+      <workItem from="1490810358011" duration="2314000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1490013436151</created>
@@ -537,29 +515,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120324000" />
+    <option name="totallyTimeSpent" value="123268000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="102" y="114" width="1456" height="898" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15298508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16476463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2753623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31438127" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21780822" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2753623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -730,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-39">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -753,14 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1152">
           <caret line="64" column="102" lean-forward="false" selection-start-line="64" selection-start-column="102" selection-end-line="64" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/StatWidget.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2285">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +841,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ScorerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="378">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
@@ -881,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="1530">
           <caret line="85" column="11" lean-forward="false" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="11" />
           <folding />
         </state>
@@ -889,7 +857,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/controllers/ParseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="684">
           <caret line="135" column="40" lean-forward="false" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
           <folding>
             <element signature="e#109#117#0#PHP" expanded="true" />
@@ -902,7 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -944,7 +911,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Parse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3019">
+        <state relative-caret-position="6714">
           <caret line="374" column="54" lean-forward="false" selection-start-line="374" selection-start-column="54" selection-end-line="374" selection-end-column="54" />
           <folding>
             <element signature="e#31#50#0#PHP" expanded="true" />
@@ -952,9 +919,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="50" column="98" lean-forward="false" selection-start-line="50" selection-start-column="98" selection-end-line="50" selection-end-column="98" />
+          <folding>
+            <marker date="1490798763530" expanded="true" signature="602:634" ph="SELECT MAX(c... play" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/components/TableWidget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
+        <state relative-caret-position="655">
           <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
           <folding>
             <element signature="e#36#56#0#PHP" expanded="true" />
@@ -962,17 +939,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Team.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="484" column="36" lean-forward="false" selection-start-line="484" selection-start-column="36" selection-end-line="484" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/views/table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="54">
           <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding>
             <element signature="e#7#31#0#PHP" expanded="true" />
@@ -980,15 +949,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+    <entry file="file://$PROJECT_DIR$/models/Team.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="29" column="35" lean-forward="true" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="e#1440#1481#0#PHP" expanded="true" />
-            <marker date="1490794029407" expanded="true" signature="602:634" ph="SELECT MAX(c... play" />
-            <marker date="1490794029407" expanded="true" signature="654:843" ph="..." />
-          </folding>
+        <state relative-caret-position="846">
+          <caret line="250" column="18" lean-forward="false" selection-start-line="250" selection-start-column="18" selection-end-line="250" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/StatWidget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1163">
+          <caret line="84" column="23" lean-forward="false" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

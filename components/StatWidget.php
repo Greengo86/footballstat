@@ -65,24 +65,24 @@ class StatWidget extends Widget
         $goalOwnAway = team::statGoalOwnAway($play['away'], self::HOME_GOAL);
 
 //        Угловые
-        $cornerHome = $model->statCornerHome($play['home'], self::HOME_CORNER);
-        $cornerAway = $model->statCornerAway($play['away'], self::AWAY_CORNER);
+        $cornerHome = team::statCornerHome($play['home'], self::HOME_CORNER);
+        $cornerAway = team::statCornerAway($play['away'], self::AWAY_CORNER);
 
 //        Фолы
-        $foulHome = $model->statFoulHome($play['home'], self::HOME_FOUL);
-        $foulAway = $model->statFoulAway($play['away'], self::AWAY_FOUL);
+        $foulHome = team::statFoulHome($play['home'], self::HOME_FOUL);
+        $foulAway = team::statFoulAway($play['away'], self::AWAY_FOUL);
 
 //        Процент владения мячом
-        $possesHome = $model->statPossesHome($play['home'], self::HOME_POSSESSION);
-        $possesAway = $model->statPossesAway($play['away'], self::AWAY_POSSESSION);
+        $possesHome = team::statPossesHome($play['home'], self::HOME_POSSESSION);
+        $possesAway = team::statPossesAway($play['away'], self::AWAY_POSSESSION);
 
 //       Оффсайды
-        $offsideHome = $model->statOffsideHome($play['home'], self::HOME_OFFSIDE);
-        $offsideAway = $model->statOffsideAway($play['away'], self::AWAY_OFFSIDE);
+        $offsideHome = team::statOffsideHome($play['home'], self::HOME_OFFSIDE);
+        $offsideAway = team::statOffsideAway($play['away'], self::AWAY_OFFSIDE);
 
 //        Жёлтые карточки
-        $yelCartHome = $model->statYelCartHome($play['home'], self::HOME_YELLOW_CART);
-        $yelCartAway = $model->statYelCartAway($play['away'], self::AWAY_YELLOW_CART);
+        $yelCartHome = team::statYelCartHome($play['home'], self::HOME_YELLOW_CART);
+        $yelCartAway = team::statYelCartAway($play['away'], self::AWAY_YELLOW_CART);
 
 //        суммируем значения дома и на выезде для каждой команды
 //        Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
