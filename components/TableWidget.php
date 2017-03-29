@@ -42,17 +42,11 @@ class TableWidget extends Widget
         $goalOwnAway = team::statGoalOwnAway($this->play['away'], self::HOME_GOAL);
 
 //        Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
-        $this->score['goal'] = team::statSum($goalHome, $goalAway);
-        $this->score['ownGoal'] = team::statOwnGoalSum($goalOwnHome, $goalOwnAway);
-
-//        Получаем количество сыгранных матчей в виде Команда => количество очков
-//        $this->score['games'] = $model->getGames($this->play['home']);
-
-//        Получаем отсортированный массив в виде Команда => количество очков
-//        $this->score['points'] = $model->getPoints($this->play['home']);
+        $score['goal'] = team::statSum($goalHome, $goalAway);
+        $score['ownGoal'] = team::statOwnGoalSum($goalOwnHome, $goalOwnAway);
 
 //        Получаем отсортированный массив в виде Команда => значение: игры => X, очки => X, голы => X, пропголы => X
-        $this->score['table'] = team::getTable($this->play['home'], $this->score['goal'], $this->score['ownGoal']);
+        $this->score['table'] = team::getTable($this->play['home'], $score['goal'], $score['ownGoal']);
 
     }
 
@@ -63,8 +57,6 @@ class TableWidget extends Widget
             'table' => $this->score['table'],
             //Из вида site/index передаём название чемпионата
             'champ' => $this->champ,
-
-
         ]);
     }
 

@@ -477,9 +477,12 @@ class Team extends ActiveRecord
      */
     public static function getTable($playHome, $goal, $ownGoal)
     {
+
+        //Обнуляем статическое свойство перед каждый проходом
+        self::$points = [];
         //        Получаем отсортированный массив в виде Команда => значение: игры => X, очки => X, голы => X, пропголы => X
         foreach ($playHome as $game){
-            //        метод подсчёта очков для каждой команды в таблице
+            //     подсчитываем очки для каждой команды в таблице
             if ($game['home_score_full'] > $game['away_score_full']){
                 self::$points[$game['teamHome']['team_name']]['points'] += 3;
             }elseif ($game['home_score_full'] < $game['away_score_full']){

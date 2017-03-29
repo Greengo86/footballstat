@@ -3,6 +3,7 @@
 //echo debug($own_Goal);
 //echo debug($table);
 //Делим массив на части по "7" команд для того, чтобы разместить в виджет
+//var_dump($table);
 $part = array_chunk($table, 7, 1);
 
 ?>
@@ -24,7 +25,7 @@ $part = array_chunk($table, 7, 1);
                         </tr>
                         </thead>
                         <tbody>
-                        Выводим в таблицу Команду, кол-во игр, очки, разницу забитых и пропущенных мячей
+                        <!--                        Выводим в таблицу Команду, кол-во игр, очки, разницу забитых и пропущенных мячей-->
                         <?php foreach ($part[$key] as $team => $value) :
                             echo "<tr>";
                             echo "<td>$team</td>";

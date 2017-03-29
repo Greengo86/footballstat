@@ -25,15 +25,15 @@ $this->title = 'Footballstat';
                 'class' => 'yii\caching\DbDependency',
                 'sql' => 'SELECT MAX(created_at) FROM play',
             ];
-            if ($this->beginCache('table', ['duration' => $duration, 'dependency' => $dependency])) {
+//            if ($this->beginCache('table', ['duration' => $duration, 'dependency' => $dependency])) {
                 TableWidget::begin(['champ' => 1]);
                 TableWidget::end();
                 TableWidget::begin(['champ' => 2]);
                 TableWidget::end();
                 TableWidget::begin(['champ' => 3]);
                 TableWidget::end();
-                $this->endCache();
-            }
+//                $this->endCache();
+//            }
             ?>
         </div>
     </div>
