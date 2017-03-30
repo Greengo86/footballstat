@@ -24,16 +24,6 @@ class Team extends ActiveRecord
     public $statAway;
     public $games;
 
-    public static $yelCartHome;
-    public static $yelCartAway;
-    public static $possesHome;
-    public static $possesAway;
-    public static $foulHome;
-    public static $foulAway;
-    public static $cornerHome;
-    public static $cornerAway;
-    public static $offsideHome;
-    public static $offsideAway;
     public static $points;
 
     /**
@@ -157,105 +147,115 @@ class Team extends ActiveRecord
     //Методы для формирования StatWidget на главной странице
     public static function statFoulHome($playHome, $value){
 
+        $foulHome = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями дома
         foreach ($playHome as $game) {
-            self::$foulHome[$game['teamHome']['team_name']] += $game[$value];
+            $foulHome[$game['teamHome']['team_name']] += $game[$value];
         }
 
-        return self::$foulHome;
+        return $foulHome;
 
     }
 
     public static function statFoulAway($playAway, $value){
 
+        $foulAway = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
         foreach ($playAway as $game) {
-            self::$foulAway[$game['teamAway']['team_name']] += $game[$value];
+            $foulAway[$game['teamAway']['team_name']] += $game[$value];
         }
 
-        return self::$foulAway;
+        return $foulAway;
 
     }
 
     public static function statCornerHome($playHome, $value){
 
+        $cornerHome = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями дома
         foreach ($playHome as $game) {
-            self::$cornerHome[$game['teamHome']['team_name']] += $game[$value];
+            $cornerHome[$game['teamHome']['team_name']] += $game[$value];
         }
 
-        return self::$cornerHome;
+        return $cornerHome;
 
     }
 
     public static function statCornerAway($playAway, $value){
 
+        $cornerAway = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
         foreach ($playAway as $game) {
-            self::$cornerAway[$game['teamAway']['team_name']] += $game[$value];
+            $cornerAway[$game['teamAway']['team_name']] += $game[$value];
         }
 
-        return self::$cornerAway;
+        return $cornerAway;
     }
 
     public static function statPossesHome($playHome, $value){
 
+        $possesHome = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями дома
         foreach ($playHome as $game) {
-            self::$possesHome[$game['teamHome']['team_name']] += $game[$value];
+            $possesHome[$game['teamHome']['team_name']] += $game[$value];
         }
 
-        return self::$possesHome;
+        return $possesHome;
     }
 
     public static function statPossesAway($playAway, $value){
 
+        $possesAway = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
         foreach ($playAway as $game) {
-            self::$possesAway[$game['teamAway']['team_name']] += $game[$value];
+            $possesAway[$game['teamAway']['team_name']] += $game[$value];
         }
 
-        return self::$possesAway;
+        return $possesAway;
     }
 
     public static function statOffsideHome($playHome, $value){
 
+        $offsideHome = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями дома
         foreach ($playHome as $game) {
-            self::$offsideHome[$game['teamHome']['team_name']] += $game[$value];
+            $offsideHome[$game['teamHome']['team_name']] += $game[$value];
         }
 
-        return self::$offsideHome;
+        return $offsideHome;
     }
 
     public static function statOffsideAway($playAway, $value){
 
+        $offsideAway = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
         foreach ($playAway as $game) {
-            self::$offsideAway[$game['teamAway']['team_name']] += $game[$value];
+            $offsideAway[$game['teamAway']['team_name']] += $game[$value];
         }
 
-        return self::$offsideAway;
+        return $offsideAway;
     }
 
     public static function statYelCartHome($playHome, $value){
 
+        $yelCartHome = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями дома
         foreach ($playHome as $game) {
-            self::$yelCartHome[$game['teamHome']['team_name']] += $game[$value];
+            $yelCartHome[$game['teamHome']['team_name']] += $game[$value];
         }
 
-        return self::$yelCartHome;
+        return $yelCartHome;
     }
 
     public static function statYelCartAway($playAway, $value){
 
+        $yelCartAway = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
         foreach ($playAway as $game) {
-            self::$yelCartAway[$game['teamAway']['team_name']] += $game[$value];
+            $yelCartAway[$game['teamAway']['team_name']] += $game[$value];
         }
 
-        return self::$yelCartAway;
+        return $yelCartAway;
     }
 
     public static function teamEmbl($playHome, $team)

@@ -54,7 +54,6 @@ class LeagueParseController extends ParseController
         У матчей чемпионата Испании один формат, у остальных(Англии и Германии) другой*/
         $i = 9;
         $result = parent::actionLive($url, $i, self::PLAY, self::PRIMERA);
-        echo 'heeey';
 
         return $this->render('spain', [
             'result' => $result,
