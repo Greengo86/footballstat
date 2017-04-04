@@ -27,7 +27,7 @@ $config = [
             'timeZone' => 'Europe/Minsk',
             'dateFormat' => 'd.m.Y',
             'timeFormat' => 'H:i',
-            //'datetimeFormat' => 'd.MM.Y HH:mm',
+//            'datetimeFormat' => 'd.MM.Y HH:mm',
             'datetimeFormat' => 'php: d.m.Y H:i',
         ],
         'cache' => [

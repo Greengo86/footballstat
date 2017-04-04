@@ -19,12 +19,11 @@ $this->title = 'Игры. Создай игру';
         <?= Html::a('Добавить команду', ['team/create'], ['class' => 'btn btn-danger']) ?>
     </p>
 
-    <p>
-        <h4>Выберите чемпионат:</h4>
-            <a href="<?= Url::to(['/admin/play/champ', 'id' =>1])?>"><?= Html::img('@web/img/embl/lfp.png', ['alt' => 'Испания']) ?></a>
-            <a href="<?= Url::to(['/admin/play/champ', 'id' =>2])?>"><?= Html::img('@web/img/embl/pl.png', ['alt' => 'Англия']) ?></a>
-            <a href="<?= Url::to(['/admin/play/champ', 'id' =>3])?>"><?= Html::img('@web/img/embl/bundes.png', ['alt' => 'Германия']) ?></a>
-    </p>
+    <h4>Выберите чемпионат:</h4>
+    <a href="<?= Url::to(['/admin/play/champ', 'id' => 1]) ?>"><?= Html::img('@web/img/champ/1.png', ['alt' => 'Испания']) ?></a>
+    <a href="<?= Url::to(['/admin/play/champ', 'id' => 2]) ?>"><?= Html::img('@web/img/champ/2.png', ['alt' => 'Англия']) ?></a>
+    <a href="<?= Url::to(['/admin/play/champ', 'id' => 3]) ?>"><?= Html::img('@web/img/champ/3.png', ['alt' => 'Россия']) ?></a>
+
     <?= GridView::widget([
         'pager' => [
             'firstPageLabel' => '<<<',

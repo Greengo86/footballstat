@@ -10,7 +10,6 @@ use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\data\ActiveDataProvider;
 
 /**
  * PlayController implements the CRUD actions for Play model.

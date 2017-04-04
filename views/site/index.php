@@ -49,8 +49,6 @@ $this->title = 'Footballstat';
         <?php
         //Подключаем и кешируем виджет StatWidget
         //if ($this->beginCache('stat', ['duration' => $duration, 'dependency' => $dependency])) {
-        //    StatWidget::begin(['champ' => '1']);
-        //    StatWidget::end();
         StatWidget::begin(['champ' => '1']);
         StatWidget::end();
         StatWidget::begin(['champ' => '2']);
