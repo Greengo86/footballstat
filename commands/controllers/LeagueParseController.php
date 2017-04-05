@@ -2,8 +2,6 @@
 
 namespace app\commands\controllers;
 
-use app\models\Parse;
-use Yii;
 use yii\filters\AccessControl;
 
 
@@ -87,7 +85,7 @@ class LeagueParseController extends ParseController
         поэтому модель будет парсить под формат чемпионата Англии. В завимости от неё модель определит
         каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
         $k = 9;
-        $result = parent::actionLive($url, $k, self::PLAY, self::PREMIRLIGA);
+        $result = parent::actionLive($url, $k, self::LIVE, self::PREMIRLIGA);
 
         foreach ($result as $value) {
             var_dump($value);
