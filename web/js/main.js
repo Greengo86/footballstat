@@ -233,11 +233,14 @@ jQuery(function($) {
     owl.owlCarousel({
         rtl:true,
         loop:true,
-        margin:10,
         nav:true,
+        responsiveClass:true,
         responsive:{
             1800:{
                 items:5
+            },
+            960:{
+                items:4
             }
         }
     });
