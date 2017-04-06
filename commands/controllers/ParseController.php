@@ -246,6 +246,16 @@ class ParseController extends Controller
         /** вызываем метод, который запишет подготовленные данные в бд */
         $model->playInsert($this->to_record);
 
+        $play = new Play();
+
+        if (!empty($this->to_record)){
+
+            $play->playInserted();
+        }
+
+
+
+
         return $this->to_record;
 //            /** Если в массиве $this->stat в значении 'link', есть ссылка, что и в базе данных,
 //            то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует

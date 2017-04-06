@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\commands\controllers\ParseController;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
@@ -37,6 +38,9 @@ use yii\behaviors\TimestampBehavior;
 class Play extends ActiveRecord
 {
 
+    //Устанавливаем константу для консольного приложения(парсинга мачтей), как признак, что игра добавлена в бд
+    const RECORD_INSERTED = 'RECORD_INSERTED';
+
     public function behaviors()
     {
         return [
@@ -50,6 +54,48 @@ class Play extends ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
         ];
+    }
+
+    /**
+     * Статический метод, который мы вызываем с помощью событие, а именно запись в базу данных из контроллера
+     * ParseController и отправляем почту
+     */
+    public static function method_Record_Insert($data)
+    {
+
+        echo 'static method_Record_Insert';
+        Yii::$app->mailer->compose()
+            ->setFrom('from@domain.com')
+            ->setTo('to@domain.com')
+            ->setSubject('Тема сообщения')
+            ->setTextBody('Текст сообщения')
+            ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
+            ->send();
+        var_dump($data);
+    }
+
+    /**
+     * Присоединяем обработчик события к статической функции method_Record_Insert(), где будем рассылать письма
+     */
+    public function init()
+    {
+//        $this->on(Play::RECORD_INSERTED, function($event){
+//                var_dump($event->data);
+//        });
+//        $this->on(self::RECORD_INSERTED, [$this, 'method_Record_Insert']);
+
+
+    }
+
+    /**
+     * @param $data - массив принимаемый от ParseController, данные из которого были записаны в бд. Параметр необходим для
+     * того, чтобы раскрыть смысл отправленных почтовых сообщений
+     * Вызываем обработчик self::RECORD_INSERTED в случае записи данных в бд => присоединяем обработчик
+     */
+    public function playInserted()
+    {
+
+        $this->trigger(self::RECORD_INSERTED);
     }
 
     /**
