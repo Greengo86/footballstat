@@ -60,10 +60,9 @@ class Play extends ActiveRecord
      * Статический метод, который мы вызываем с помощью событие, а именно запись в базу данных из контроллера
      * ParseController и отправляем почту
      */
-    public static function method_Record_Insert($data)
+    public static function method_Record_Insert($event)
     {
 
-        echo 'static method_Record_Insert';
         Yii::$app->mailer->compose()
             ->setFrom('from@domain.com')
             ->setTo('to@domain.com')
@@ -71,31 +70,20 @@ class Play extends ActiveRecord
             ->setTextBody('Текст сообщения')
             ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
             ->send();
-        var_dump($data);
+        var_dump($event->play_insert);
     }
 
     /**
      * Присоединяем обработчик события к статической функции method_Record_Insert(), где будем рассылать письма
+     * Здесь мы ловим, то событие из ParseController, которое инициируется при записи данных в бд и вызываем статическую ф-цию 'method_Record_Insert'
      */
     public function init()
     {
 //        $this->on(Play::RECORD_INSERTED, function($event){
-//                var_dump($event->data);
+//            var_dump($event->play_insert);
 //        });
-//        $this->on(self::RECORD_INSERTED, [$this, 'method_Record_Insert']);
+        $this->on(self::RECORD_INSERTED, [$this, 'method_Record_Insert']);
 
-
-    }
-
-    /**
-     * @param $data - массив принимаемый от ParseController, данные из которого были записаны в бд. Параметр необходим для
-     * того, чтобы раскрыть смысл отправленных почтовых сообщений
-     * Вызываем обработчик self::RECORD_INSERTED в случае записи данных в бд => присоединяем обработчик
-     */
-    public function playInserted()
-    {
-
-        $this->trigger(self::RECORD_INSERTED);
     }
 
     /**

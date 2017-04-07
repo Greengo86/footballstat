@@ -3,6 +3,7 @@
 
 namespace app\commands\controllers;
 
+use app\commands\events\PlayInsertEvent;
 use app\commands\models\ParsePlay;
 use Yii;
 
@@ -17,6 +18,8 @@ class ParseController extends Controller
 
     /** Основной url сайта с которого будем парсить*/
     const DOMEN = 'http://soccer365.ru';
+    //Устанавливаем константу для консольного приложения(парсинга мачтей), как признак, что игра добавлена в бд
+    const RECORD_INSERTED = 'RECORD_INSERTED';
 
 
     public $stat = [];
@@ -243,17 +246,23 @@ class ParseController extends Controller
             }
             $i++;
         }
-        /** вызываем метод, который запишет подготовленные данные в бд */
+        /* вызываем метод, который запишет подготовленные данные в бд */
         $model->playInsert($this->to_record);
 
         $play = new Play();
 
+        /*Если свойство $this->to_record не пусто, считаем что произошла запись данных в бд и инициируем событие,
+        которое отправить сообщение на электронную почту с соответствующими сведениями*/
         if (!empty($this->to_record)){
 
-            $play->playInserted();
+            //Создаем объект, который будет являться экземпляром класса yii\base\Event для того, чтобы передать
+            // его в качестве второго параметра методу yii\base\Component::trigger() для более полной информации о записи в бд
+            $event = new PlayInsertEvent();
+            $event->play_insert = $this->to_record;
+            //Инициируем событие 'запись вставлена' с помощью yii\base\Component::trigger() в моделе play
+            $play->trigger(Play::RECORD_INSERTED, $event);
+//            $play->playInserted();
         }
-
-
 
 
         return $this->to_record;
