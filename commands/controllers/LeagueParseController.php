@@ -54,7 +54,7 @@ class LeagueParseController extends ParseController
         Что парсим, зависит от передаваемой константы LIVE или PLAY: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад
         Передаём также строку 'spain' - В завимости от неё модель определит каким образом "разбирать" дату и время на странице матча.
         У матчей разных чемпионатов разные формата разбора*/
-        $k = 0;
+        $k = 9;
         $result = parent::actionLive($url, $k, self::PLAY, self::PRIMERA);
 
         foreach ($result as $value) {
@@ -85,7 +85,7 @@ class LeagueParseController extends ParseController
         поэтому модель будет парсить под формат чемпионата Англии. В завимости от неё модель определит
         каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
         $k = 9;
-        $result = parent::actionLive($url, $k, self::LIVE, self::PREMIRLIGA);
+        $result = parent::actionLive($url, $k, self::PLAY, self::PREMIRLIGA);
 
         foreach ($result as $value) {
             var_dump($value);
