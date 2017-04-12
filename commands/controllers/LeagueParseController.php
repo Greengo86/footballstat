@@ -58,7 +58,7 @@ class LeagueParseController extends ParseController
         $result = parent::actionLive($url, $k, self::PLAY, self::PRIMERA);
 
         foreach ($result as $value) {
-//            var_dump($value);
+            var_dump($value);
         }
 
         return $this->render('spain', [
@@ -115,16 +115,13 @@ class LeagueParseController extends ParseController
         каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
         $k = 8;
 
-        $result = parent::actionLive($url, $k, self::PLAY, self::BUNDESLIGA);
+        $result = parent::actionLive($url, $k, self::LIVE, self::BUNDESLIGA);
 
         foreach ($result as $value) {
             var_dump($value);
         }
 
         return $this->render('germany', [
-//            'teamhome' => $team_home,
-//            'teamhomescore' => $team_home_score,
-//            'teamaway' => $team_away,
             'result' => $result,
         ]);
 
