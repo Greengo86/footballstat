@@ -512,6 +512,11 @@ hr.style3 {
 }
 
 /* Стили для главной страницы - Статистические факты*/
+/*Устанавливаем ширину блоков Статистических фактов в 100% для более аккуратного отображения*/
+#services .owl-stage .owl-item .col-md-6{
+    width: 100%;
+}
+
 .owl-carousel .heading{
     font-size: 20px;
     text-align: center;
@@ -533,7 +538,7 @@ hr.style3 {
 
 .owl-carousel .description img{
     margin: 0 auto;
-    max-width: 40%;
+    max-width: 30%;
 }
 
 footer .container .row .col-sm-8 p {

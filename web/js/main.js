@@ -229,19 +229,28 @@ jQuery(function($) {
 
     /** Функция для работы слайдера статистических фактов на главной странице*/
 
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-        rtl:true,
+    $('.owl-carousel').owlCarousel({
         loop:true,
-        nav:true,
         responsiveClass:true,
         responsive:{
-            1800:{
-                items:5
+            0:{
+                items:2,
+                nav:true
             },
-            960:{
-                items:4
+            500:{
+                items:3,
+                nav:true
+            },
+            1000:{
+                items:4,
+                nav:true,
+                loop:true
+            },
+            1600:{
+                items:5,
+                nav:true,
+                loop:true
             }
         }
-    });
+    })
 });
