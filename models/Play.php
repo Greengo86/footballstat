@@ -2,7 +2,6 @@
 
 namespace app\models;
 
-use app\commands\controllers\ParseController;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Expression;

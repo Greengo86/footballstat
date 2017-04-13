@@ -54,35 +54,35 @@ class StatWidget extends Widget
         $play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
         $play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
 
-        $model = new Team();
 
-//        Получаем список статистических показателей дома и на выезде - Голы в матче
-        $goalHome = team::statGoalHome($play['home'], self::HOME_GOAL);
-        $goalAway = team::statGoalAway($play['away'], self::AWAY_GOAL);
+//        Получаем список статистических показателей дома и на выезде, в качестве параметров передаём какой
+//        именно параметр хотим получить - Голы в матче
+        $goalHome = team::statHome($play['home'], self::HOME_GOAL, 'goalHome');
+        $goalAway = team::statAway($play['away'], self::AWAY_GOAL, 'goalAway');
 
 //        Пропушённые голы
-        $goalOwnHome = team::statGoalOwnHome($play['home'], self::AWAY_GOAL);
-        $goalOwnAway = team::statGoalOwnAway($play['away'], self::HOME_GOAL);
+        $goalOwnHome = team::statHome($play['home'], self::AWAY_GOAL, 'goalOwnHome');
+        $goalOwnAway = team::statAway($play['away'], self::HOME_GOAL, 'goalOwnAway');
 
 //        Угловые
-        $cornerHome = team::statCornerHome($play['home'], self::HOME_CORNER);
-        $cornerAway = team::statCornerAway($play['away'], self::AWAY_CORNER);
+        $cornerHome = team::statHome($play['home'], self::HOME_CORNER, 'cornerHome');
+        $cornerAway = team::statAway($play['away'], self::AWAY_CORNER, 'cornerAway');
 
 //        Фолы
-        $foulHome = team::statFoulHome($play['home'], self::HOME_FOUL);
-        $foulAway = team::statFoulAway($play['away'], self::AWAY_FOUL);
+        $foulHome = team::statHome($play['home'], self::HOME_FOUL, 'foulHome');
+        $foulAway = team::statAway($play['away'], self::AWAY_FOUL, 'foulAway');
 
 //        Процент владения мячом
-        $possesHome = team::statPossesHome($play['home'], self::HOME_POSSESSION);
-        $possesAway = team::statPossesAway($play['away'], self::AWAY_POSSESSION);
+        $possesHome = team::statHome($play['home'], self::HOME_POSSESSION, 'possesHome');
+        $possesAway = team::statAway($play['away'], self::AWAY_POSSESSION, 'possesAway');
 
 //       Оффсайды
-        $offsideHome = team::statOffsideHome($play['home'], self::HOME_OFFSIDE);
-        $offsideAway = team::statOffsideAway($play['away'], self::AWAY_OFFSIDE);
+        $offsideHome = team::statHome($play['home'], self::HOME_OFFSIDE, 'offsideHome');
+        $offsideAway = team::statAway($play['away'], self::AWAY_OFFSIDE, 'offsideAway');
 
 //        Жёлтые карточки
-        $yelCartHome = team::statYelCartHome($play['home'], self::HOME_YELLOW_CART);
-        $yelCartAway = team::statYelCartAway($play['away'], self::AWAY_YELLOW_CART);
+        $yelCartHome = team::statHome($play['home'], self::HOME_YELLOW_CART, 'yelCartHome');
+        $yelCartAway = team::statAway($play['away'], self::AWAY_YELLOW_CART, 'yelCartAway');
 
 //        суммируем значения дома и на выезде для каждой команды
 //        Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков

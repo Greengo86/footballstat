@@ -144,119 +144,119 @@ class Team extends ActiveRecord
         return round(($statHome + $statAway) / ($qtyHome + $qtyAway), 2);
     }
 
-    //Методы для формирования StatWidget на главной странице
-    public static function statFoulHome($playHome, $value){
-
-        $foulHome = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $foulHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $foulHome;
-
-    }
-
-    public static function statFoulAway($playAway, $value){
-
-        $foulAway = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
-        foreach ($playAway as $game) {
-            $foulAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $foulAway;
-
-    }
-
-    public static function statCornerHome($playHome, $value){
-
-        $cornerHome = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $cornerHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $cornerHome;
-
-    }
-
-    public static function statCornerAway($playAway, $value){
-
-        $cornerAway = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
-        foreach ($playAway as $game) {
-            $cornerAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $cornerAway;
-    }
-
-    public static function statPossesHome($playHome, $value){
-
-        $possesHome = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $possesHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $possesHome;
-    }
-
-    public static function statPossesAway($playAway, $value){
-
-        $possesAway = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
-        foreach ($playAway as $game) {
-            $possesAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $possesAway;
-    }
-
-    public static function statOffsideHome($playHome, $value){
-
-        $offsideHome = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $offsideHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $offsideHome;
-    }
-
-    public static function statOffsideAway($playAway, $value){
-
-        $offsideAway = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
-        foreach ($playAway as $game) {
-            $offsideAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $offsideAway;
-    }
-
-    public static function statYelCartHome($playHome, $value){
-
-        $yelCartHome = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $yelCartHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $yelCartHome;
-    }
-
-    public static function statYelCartAway($playAway, $value){
-
-        $yelCartAway = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
-        foreach ($playAway as $game) {
-            $yelCartAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $yelCartAway;
-    }
+//    //Методы для формирования StatWidget на главной странице
+//    public static function statFoulHome($playHome, $value){
+//
+//        $foulHome = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+//        foreach ($playHome as $game) {
+//            $foulHome[$game['teamHome']['team_name']] += $game[$value];
+//        }
+//
+//        return $foulHome;
+//
+//    }
+//
+//    public static function statFoulAway($playAway, $value){
+//
+//        $foulAway = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+//        foreach ($playAway as $game) {
+//            $foulAway[$game['teamAway']['team_name']] += $game[$value];
+//        }
+//
+//        return $foulAway;
+//
+//    }
+//
+//    public static function statCornerHome($playHome, $value){
+//
+//        $cornerHome = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+//        foreach ($playHome as $game) {
+//            $cornerHome[$game['teamHome']['team_name']] += $game[$value];
+//        }
+//
+//        return $cornerHome;
+//
+//    }
+//
+//    public static function statCornerAway($playAway, $value){
+//
+//        $cornerAway = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+//        foreach ($playAway as $game) {
+//            $cornerAway[$game['teamAway']['team_name']] += $game[$value];
+//        }
+//
+//        return $cornerAway;
+//    }
+//
+//    public static function statPossesHome($playHome, $value){
+//
+//        $possesHome = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+//        foreach ($playHome as $game) {
+//            $possesHome[$game['teamHome']['team_name']] += $game[$value];
+//        }
+//
+//        return $possesHome;
+//    }
+//
+//    public static function statPossesAway($playAway, $value){
+//
+//        $possesAway = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+//        foreach ($playAway as $game) {
+//            $possesAway[$game['teamAway']['team_name']] += $game[$value];
+//        }
+//
+//        return $possesAway;
+//    }
+//
+//    public static function statOffsideHome($playHome, $value){
+//
+//        $offsideHome = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+//        foreach ($playHome as $game) {
+//            $offsideHome[$game['teamHome']['team_name']] += $game[$value];
+//        }
+//
+//        return $offsideHome;
+//    }
+//
+//    public static function statOffsideAway($playAway, $value){
+//
+//        $offsideAway = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+//        foreach ($playAway as $game) {
+//            $offsideAway[$game['teamAway']['team_name']] += $game[$value];
+//        }
+//
+//        return $offsideAway;
+//    }
+//
+//    public static function statYelCartHome($playHome, $value){
+//
+//        $yelCartHome = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+//        foreach ($playHome as $game) {
+//            $yelCartHome[$game['teamHome']['team_name']] += $game[$value];
+//        }
+//
+//        return $yelCartHome;
+//    }
+//
+//    public static function statYelCartAway($playAway, $value){
+//
+//        $yelCartAway = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+//        foreach ($playAway as $game) {
+//            $yelCartAway[$game['teamAway']['team_name']] += $game[$value];
+//        }
+//
+//        return $yelCartAway;
+//    }
 
     public static function teamEmbl($playHome, $team)
     {
@@ -302,77 +302,85 @@ class Team extends ActiveRecord
 //    Методы для формирования турнирных таблиц для каждого чемпионата на главной странице
     /**
      * @param $playHome - массив проведёных домашних матчей
-     * @param $value - статистическое значение. В данном случае home_score_full - забитые мячи домашней команды
-     * @return mixed - сформированный массив из ключа(команды) и значения (забитые мячи)
+     * @param $value - статистические значения, которые занесены в модели Play и принимаются от констант StatWidget
+     * home_score_full, h_tid_posses!
+     * @param $param - стат. параметр, который станет названием массива куда мы будем записывать в цикле foreach параметры,
+     * которые принимаем в $value(например - goalHome, goalOwnHome)
+     * @return mixed - сформированный массив из ключа(команды) и значения (например - забитые или пропушенные мячи,
+     * угловые, фолы, владение) Дома!
      */
-    public static function statGoalHome($playHome, $value)
+    public static function statHome($playHome, $value, $param)
     {
 
-        $goalHome = [];
+        $param = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями дома
         foreach ($playHome as $game) {
-            $goalHome[$game['teamHome']['team_name']] += $game[$value];
+            $param[$game['teamHome']['team_name']] += $game[$value];
         }
 
-        return $goalHome;
+        return $param;
 
     }
 
     /**
-     * @param $playAway - массив проведёных гостевых матчей
-     * @param $value - статистическое значение. В данном случае away_score_full - забитые мячи домашней команды
-     * @return mixed - сформированный массив из ключа(команды) и значения (забитые мячи)
+     * @param $playAway - массив проведёных выездных матчей
+     * @param $value - статистические значения, которые занесены в модели Play и принимаются от констант StatWidget
+     * away_score_full, a_tid_posses!
+     * @param $param - стат. параметр, который станет названием массива куда мы будем записывать в цикле foreach параметры,
+     * которые принимаем в $value(например - goalAway, goalOwnAway)
+     * @return mixed - сформированный массив из ключа(команды) и значения (например - забитые или пропушенные мячи,
+     * угловые, фолы, владение) НА Выезде!
      */
-    public static function statGoalAway($playAway, $value)
+    public static function statAway($playAway, $value, $param)
     {
 
-        $goalAway = [];
+        $param = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
         foreach ($playAway as $game) {
-            $goalAway[$game['teamAway']['team_name']] += $game[$value];
+            $param[$game['teamAway']['team_name']] += $game[$value];
         }
 
-        return $goalAway;
+        return $param;
 
     }
 
-    /**
-     * @param $playHome - массив проведёных домашних матчей
-     * @param $value - статистическое значение. В данном случае away_score_full - забитые мячи домашней команды
-     * В данном методе подсчитываем голы пропущёные дома, поэтому принимаем значение away_score_full
-     * @return mixed - сформированный массив из ключа(команды) и значения (пропущенные мячи)
-     */
-    public static function statGoalOwnHome($playHome, $value)
-    {
-
-        $goalOwnHome = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями дома
-        foreach ($playHome as $game) {
-            $goalOwnHome[$game['teamHome']['team_name']] += $game[$value];
-        }
-
-        return $goalOwnHome;
-
-    }
-
-    /**
-     * @param $playAway - массив проведёных гостевых матчей
-     * @param $value - статистическое значение. В данном случае home_score_full - забитые мячи домашней команды
-     * В данном методе подсчитываем голы пропущёные дома, поэтому принимаем значение home_score_full
-     * @return mixed - сформированный массив из ключа(команды) и значения (пропущенные мячи)
-     */
-    public static function statGoalOwnAway($playAway, $value)
-    {
-
-        $goalOwnAway = [];
-        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
-        foreach ($playAway as $game) {
-            $goalOwnAway[$game['teamAway']['team_name']] += $game[$value];
-        }
-
-        return $goalOwnAway;
-
-    }
+//    /**
+//     * @param $playHome - массив проведёных домашних матчей
+//     * @param $value - статистическое значение. В данном случае away_score_full - забитые мячи домашней команды
+//     * В данном методе подсчитываем голы пропущёные дома, поэтому принимаем значение away_score_full
+//     * @return mixed - сформированный массив из ключа(команды) и значения (пропущенные мячи)
+//     */
+//    public static function statGoalOwnHome($playHome, $value)
+//    {
+//
+//        $goalOwnHome = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями дома
+//        foreach ($playHome as $game) {
+//            $goalOwnHome[$game['teamHome']['team_name']] += $game[$value];
+//        }
+//
+//        return $goalOwnHome;
+//
+//    }
+//
+//    /**
+//     * @param $playAway - массив проведёных гостевых матчей
+//     * @param $value - статистическое значение. В данном случае home_score_full - забитые мячи домашней команды
+//     * В данном методе подсчитываем голы пропущёные дома, поэтому принимаем значение home_score_full
+//     * @return mixed - сформированный массив из ключа(команды) и значения (пропущенные мячи)
+//     */
+//    public static function statGoalOwnAway($playAway, $value)
+//    {
+//
+//        $goalOwnAway = [];
+//        //Формируем массив из названий команд(ключи) и статистическими значениями на выезде
+//        foreach ($playAway as $game) {
+//            $goalOwnAway[$game['teamAway']['team_name']] += $game[$value];
+//        }
+//
+//        return $goalOwnAway;
+//
+//    }
 
     /**
      * @param $scoreHome

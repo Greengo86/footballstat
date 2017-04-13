@@ -261,7 +261,6 @@ class ParseController extends Controller
             $event->play_insert = $this->to_record;
             //Инициируем событие 'запись вставлена' с помощью yii\base\Component::trigger() в моделе play
             $play->trigger(Play::RECORD_INSERTED, $event);
-//            $play->playInserted();
         }
 
 

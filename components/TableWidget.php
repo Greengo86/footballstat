@@ -34,12 +34,12 @@ class TableWidget extends Widget
         }
 
 //        Получаем список статистических показателей дома и на выезде - Голы в матче
-        $goalHome = team::statGoalHome($this->play['home'], self::HOME_GOAL);
-        $goalAway = team::statGoalAway($this->play['away'], self::AWAY_GOAL);
+        $goalHome = team::statHome($this->play['home'], self::HOME_GOAL, 'goalHome');
+        $goalAway = team::statAway($this->play['away'], self::AWAY_GOAL, 'goalAway');
 
 //        Пропушённые голы
-        $goalOwnHome = team::statGoalOwnHome($this->play['home'], self::AWAY_GOAL);
-        $goalOwnAway = team::statGoalOwnAway($this->play['away'], self::HOME_GOAL);
+        $goalOwnHome = team::statHome($this->play['home'], self::AWAY_GOAL, 'goalAway');
+        $goalOwnAway = team::statAway($this->play['away'], self::HOME_GOAL, 'goalHome');
 
 //        Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
         $score['goal'] = team::statSum($goalHome, $goalAway);
