@@ -618,6 +618,15 @@ footer{
     margin-top: 20px;
 }
 
+/*Стили отображения на главной странице последних матчей*/
+#last-games .nav {
+    display: block;
+}
+
+#last-games .nav-tabs.nav-justified > li > a {
+    border: none;
+}
+
 /*Стили таблиц чемпионата на главной странице*/
 .intro-table {
     background-position: -35px 0;
