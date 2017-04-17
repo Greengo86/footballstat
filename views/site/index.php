@@ -30,49 +30,16 @@ $this->title = 'Footballstat';
 //            if ($this->beginCache('table', ['duration' => $duration, 'dependency' => $dependency])) {
                 TableWidget::begin(['champ' => 1]);
                 TableWidget::end();
-                TableWidget::begin(['champ' => 2]);
-                TableWidget::end();
-                TableWidget::begin(['champ' => 3]);
-                TableWidget::end();
+//                TableWidget::begin(['champ' => 2]);
+//                TableWidget::end();
+//                TableWidget::begin(['champ' => 3]);
+//                TableWidget::end();
 //                $this->endCache();
 //            }
             ?>
         </div>
     </div>
 </section>
-
-<?php
-    $items = [
-        [
-            'label'=>'<i class="glyphicon glyphicon-home"></i> Испания',
-            'active'=>true,
-            'content'=>$content,
-            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
-        ],
-        [
-            'label'=>'<i class="glyphicon glyphicon-user"></i> Англия',
-            'content'=>$content,
-            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
-        ],
-        [
-            'label'=>'<i class="glyphicon glyphicon-user"></i> Германия',
-            'content'=>$content,
-            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
-        ],
-    ];
-?>
-
-    <div class="container">
-            <?php
-                echo TabsX::widget([
-                'items'=>$items,
-                'position'=>TabsX::POS_ABOVE,
-                'align'=>TabsX::ALIGN_CENTER,
-                'encodeLabels'=>true
-                ]);
-            ?>
-    </div>
-
 
 <section id="services" class="section section-padded">
     <div class="container">

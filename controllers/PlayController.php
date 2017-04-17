@@ -60,7 +60,7 @@ class PlayController extends Controller
     public function actionTabsData()
     {
         $tabContent = 'Чемпионат!!!!!';
-        $html = $this->renderPartial('/site/index.php', ['content' => $tabContent]);
+        $html = $this->renderAjax('/layout/main.php', ['cont' => $tabContent]);
         return Json::encode($html);
     }
 

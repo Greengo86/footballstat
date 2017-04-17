@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use kartik\tabs\TabsX;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\Nav;
@@ -79,6 +80,36 @@ AppAsset::register($this);
         </header>
 
         <?= $content ?>
+
+
+
+    <?php
+    $opt = [
+        [
+            'label'=>'<i class="glyphicon glyphicon-home"></i> Испания',
+            'active'=>true,
+            'content'=>$cont,
+            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
+        ],
+        [
+            'label'=>'<i class="glyphicon glyphicon-user"></i> Англия',
+            'content'=>$cont,
+            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
+        ],
+        [
+            'label'=>'<i class="glyphicon glyphicon-user"></i> Германия',
+            'content'=>$cont,
+            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
+        ],
+    ];
+
+    echo TabsX::widget([
+        'items'=>$opt,
+        'position'=>TabsX::POS_ABOVE,
+        'align'=>TabsX::ALIGN_CENTER,
+        'encodeLabels'=>true
+    ]);
+    ?>
 
         <div class="page-buffer"></div>
 
