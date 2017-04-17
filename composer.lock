@@ -515,12 +515,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "99bba6cfcef21b6ce33d906ad080b862abca6e1a"
+                "reference": "db72623616c73e6ed0ab3f00accf636847332491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/99bba6cfcef21b6ce33d906ad080b862abca6e1a",
-                "reference": "99bba6cfcef21b6ce33d906ad080b862abca6e1a",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/db72623616c73e6ed0ab3f00accf636847332491",
+                "reference": "db72623616c73e6ed0ab3f00accf636847332491",
                 "shasum": ""
             },
             "type": "library",
@@ -560,7 +560,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2017-03-25 17:14:29"
+            "time": "2017-04-14 08:04:20"
         },
         {
             "name": "kartik-v/bootstrap-star-rating",
@@ -1560,16 +1560,16 @@
         },
         {
             "name": "kartik-v/yii2-widget-select2",
-            "version": "v2.0.8",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-widget-select2.git",
-                "reference": "4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69"
+                "reference": "03f202e9e2415f4c84e93a64074d85677fd0cc51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69",
-                "reference": "4d03239c1e28ef8d3b96ab7fe360f5cbda34fb69",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/03f202e9e2415f4c84e93a64074d85677fd0cc51",
+                "reference": "03f202e9e2415f4c84e93a64074d85677fd0cc51",
                 "shasum": ""
             },
             "require": {
@@ -1609,7 +1609,7 @@
                 "widget",
                 "yii2"
             ],
-            "time": "2016-02-17T11:49:30+00:00"
+            "time": "2017-04-12T09:00:24+00:00"
         },
         {
             "name": "kartik-v/yii2-widget-sidenav",
