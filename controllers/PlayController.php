@@ -6,6 +6,7 @@ use app\models\Parse;
 use app\models\Team;
 use Yii;
 use app\models\Play;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
@@ -56,6 +57,13 @@ class PlayController extends Controller
         ]);
     }
 
+    public function actionTabsData()
+    {
+        $tabContent = 'Чемпионат!!!!!';
+        $html = $this->renderPartial('tabContent');
+        $y = 'Heeeey';
+        return Json::encode($y);
+    }
 
     /**
      * @param string $id - id матча! поле id в таблице play в бд

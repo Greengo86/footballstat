@@ -4,6 +4,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use kartik\tabs\TabsX;
 use app\components\StatWidget;
 use app\components\TableWidget;
 
@@ -40,12 +41,38 @@ $this->title = 'Footballstat';
     </div>
 </section>
 
+<?php
+    $items = [
+        [
+            'label'=>'<i class="glyphicon glyphicon-home"></i> Испания',
+            'content'=>$play,
+            'active'=>true,
+            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
+        ],
+        [
+            'label'=>'<i class="glyphicon glyphicon-user"></i> Англия',
+            'content'=>$play,
+            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
+        ],
+        [
+            'label'=>'<i class="glyphicon glyphicon-user"></i> Германия',
+            'content'=>$play,
+            'linkOptions'=>['data-url'=>Url::to(['/play/tabs-data'])]
+        ],
+    ];
+?>
+
 <section id="last-games">
     <div class="container">
         <ul class="nav nav-tabs nav-justified text-center">
-            <li class="active"><h5><a href="<?php echo Url::toRoute(['play/champ/1']) ?>">Испания</a></h5></li>
-            <li><h5><a data-toggle="tab" href="#champ2">Англия</a></h5></li>
-            <li><h5><a data-toggle="tab" href="#champ3">Германия</a></h5></li>
+            <?php
+                echo TabsX::widget([
+                'items'=>$items,
+                'position'=>TabsX::POS_ABOVE,
+                'align'=>TabsX::ALIGN_CENTER,
+                'encodeLabels'=>false
+                ]);
+            ?>
         </ul>
         <div class="tab-content">
             <div id="champ1" class="tab-pane in active">
