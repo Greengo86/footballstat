@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use app\components\LastGamesWidget;
 use kartik\tabs\TabsX;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -82,7 +83,7 @@ AppAsset::register($this);
         <?= $content ?>
 
 
-
+<section id="last-games">
     <?php
     $opt = [
         [
@@ -110,6 +111,7 @@ AppAsset::register($this);
         'encodeLabels'=>true
     ]);
     ?>
+</section>
 
         <div class="page-buffer"></div>
 
