@@ -57,11 +57,19 @@ class PlayController extends Controller
         ]);
     }
 
-    public function actionTabsData()
+    /**
+     * @param $id - id чемпионата
+     * @return string - возвращаем сериализованную переменную в вид для отображения последний 10 матчей чемпионата
+     */
+    public function actionLastGames()
     {
-        $tabContent = 'Чемпионат!!!!!';
-        return $this->renderAjax('/layouts/main.php', ['cont' => $tabContent]);
-//        return Json::encode($html);
+        $id = Yii::$app->request->get('id');
+        $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit(1)->where(['league_id' => $id])->orderBy(['date' => SORT_ASC])->all();
+        $html = $this->renderAjax('last-games', [
+            'id' => $id,
+            'play' => $play,
+        ]);
+        return Json::encode($html);
     }
 
     /**

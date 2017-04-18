@@ -41,6 +41,36 @@ $this->title = 'Footballstat';
     </div>
 </section>
 
+<section id="last-games">
+    <div class="container">
+        <?php
+
+        $opt = [
+            [
+                'label'=>'<i class="glyphicon glyphicon-home"></i> Испания',
+                'active'=>true,
+                'linkOptions'=>['data-url'=>Url::to(['play/last-games/1'])]
+            ],
+            [
+                'label'=>'<i class="glyphicon glyphicon-user"></i> Англия',
+                'linkOptions'=>['data-url'=>Url::to(['play/last-games/2'])]
+            ],
+            [
+                'label'=>'<i class="glyphicon glyphicon-user"></i> Германия',
+                'linkOptions'=>['data-url'=>Url::to(['play/last-games/3'])]
+            ],
+        ];
+
+        echo TabsX::widget([
+            'items'=>$opt,
+            'position'=>TabsX::POS_ABOVE,
+            'align'=>TabsX::ALIGN_CENTER,
+            'encodeLabels'=>false
+        ]);
+        ?>
+    </div>
+</section>
+
 <section id="services" class="section section-padded">
     <div class="container">
         <div class="row text-center title">

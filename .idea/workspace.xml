@@ -2,26 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="befce524-f27b-4010-94b0-3405c9b2f0bf" name="Default" comment="+delete view's &amp; team's actions">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/LastGamesWidget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/views/lastgame.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" afterPath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-helpers" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-helpers" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/footballstat.iml" afterPath="$PROJECT_DIR$/.idea/footballstat.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/play/last-games.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components/LastGamesWidget.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components/views/lastgame.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/db.php" afterPath="$PROJECT_DIR$/config/db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/web.php" afterPath="$PROJECT_DIR$/config/web.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/PlayController.php" afterPath="$PROJECT_DIR$/controllers/PlayController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/CHANGE.md" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/CHANGE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/LICENSE.md" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/README.md" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/Select2.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/Select2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/Select2Asset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/Select2Asset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeBootstrapAsset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeBootstrapAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeClassicAsset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeClassicAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeDefaultAsset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeDefaultAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeKrajeeAsset.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/ThemeKrajeeAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-addl.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-addl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-addl.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-addl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-classic.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-classic.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-classic.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-classic.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-default.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-default.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-default.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-krajee.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-krajee.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-krajee.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2-krajee.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2.min.css" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/css/select2.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ar.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/az.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/az.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/bg.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/bg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ca.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/cs.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/cs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/da.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/da.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/de.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/en.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/en.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/es.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/et.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/et.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/eu.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/eu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/fa.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/fa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/fi.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/fi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/fr.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/gl.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/gl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/he.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/hi.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/hi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/hr.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/hr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/hu.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/hu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/id.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/id.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/is.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/is.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/it.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ja.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ja.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ko.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ko.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/lt.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/lt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/lv.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/lv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/mk.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/mk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ms.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ms.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/nb.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/nb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/nl.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/pl.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/pl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/pt-BR.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/pt-BR.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/pt.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/pt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ro.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ru.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sk.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sr-Cyrl.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sr-Cyrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sr.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sv.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/sv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/th.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/th.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/tr.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/uk.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/uk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/vi.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/vi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/zh-CN.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/zh-CN.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/zh-TW.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/i18n/zh-TW.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2-krajee.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2-krajee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2-krajee.min.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2-krajee.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2.full.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2.full.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2.full.min.js" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/assets/js/select2.full.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/config.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/es/kvselect.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/es/kvselect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/fa-IR/kvselect.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/fa-IR/kvselect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/fr/kvselect.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/fr/kvselect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/it/kvselect.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/it/kvselect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/lt/kvselect.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/lt/kvselect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/pl/kvselect.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/pl/kvselect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/pt/kvselect.php" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2/messages/pt/kvselect.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/main.php" afterPath="$PROJECT_DIR$/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/index.php" afterPath="$PROJECT_DIR$/views/site/index.php" />
     </list>
     <ignored path="vendor/" />
     <ignored path="runtime/" />
@@ -49,7 +115,7 @@
       <file leaf-file-name="ParseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/controllers/ParseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1727">
+            <state relative-caret-position="2034">
               <caret line="262" column="58" lean-forward="false" selection-start-line="262" selection-start-column="58" selection-end-line="262" selection-end-column="58" />
               <folding>
                 <element signature="e#110#150#0#PHP" expanded="true" />
@@ -60,44 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeagueParseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="809">
-              <caret line="117" column="77" lean-forward="false" selection-start-line="117" selection-start-column="77" selection-end-line="117" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScorerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/ScorerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/site/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="30" />
-              <folding>
-                <element signature="e#38#59#0#PHP" expanded="true" />
-                <marker date="1492491956756" expanded="true" signature="646:678" ph="SELECT MAX(c... play" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/views/table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="e#7#31#0#PHP" expanded="true" />
               </folding>
@@ -108,8 +141,8 @@
       <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+            <state relative-caret-position="584">
+              <caret line="61" column="114" lean-forward="false" selection-start-line="61" selection-start-column="114" selection-end-line="61" selection-end-column="114" />
               <folding>
                 <element signature="e#35#56#0#PHP" expanded="true" />
               </folding>
@@ -117,50 +150,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
+      <file leaf-file-name="last-games.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/play/last-games.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="92" column="69" lean-forward="true" selection-start-line="92" selection-start-column="69" selection-end-line="92" selection-end-column="69" />
-              <folding>
-                <element signature="e#66#101#0#PHP" expanded="true" />
-                <element signature="e#4251#4257#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="72">
+              <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lastgame.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/views/lastgame.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="368">
+              <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="45" />
               <folding>
-                <element signature="e#7#29#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TableWidget.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/TableWidget.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-              <folding>
-                <element signature="e#36#56#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LastGamesWidget.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/LastGamesWidget.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-              <folding>
-                <element signature="e#34#54#0#PHP" expanded="true" />
+                <element signature="e#38#59#0#PHP" expanded="true" />
+                <marker date="1492533480688" expanded="true" signature="646:678" ph="SELECT MAX(c... play" />
               </folding>
             </state>
           </provider>
@@ -203,8 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/controllers/LeagueParseController.php" />
         <option value="$PROJECT_DIR$/web/js/jquery.mousewheel.min.js" />
         <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/RouterPanel.php" />
         <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/TimelinePanel.php" />
@@ -227,7 +232,6 @@
         <option value="$PROJECT_DIR$/views/play/scorers.php" />
         <option value="$PROJECT_DIR$/components/views/table.php" />
         <option value="$PROJECT_DIR$/assets/AppAsset.php" />
-        <option value="$PROJECT_DIR$/config/web.php" />
         <option value="$PROJECT_DIR$/components/views/stat.php" />
         <option value="$PROJECT_DIR$/modules/admin/views/play/champ.php" />
         <option value="$PROJECT_DIR$/modules/admin/views/play/index.php" />
@@ -248,12 +252,15 @@
         <option value="$PROJECT_DIR$/components/StatWidget.php" />
         <option value="$PROJECT_DIR$/components/TableWidget.php" />
         <option value="$PROJECT_DIR$/models/Team.php" />
-        <option value="$PROJECT_DIR$/views/site/index.php" />
         <option value="$PROJECT_DIR$/config/db.php" />
-        <option value="$PROJECT_DIR$/components/views/lastgame.php" />
         <option value="$PROJECT_DIR$/components/LastGamesWidget.php" />
+        <option value="$PROJECT_DIR$/components/views/lastgame.php" />
         <option value="$PROJECT_DIR$/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/views/play/last.php" />
+        <option value="$PROJECT_DIR$/config/web.php" />
+        <option value="$PROJECT_DIR$/views/play/last-games.php" />
         <option value="$PROJECT_DIR$/controllers/PlayController.php" />
+        <option value="$PROJECT_DIR$/views/site/index.php" />
       </list>
     </option>
   </component>
@@ -342,10 +349,9 @@
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="y" value="31" />
+    <option name="width" value="1680" />
+    <option name="height" value="1019" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -362,6 +368,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -420,7 +428,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="play" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,11 +442,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -470,24 +478,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footballstat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footballstat" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -515,18 +507,11 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
       <method />
     </configuration>
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application">
@@ -542,23 +527,10 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
+      <command value="run-script" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
       <method />
     </configuration>
     <configuration default="false" name="ConsoleScript" type="PhpLocalRunConfigurationType" factoryName="PHP Console" singleton="true" path="$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
@@ -622,6 +594,7 @@
       <workItem from="1492256480649" duration="2162000" />
       <workItem from="1492352941437" duration="607000" />
       <workItem from="1492408883364" duration="16465000" />
+      <workItem from="1492524749267" duration="8539000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1490013436151</created>
@@ -739,16 +712,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253098000" />
+    <option name="totallyTimeSpent" value="261637000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="31" width="1680" height="1019" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15618336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15811966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21627648" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27522936" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31326646" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44036698" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
@@ -759,7 +733,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27522936" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39908257" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -835,8 +808,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/site/about.php" />
-    <entry file="file://$PROJECT_DIR$/views/league/index.php" />
     <entry file="file://$PROJECT_DIR$/views/team/update.php" />
     <entry file="file://$PROJECT_DIR$/views/team/view.php" />
     <entry file="file://$PROJECT_DIR$/views/team/_form.php" />
@@ -1017,7 +988,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/ScorerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="378">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
@@ -1025,7 +996,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
+        <state relative-caret-position="2106">
           <caret line="117" column="77" lean-forward="false" selection-start-line="117" selection-start-column="77" selection-end-line="117" selection-end-column="77" />
           <folding />
         </state>
@@ -1033,7 +1004,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/controllers/ParseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1727">
+        <state relative-caret-position="2034">
           <caret line="262" column="58" lean-forward="false" selection-start-line="262" selection-start-column="58" selection-end-line="262" selection-end-column="58" />
           <folding>
             <element signature="e#110#150#0#PHP" expanded="true" />
@@ -1047,21 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="809">
           <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="2" selection-end-line="310" selection-end-column="36" />
-          <folding>
-            <element signature="e#39#58#0#PHP" expanded="false" />
-            <element signature="e#8476#11631#0#PHP" expanded="false" />
-            <element signature="e#12086#15142#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/play/champ.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#7#28#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1089,13 +1045,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+    <entry file="file://$PROJECT_DIR$/views/play/champ.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="30" />
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/LastGamesWidget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/views/lastgame.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="69" lean-forward="false" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/TableWidget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding>
-            <element signature="e#38#59#0#PHP" expanded="true" />
-            <marker date="1492491956756" expanded="true" signature="646:678" ph="SELECT MAX(c... play" />
+            <element signature="e#36#56#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1103,47 +1082,25 @@
     <entry file="file://$PROJECT_DIR$/components/views/table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#7#31#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/TableWidget.php">
+    <entry file="file://$PROJECT_DIR$/config/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding>
-            <element signature="e#36#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/LastGamesWidget.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/views/lastgame.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#7#29#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="738">
+          <caret line="71" column="62" lean-forward="false" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        <state relative-caret-position="584">
+          <caret line="61" column="114" lean-forward="false" selection-start-line="61" selection-start-column="114" selection-end-line="61" selection-end-column="114" />
           <folding>
             <element signature="e#35#56#0#PHP" expanded="true" />
           </folding>
@@ -1152,11 +1109,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="92" column="69" lean-forward="true" selection-start-line="92" selection-start-column="69" selection-end-line="92" selection-end-column="69" />
+        <state relative-caret-position="-136">
+          <caret line="82" column="23" lean-forward="false" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
           <folding>
             <element signature="e#66#101#0#PHP" expanded="true" />
-            <element signature="e#4251#4257#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/play/last-games.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="45" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1492533480688" expanded="true" signature="646:678" ph="SELECT MAX(c... play" />
           </folding>
         </state>
       </provider>
