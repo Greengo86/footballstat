@@ -17,7 +17,7 @@ $this->title = 'Footballstat';
 
 ?>
 
-<section>
+<section id="tables">
     <div class="container">
         <div class="row intro-tables">
             <?php
@@ -41,22 +41,26 @@ $this->title = 'Footballstat';
     </div>
 </section>
 
+
 <section id="last-games">
     <div class="container">
+        <div class="row text-center title">
+            <h2 class="black">Последние матчи</h2>
+        </div>
         <?php
 
         $opt = [
             [
-                'label'=>'<i class="glyphicon glyphicon-home"></i> Испания',
+                'label'=>'<img src="/web/img/champ/1.png"> Испания',
                 'active'=>true,
                 'linkOptions'=>['data-url'=>Url::to(['play/last-games/1'])]
             ],
             [
-                'label'=>'<i class="glyphicon glyphicon-user"></i> Англия',
+                'label'=>'<img src="/web/img/champ/2.png"> Англия',
                 'linkOptions'=>['data-url'=>Url::to(['play/last-games/2'])]
             ],
             [
-                'label'=>'<i class="glyphicon glyphicon-user"></i> Германия',
+                'label'=>'<img src="/web/img/champ/3.png"> Германия',
                 'linkOptions'=>['data-url'=>Url::to(['play/last-games/3'])]
             ],
         ];
