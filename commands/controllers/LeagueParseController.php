@@ -115,7 +115,7 @@ class LeagueParseController extends ParseController
         каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
         $k = 8;
 
-        $result = parent::actionLive($url, $k, self::LIVE, self::BUNDESLIGA);
+        $result = parent::actionLive($url, $k, self::PLAY, self::BUNDESLIGA);
 
         foreach ($result as $value) {
             var_dump($value);
