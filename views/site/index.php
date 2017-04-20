@@ -30,10 +30,10 @@ $this->title = 'Footballstat';
 //            if ($this->beginCache('table', ['duration' => $duration, 'dependency' => $dependency])) {
                 TableWidget::begin(['champ' => 1]);
                 TableWidget::end();
-//                TableWidget::begin(['champ' => 2]);
-//                TableWidget::end();
-//                TableWidget::begin(['champ' => 3]);
-//                TableWidget::end();
+                TableWidget::begin(['champ' => 2]);
+                TableWidget::end();
+                TableWidget::begin(['champ' => 3]);
+                TableWidget::end();
 //                $this->endCache();
 //            }
             ?>

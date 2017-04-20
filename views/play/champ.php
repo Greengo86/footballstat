@@ -3,21 +3,27 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+//Получаем название лиги из массива $play['home'] в первой же игре и для любого чемпионата
+foreach ($play as $land) {
+    $league = $land['league']['league'];
+    break;
+}
 
-$this->title = 'Статистика матчей:  ' . $play[$id]['league']['league'];
+$this->title = 'Статистика матчей:  ' . $league;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<?php //debug($id);?>
-
 <div class="container">
-    <h1 class=""><p class="text-center text-info"><?= Html::encode($this->title) ?></p></h1>
+    <h1><p class="text-center text-info"><?= Html::encode($this->title) ?></p></h1>
 
     <?php if (empty($play)) {
         echo 'Матчей указанного чемпионата не найдено';
     }
     ?>
 
+<!--    Выводим меню выбора тура, если $main_page не передана! Значит мы на странице /play/champ/$id!-->
+<!--    Если передана и сущесвует, то мы на главной странице и не выводим панельку выбора тура-->
+    <?php if (!isset($main_page)): ?>
     <!--    Вывод выбора тура в чемпионате-->
     <div class="panel panel-danger">
         <div class="panel-heading"><h4>Выберите тур:</h4></div>
@@ -36,11 +42,12 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+    <?php endif; ?>
 
     <?php foreach ($play as $k => $game): ?>
 
         <!--Вывод ленты последних 20 матчей чемпионата-->
-        <div class="col-md-12"><p class="text-center date"><?= Yii::$app->formatter->asDatetime($game['date']); ?></p>
+        <div class="col-md-12"><p class="text-center text-info"><?= Yii::$app->formatter->asDatetime($game['date']); ?></p>
         </div>
         <div class="col-md-5 team-embl">
             <p class="text-right"><span class="team"><?php echo Html::img($game['teamHome']['team_embl']);

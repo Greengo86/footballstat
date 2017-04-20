@@ -3,7 +3,6 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use app\components\LastGamesWidget;
 use kartik\tabs\TabsX;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -13,7 +12,6 @@ use app\assets\AppAsset;
 use yii\bootstrap\Modal;
 use app\models\Team;
 use kartik\nav\NavX;
-use app\components\TableWidget;
 
 AppAsset::register($this);
 ?>
