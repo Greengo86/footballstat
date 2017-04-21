@@ -619,12 +619,12 @@ footer{
 }
 
 /*Стили отображения на главной странице последних матчей*/
-#last-games .nav {
-    display: block;
-}
+/*#last-games .nav {*/
+    /*display: block;*/
+/*}*/
 
-#last-games .nav-tabs.nav-justified > li > a {
-    border: none;
+.tabs-krajee .nav-tabs > li > a {
+    padding: 10px 85px;
 }
 
 /*Стили таблиц чемпионата на главной странице*/
