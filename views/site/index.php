@@ -46,21 +46,22 @@ $this->title = 'Footballstat';
     <div class="container">
         <div class="row text-center title">
             <h2 class="black">Последние матчи</h2>
+            <h4 class="light muted">Кликните по эмблеме для просмотра последних матчей</h4>
         </div>
         <?php
 
         $opt = [
             [
-                'label'=>'<img src="/web/img/champ/1.png"> Испания',
+                'label'=>'<img src="/web/img/champ/1.png"><h4 class="heading">Испания</h4>',
                 'active'=>true,
                 'linkOptions'=>['data-url'=>Url::to(['play/last-games/1'])]
             ],
             [
-                'label'=>'<img src="/web/img/champ/2.png"> Англия',
+                'label'=>'<img src="/web/img/champ/2.png"><h4 class="heading">Англия</h4>',
                 'linkOptions'=>['data-url'=>Url::to(['play/last-games/2'])]
             ],
             [
-                'label'=>'<img src="/web/img/champ/3.png"> Германия',
+                'label'=>'<img src="/web/img/champ/3.png"><h4 class="heading">Германия</h4>',
                 'linkOptions'=>['data-url'=>Url::to(['play/last-games/3'])]
             ],
         ];
