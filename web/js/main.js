@@ -210,7 +210,7 @@ jQuery(function($) {
     /**
 	 * функция для вывода подробной статистика матча класса show-match в модальном окне
      */
-    $('.show-match').on('click', function(e){
+    $(".show-match").on('click', function(e){
         e.preventDefault();
         var id = $(this).data('id');
         $.ajax({

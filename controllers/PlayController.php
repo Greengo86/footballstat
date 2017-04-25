@@ -27,6 +27,7 @@ class PlayController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'match' => ['GET', 'POST'],
                 ],
             ],
         ];
@@ -65,7 +66,14 @@ class PlayController extends Controller
     {
 
         $id = Yii::$app->request->get('id');
-        $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit(10)->where(['league_id' => $id])->orderBy(['date' => SORT_DESC])->all();
+
+        /* Проверяем матчи какого чемпионата нам нужно отобразить! Если это Германия($id=3), то передаём в limit
+        9 матчей - по кол-ву игр в туре, в остальных случаях 10 */
+        if ($id == 3){
+            $limit = 9;
+        }else $limit = 10;
+
+        $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit($limit)->where(['league_id' => $id])->orderBy(['date' => SORT_DESC])->all();
         //Рендерим аяксом view champ и выводим на главную страницу последние 10 матчей 3 чемпионатов по клику в tab'е
         $html = $this->renderAjax('champ', [
             'playCount' => 10,
