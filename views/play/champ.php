@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <!--    Выводим меню выбора тура, если $main_page не передана! Значит мы на странице /play/champ/$id!-->
 <!--    Если передана и сущесвует, то мы на главной странице и не выводим панельку выбора тура-->
+    <?php if (!isset($main_page)): ?>
     <!--    Вывод выбора тура в чемпионате-->
     <div class="panel panel-danger">
         <div class="panel-heading"><h4>Выберите тур:</h4></div>
@@ -41,6 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
+    <?php endif; ?>
 
     <?php foreach ($play as $k => $game): ?>
 
@@ -76,5 +78,3 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     <?php endforeach ?>
 </div>
-
-

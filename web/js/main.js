@@ -210,7 +210,7 @@ jQuery(function($) {
     /**
 	 * функция для вывода подробной статистика матча класса show-match в модальном окне
      */
-    $(".show-match").on('click', function(e){
+    $('.show-match').on('click', function(e){
         e.preventDefault();
         var id = $(this).data('id');
         $.ajax({
@@ -224,7 +224,24 @@ jQuery(function($) {
             error: function(){
                 alert('Ошибка выдачи подробной статистики матча');
             }
-        })
+        });
+    });
+
+    $('.show-last').on('click', function(e){
+        e.preventDefault();
+        var id = $(this).data('id');
+        $.ajax({
+            url: '/play/match',
+            data: {id: id},
+            type: 'GET',
+            success: function(res){
+                // console.log(res);
+                showStat(res);
+            },
+            error: function(){
+                alert('Ошибка выдачи подробной статистики матча');
+            }
+        });
     });
 
     /** Функция для работы слайдера статистических фактов на главной странице*/
