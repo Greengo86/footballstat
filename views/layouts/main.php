@@ -80,6 +80,19 @@ AppAsset::register($this);
 
         <?= $content ?>
 
+        <?php
+
+        echo Html::a(
+            'Статистика',
+            [['play/match', 'id' => 5]],
+            [
+                'data-toggle' => 'modal',
+                'data-target' => '#show-modal',
+                'class' => 'btn btn-danger'
+            ]
+        )
+        ?>
+
         <div class="page-buffer"></div>
 
     <footer>
@@ -113,8 +126,14 @@ AppAsset::register($this);
 
 <?php
     Modal::begin([
+        'options' => [
+            'id' => 'show-modal'
+        ],
         'header' => '<h3 class="text-center">Подробная статистика<h3>',
         'size' => 'modal-lg',
+        'toggleButton' => [
+            'tag' => 'button',
+        ],
         'id' => 'match',
         'footer' => '<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>'
     ]);
