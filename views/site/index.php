@@ -73,12 +73,6 @@ $this->title = 'Footballstat';
             'encodeLabels'=>false
         ]);
         ?>
-            <div class="col-md-12 text-center">
-                <a class="show-match" href="<?php echo Url::to(['play/match', 'id' => $play[$k]['id']]) ?>"
-                   data-id="<?= $play[$k]['id'] ?>"><i class="glyphicon glyphicon-stats"></i>Статистика матча</a>
-                <br>
-                <hr class="style1">
-            </div>
     </div>
 </section>
 

@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="befce524-f27b-4010-94b0-3405c9b2f0bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" afterPath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-helpers" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-helpers" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/main.php" afterPath="$PROJECT_DIR$/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/PlayController.php" afterPath="$PROJECT_DIR$/controllers/PlayController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/play/champ.php" afterPath="$PROJECT_DIR$/views/play/champ.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/main.js" afterPath="$PROJECT_DIR$/web/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/index.php" afterPath="$PROJECT_DIR$/views/site/index.php" />
     </list>
     <ignored path="vendor/" />
     <ignored path="runtime/" />
@@ -70,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="354">
-              <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+              <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
               <folding>
                 <element signature="e#35#56#0#PHP" expanded="true" />
               </folding>
@@ -81,7 +79,7 @@
       <file leaf-file-name="match.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/play/match.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -91,8 +89,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="207" selection-end-column="5" />
+            <state relative-caret-position="486">
+              <caret line="221" column="30" lean-forward="true" selection-start-line="221" selection-start-column="30" selection-end-line="221" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -101,11 +99,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="73" selection-end-column="11" />
+            <state relative-caret-position="548">
+              <caret line="74" column="10" lean-forward="false" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
               <folding>
                 <element signature="e#38#59#0#PHP" expanded="true" />
-                <marker date="1493216863977" expanded="true" signature="658:690" ph="SELECT MAX(c... play" />
+                <marker date="1493322929634" expanded="true" signature="658:690" ph="SELECT MAX(c... play" />
               </folding>
             </state>
           </provider>
@@ -115,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/views/play/champ.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="620">
-              <caret line="73" column="32" lean-forward="false" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+              <caret line="73" column="104" lean-forward="false" selection-start-line="73" selection-start-column="104" selection-end-line="73" selection-end-column="104" />
               <folding>
                 <element signature="e#7#28#0#PHP" expanded="true" />
               </folding>
@@ -128,9 +126,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="548">
               <caret line="128" column="65" lean-forward="false" selection-start-line="128" selection-start-column="65" selection-end-line="128" selection-end-column="65" />
-              <folding>
-                <element signature="e#3600#3606#0#HTML" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -218,9 +214,9 @@
         <option value="$PROJECT_DIR$/web/css/custom.css" />
         <option value="$PROJECT_DIR$/commands/controllers/LeagueParseController.php" />
         <option value="$PROJECT_DIR$/commands/models/ParsePlay.php" />
+        <option value="$PROJECT_DIR$/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/views/site/index.php" />
         <option value="$PROJECT_DIR$/controllers/PlayController.php" />
-        <option value="$PROJECT_DIR$/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/web/js/main.js" />
         <option value="$PROJECT_DIR$/views/play/champ.php" />
       </list>
@@ -330,6 +326,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -440,8 +438,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,7 +560,8 @@
       <workItem from="1492953413628" duration="5323000" />
       <workItem from="1493045134546" duration="1103000" />
       <workItem from="1493130041524" duration="14523000" />
-      <workItem from="1493216136336" duration="7797000" />
+      <workItem from="1493216136336" duration="7873000" />
+      <workItem from="1493303378267" duration="3066000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1490013436151</created>
@@ -713,17 +710,24 @@
       <option name="project" value="LOCAL" />
       <updated>1493151592224</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="+modal 0.3">
+      <created>1493235256082</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1493235256082</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308448000" />
+    <option name="totallyTimeSpent" value="311590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1680" height="1019" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17277168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17460318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21627648" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -808,7 +812,8 @@
     <MESSAGE value="+last_games 0.4" />
     <MESSAGE value="+css  last_games" />
     <MESSAGE value="+modal window" />
-    <option name="LAST_COMMIT_MESSAGE" value="+modal window" />
+    <MESSAGE value="+modal 0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="+modal 0.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1080,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="633" column="20" lean-forward="false" selection-start-line="633" selection-start-column="20" selection-end-line="633" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,9 +1096,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="128" column="65" lean-forward="false" selection-start-line="128" selection-start-column="65" selection-end-line="128" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/play/match.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1102,11 +1114,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="73" selection-end-column="11" />
+        <state relative-caret-position="548">
+          <caret line="74" column="10" lean-forward="false" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
           <folding>
             <element signature="e#38#59#0#PHP" expanded="true" />
-            <marker date="1493216863977" expanded="true" signature="658:690" ph="SELECT MAX(c... play" />
+            <marker date="1493322929634" expanded="true" signature="658:690" ph="SELECT MAX(c... play" />
           </folding>
         </state>
       </provider>
@@ -1114,27 +1126,17 @@
     <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
-          <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+          <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
           <folding>
             <element signature="e#35#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="128" column="65" lean-forward="false" selection-start-line="128" selection-start-column="65" selection-end-line="128" selection-end-column="65" />
-          <folding>
-            <element signature="e#3600#3606#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="207" selection-end-column="5" />
+        <state relative-caret-position="486">
+          <caret line="221" column="30" lean-forward="true" selection-start-line="221" selection-start-column="30" selection-end-line="221" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1142,7 +1144,7 @@
     <entry file="file://$PROJECT_DIR$/views/play/champ.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
-          <caret line="73" column="32" lean-forward="false" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+          <caret line="73" column="104" lean-forward="false" selection-start-line="73" selection-start-column="104" selection-end-line="73" selection-end-column="104" />
           <folding>
             <element signature="e#7#28#0#PHP" expanded="true" />
           </folding>

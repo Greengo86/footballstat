@@ -94,6 +94,7 @@ class PlayController extends Controller
     public function actionMatch($id)
     {
         $match = Play::find()->asArray()->with('teamHome', 'teamAway', 'league')->where(['id' => $id])->one();
+        debug($id);
 
         /* Отключаем лейаут для показа матча, т.к. будем показывать в модальном окне*/
         $this->layout = false;
