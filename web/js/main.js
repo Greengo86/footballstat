@@ -244,6 +244,11 @@ jQuery(function($) {
         });
     });
 
+    $('#foo').on('click', function(){
+    	e.preventDefault();
+    	alert('foooooo');
+	});
+
     /** Функция для работы слайдера статистических фактов на главной странице*/
 
     $('.owl-carousel').owlCarousel({
