@@ -71,8 +71,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <br class="">
         <div class="col-md-12 text-center">
-            <a class="#foo" href="<?php echo Url::to(['/play/match', 'id' => $play[$k]['id']]) ?>"
-               data-id="<?= $play[$k]['id'] ?>"><i class="glyphicon glyphicon-stats"></i>Статистика матча</a>
+            <a class="show-match" href="#" onClick="popUp('<?php echo Url::to(['/play/match', 'id' => $play[$k]['id']]); ?>',600,500)">
+                <i class="glyphicon glyphicon-stats"></i>Статистика</a>
             <br>
             <hr class="style1">
         </div>

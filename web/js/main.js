@@ -244,11 +244,6 @@ jQuery(function($) {
         });
     });
 
-    $('#foo').on('click', function(){
-    	e.preventDefault();
-    	alert('foooooo');
-	});
-
     /** Функция для работы слайдера статистических фактов на главной странице*/
 
     $('.owl-carousel').owlCarousel({
@@ -276,3 +271,10 @@ jQuery(function($) {
         }
     })
 });
+
+function popUp(u,w,h) {
+    var wc=parseInt((screen.availWidth-w)/2);
+    var hc=parseInt((screen.availHeight-h)/2);
+    childform = window.open(u,'form','width='+w+',height='+h+',top='+hc+',screenY='+hc+',left='+wc+',screenX='+wc+' Toolbar=0, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Copyhistory=1');
+}
+
