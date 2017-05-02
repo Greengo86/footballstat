@@ -107,7 +107,12 @@ jQuery(function($) {
         $('.panel div.clickable').click();
     });
 
-	// Window Scroll
+    // $(document).ready(function(){
+    //     $('#modal').modal();
+    // });
+
+
+    // Window Scroll
 	function onScroll() {
 		if ($(window).scrollTop() > 50) {
 			$('nav.original').css('opacity', '0');
@@ -244,6 +249,14 @@ jQuery(function($) {
         });
     });
 
+    $(document).ready(function(){
+        //при нажатию на любую кнопку, имеющую класс .btn
+        $(".btn").click(function() {
+            //открыть модальное окно с id="myModal"
+            $("#myModal").modal('show');
+        });
+    });
+
     /** Функция для работы слайдера статистических фактов на главной странице*/
 
     $('.owl-carousel').owlCarousel({
@@ -272,6 +285,7 @@ jQuery(function($) {
     })
 });
 
+// Метод для отображения детальной статистики матча в "последние матчи" чемпионата на главной странице
 function popUp(u,w,h) {
     var wc=parseInt((screen.availWidth-w)/2);
     var hc=parseInt((screen.availHeight-h)/2);
