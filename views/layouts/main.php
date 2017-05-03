@@ -81,9 +81,9 @@ AppAsset::register($this);
         <?= $content ?>
 
         <div class="page-buffer"></div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Открыть модальное окно
-</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Открыть модальное окно
+        </button>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

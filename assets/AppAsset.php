@@ -44,7 +44,7 @@ class AppAsset extends AssetBundle
         'js/jquery.onepagenav.js',
         'js/main.js',
         'js/owl.carousel.js',
-        'js/owl.carousel.min.js',
+//        'js/owl.carousel.min.js',
 //        'js/jquery.mousewheel.min.js',
 //       'js/bootstrap.min.js',
     ];

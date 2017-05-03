@@ -75,7 +75,7 @@ class PlayController extends Controller
 
         $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit($limit)->where(['league_id' => $id])->orderBy(['date' => SORT_DESC])->all();
         //Рендерим аяксом view champ и выводим на главную страницу последние 10 матчей 3 чемпионатов по клику в tab'е
-        $html = $this->renderAjax('last-games', [
+        $html = $this->renderAjax('champ', [
             'playCount' => 10,
             /*Объявляем переменную main_page и передаём в view champ! Если она объявлена, это значит мы на главной странице
             и таблицу выбора тура чемпионата показывать не нужно*/
