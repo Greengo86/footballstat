@@ -2,12 +2,145 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="befce524-f27b-4010-94b0-3405c9b2f0bf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.phar" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.dependencyLib.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.dependencyLib.jquery.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" afterPath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-helpers" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-helpers" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/footballstat.iml" afterPath="$PROJECT_DIR$/.idea/footballstat.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/AppAsset.php" afterPath="$PROJECT_DIR$/assets/AppAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/PlayController.php" afterPath="$PROJECT_DIR$/controllers/PlayController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/LICENSE.md" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/README.md" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/composer.json" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/src/DateTimePicker.php" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/src/DateTimePicker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/src/DateTimePickerAsset.php" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/src/DateTimePickerAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.editorconfig" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.editorconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.eslintrc" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.eslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.gitattributes" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.gitattributes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.gitignore" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/bower.json" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.date.extensions.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.date.extensions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.extensions.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.extensions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.phone.extensions.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.phone.extensions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.regex.extensions.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.regex.extensions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/jquery.inputmask.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/jquery.inputmask.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/jquery.inputmask.bundle.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/jquery.inputmask.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.date.extensions.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.date.extensions.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.extensions.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.extensions.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.numeric.extensions.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.numeric.extensions.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.phone.extensions.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.phone.extensions.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.regex.extensions.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.regex.extensions.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/jquery.inputmask.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/jquery.inputmask.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js" afterPath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/LICENSE" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/README.md" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/bower.json" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ar.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.bg.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.bg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ca.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ca.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.cs.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.cs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.da.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.da.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.de.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.de.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ee.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ee.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.el.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.el.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.es.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.es.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fi.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.he.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.he.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.hr.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.hr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.hu.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.hu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.id.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.id.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.is.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.is.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.it.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ja.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ja.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ko.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ko.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.lt.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.lt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.lv.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.lv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ms.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ms.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.nb.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.nb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.nl.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.nl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.no.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.no.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pl.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt-BR.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt-BR.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.pt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ro.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.rs-latin.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.rs-latin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.rs.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.rs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ru.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sk.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sl.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sv.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sv.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sw.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.sw.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.th.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.th.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.tr.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ua.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.ua.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.uk.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.uk.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-TW.js" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-TW.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/less/datetimepicker.less" afterPath="$PROJECT_DIR$/vendor/bower/smalot-bootstrap-datetimepicker/less/datetimepicker.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/.travis.yml" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/CHANGES" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/CHANGES" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/VERSION" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/VERSION" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyContainer.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/DependencyContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FailoverTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/FailoverTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Image.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/LoadBalancedTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/LoadBalancedTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MailTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Attachment.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Attachment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderSet.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/HeaderSet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimePart.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/MimePart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderSet.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleHeaderSet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MimePart.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/MimePart.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/NullTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/NullTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/PopBeforeSmtpPlugin.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/PopBeforeSmtpPlugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Preferences.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Preferences.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SendmailTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SendmailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/BodySigner.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/BodySigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DKIMSigner.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DKIMSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DomainKeySigner.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/DomainKeySigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/HeaderSigner.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/HeaderSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/OpenDKIMSigner.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/OpenDKIMSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/SMimeSigner.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/SMimeSigner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SmtpTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SmtpTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SpoolTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/SpoolTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/NTLMAuthenticator.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/Esmtp/Auth/NTLMAuthenticator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/MailTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/MailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SendmailTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SendmailTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SpoolTransport.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/SpoolTransport.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/acceptance/Swift/CharacterReaderFactory/SimpleCharacterReaderFactoryAcceptanceTest.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/acceptance/Swift/CharacterReaderFactory/SimpleCharacterReaderFactoryAcceptanceTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/acceptance/Swift/Transport/StreamBuffer/SocketTimeoutTest.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/acceptance/Swift/Transport/StreamBuffer/SocketTimeoutTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/DependencyContainerTest.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/DependencyContainerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Events/SimpleEventDispatcherTest.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Events/SimpleEventDispatcherTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Mime/SimpleHeaderFactoryTest.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Mime/SimpleHeaderFactoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Mime/SimpleHeaderSetTest.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Mime/SimpleHeaderSetTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/StreamFilters/StringReplacementFilterFactoryTest.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/unit/Swift/StreamFilters/StringReplacementFilterFactoryTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/LICENSE.md" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/LICENSE.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Logger.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Logger.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Mailer.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Mailer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Makefile" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Message.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/Message.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/README.md" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/composer.json" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/main.php" afterPath="$PROJECT_DIR$/views/layouts/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/play/champ.php" afterPath="$PROJECT_DIR$/views/play/champ.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/play/match.php" afterPath="$PROJECT_DIR$/views/play/match.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/main.js" afterPath="$PROJECT_DIR$/web/js/main.js" />
     </list>
     <ignored path="vendor/" />
     <ignored path="runtime/" />
@@ -32,31 +165,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LeagueParseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="87" column="77" lean-forward="false" selection-start-line="87" selection-start-column="77" selection-end-line="87" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ParsePlay.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/models/ParsePlay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4879">
+            <state relative-caret-position="5166">
               <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="299" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+            <state relative-caret-position="638">
+              <caret line="91" column="5" lean-forward="false" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
               <folding>
                 <element signature="e#35#56#0#PHP" expanded="true" />
               </folding>
@@ -64,12 +187,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="249" column="7" lean-forward="false" selection-start-line="249" selection-start-column="7" selection-end-line="249" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="513">
+              <caret line="264" column="11" lean-forward="true" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="11" />
+              <folding>
+                <marker date="1493926703024" expanded="true" signature="8477:8558" ph="/** Функция для работы слайдера статистических фактов на главной странице ...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,8 +202,8 @@
       <file leaf-file-name="champ.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/play/champ.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="79" column="70" lean-forward="false" selection-start-line="79" selection-start-column="70" selection-end-line="79" selection-end-column="70" />
+            <state relative-caret-position="638">
+              <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
               <folding>
                 <element signature="e#7#28#0#PHP" expanded="true" />
               </folding>
@@ -86,11 +211,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="match.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/play/match.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="674">
+              <caret line="161" column="14" lean-forward="false" selection-start-line="161" selection-start-column="14" selection-end-line="161" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="last-games.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/play/last-games.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="78" column="14" lean-forward="false" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
+            <state relative-caret-position="656">
+              <caret line="77" column="54" lean-forward="false" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
               <folding>
                 <element signature="e#7#28#0#PHP" expanded="true" />
               </folding>
@@ -101,41 +236,11 @@
       <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="82" column="39" lean-forward="false" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="owl.carousel.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="153" lean-forward="false" selection-start-line="45" selection-start-column="142" selection-end-line="45" selection-end-column="153" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="owl.carousel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="-172">
+              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#3337#3343#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppAsset.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/AppAsset.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -178,8 +283,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/RouterPanel.php" />
-        <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/TimelinePanel.php" />
         <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/UserPanel.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/commands/HelloController.php" />
@@ -220,15 +323,17 @@
         <option value="$PROJECT_DIR$/config/web.php" />
         <option value="$PROJECT_DIR$/web/css/custom.css" />
         <option value="$PROJECT_DIR$/views/site/index.php" />
-        <option value="$PROJECT_DIR$/views/play/match.php" />
         <option value="$PROJECT_DIR$/commands/controllers/LeagueParseController.php" />
         <option value="$PROJECT_DIR$/commands/models/ParsePlay.php" />
         <option value="$PROJECT_DIR$/views/play/last-games.php" />
         <option value="$PROJECT_DIR$/controllers/PlayController.php" />
-        <option value="$PROJECT_DIR$/assets/AppAsset.php" />
+        <option value="$PROJECT_DIR$/views/play/show.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/views/play/match.php" />
+        <option value="$PROJECT_DIR$/web/js/main.js" />
         <option value="$PROJECT_DIR$/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/views/play/champ.php" />
-        <option value="$PROJECT_DIR$/web/js/main.js" />
+        <option value="$PROJECT_DIR$/assets/AppAsset.php" />
       </list>
     </option>
   </component>
@@ -317,10 +422,10 @@
   </component>
   <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-6" />
+    <option name="y" value="31" />
+    <option name="width" value="1692" />
+    <option name="height" value="1025" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -337,8 +442,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -363,46 +466,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footballstat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footballstat" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footballstat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="footballstat" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="owl.carousel.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -453,10 +516,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/config/db.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
@@ -480,18 +545,11 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
       <method />
     </configuration>
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application">
@@ -507,23 +565,10 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
+      <command value="run-script" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
       <method />
     </configuration>
     <configuration default="false" name="ConsoleScript" type="PhpLocalRunConfigurationType" factoryName="PHP Console" singleton="true" path="$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
@@ -775,14 +820,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347330000" />
+    <option name="totallyTimeSpent" value="363496000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="31" width="1692" height="1025" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18559219" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21627648" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3130734" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -790,7 +836,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25688073" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -880,9 +925,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/play/update.php" />
-    <entry file="file://$PROJECT_DIR$/views/play/_form.php" />
-    <entry file="file://$PROJECT_DIR$/views/play/create.php" />
     <entry file="file://$PROJECT_DIR$/views/play/index.php" />
     <entry file="file://$PROJECT_DIR$/views/play/_search.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1072,7 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,7 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="130" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,17 +1149,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
           <caret line="262" column="58" lean-forward="false" selection-start-line="262" selection-start-column="58" selection-end-line="262" selection-end-column="58" />
-          <folding>
-            <element signature="e#110#150#0#PHP" expanded="false" />
-            <element signature="e#979#3791#0#PHP" expanded="false" />
-            <element signature="e#3902#10924#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/controllers/LeagueParseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
+        <state relative-caret-position="1566">
           <caret line="87" column="77" lean-forward="false" selection-start-line="87" selection-start-column="77" selection-end-line="87" selection-end-column="77" />
           <folding />
         </state>
@@ -1137,16 +1172,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/models/ParsePlay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4879">
+        <state relative-caret-position="5166">
           <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="299" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/play/match.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2040">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1158,75 +1185,112 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="45" column="124" lean-forward="false" selection-start-line="45" selection-start-column="113" selection-end-line="45" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56385">
+          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <marker date="1490193089544" expanded="true" signature="58502:58546" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7344">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/play/last-games.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="14" lean-forward="false" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
+        <state relative-caret-position="656">
+          <caret line="77" column="54" lean-forward="false" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
           <folding>
             <element signature="e#7#28#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.js">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/owl.carousel.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="153" lean-forward="false" selection-start-line="45" selection-start-column="142" selection-end-line="45" selection-end-column="153" />
+        <state relative-caret-position="522">
+          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
+    <entry file="file://$PROJECT_DIR$/views/play/match.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="77" column="40" lean-forward="false" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+        <state relative-caret-position="674">
+          <caret line="161" column="14" lean-forward="false" selection-start-line="161" selection-start-column="14" selection-end-line="161" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="264" column="11" lean-forward="true" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="11" />
           <folding>
-            <element signature="e#35#56#0#PHP" expanded="true" />
+            <marker date="1493926703024" expanded="true" signature="8477:8558" ph="/** Функция для работы слайдера статистических фактов на главной странице ...*/" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/AppAsset.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        <state relative-caret-position="323">
+          <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="82" column="39" lean-forward="false" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="-172">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="e#3337#3343#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/play/champ.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="79" column="70" lean-forward="false" selection-start-line="79" selection-start-column="70" selection-end-line="79" selection-end-column="70" />
+        <state relative-caret-position="638">
+          <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding>
             <element signature="e#7#28#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/main.js">
+    <entry file="file://$PROJECT_DIR$/views/play/show.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="249" column="7" lean-forward="false" selection-start-line="249" selection-start-column="7" selection-end-line="249" selection-end-column="7" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="91" column="5" lean-forward="false" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="e#35#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

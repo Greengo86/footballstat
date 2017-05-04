@@ -249,13 +249,22 @@ jQuery(function($) {
         });
     });
 
-    $(document).ready(function(){
-        //при нажатию на любую кнопку, имеющую класс .btn
-        $(".btn").click(function() {
-            //открыть модальное окно с id="myModal"
-            $("#myModal").modal('show');
+
+	//Проверка работы модального окна
+    $(function() {
+		$('#modalButton').click(function (){
+			$('#modal').modal('show')
+				.find('#modalContent')
+				.load($(this).attr('value'));
+		});
+    });
+
+    $(function() {
+        $('#exampleModal').click(function (){
+			$('#exampleModal').arcticmodal()
         });
     });
+
 
     /** Функция для работы слайдера статистических фактов на главной странице*/
 
@@ -291,4 +300,5 @@ function popUp(u,w,h) {
     var hc=parseInt((screen.availHeight-h)/2);
     childform = window.open(u,'form','width='+w+',height='+h+',top='+hc+',screenY='+hc+',left='+wc+',screenX='+wc+' Toolbar=0, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Copyhistory=1');
 }
+
 

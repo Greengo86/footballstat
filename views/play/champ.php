@@ -76,11 +76,5 @@ $this->params['breadcrumbs'][] = $this->title;
             <br>
             <hr class="style1">
         </div>
-        <!-- Кнопка, открывающая модальное окно -->
-        <a href="#" class="btn btn-primary">Открыть модальное окно</a>
-        <!-- HTML-код модального окна-->
-        <div id="myModal" class="modal fade">
-            <!--...-->
-        </div>
     <?php endforeach ?>
 </div>
