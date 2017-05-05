@@ -30,7 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="panel-body">
             <div class="menu-tour">
                 <ul>
-                    <?php $y = ceil($playCount / 10);
+<!--                    Переменную $limit принимаем из контроллера в зависимости от чемпионата. Если это Германия($id=3),-->
+<!--                    то $limit 9 матчей - по кол-ву игр в туре, в остальных случаях 10. Далее делим на кол-во сыгранных матчей-->
+<!--                    в чемпионате, округляем в большую сторону(ceil) и получаем кол-во туров в виде ссылок, кликнув по которым можно пеерейти на необходимый тур-->
+                    <?php $y = ceil($playCount / $limit);
                     $i = 1;
                     while ($i <= $y): ?>
                         <li>
@@ -76,11 +79,32 @@ $this->params['breadcrumbs'][] = $this->title;
             <br>
             <hr class="style1">
         </div>
-        <!-- Кнопка, открывающая модальное окно -->
-        <a href="#" class="btn btn-primary">Открыть модальное окно</a>
-        <!-- HTML-код модального окна-->
-        <div id="myModal" class="modal fade">
-            <!--...-->
-        </div>
     <?php endforeach ?>
 </div>
+
+<script>
+    /**
+     * функция для вывода подробной статистика матча класса show-match в модальном окне
+     */
+    $('.show-match').on('click', function(e){
+        e.preventDefault();
+        var id = $(this).data('id');
+        $.ajax({
+            url: '/play/match',
+            data: {id: id},
+            type: 'GET',
+            success: function(res){
+                // console.log(res);
+                showStat(res);
+            },
+            error: function(){
+                alert('Ошибка выдачи подробной статистики матча');
+            }
+        });
+    });
+
+    function showStat(match){
+        $('#match .modal-body').html(match);
+        $('#match').modal();
+    }
+</script>

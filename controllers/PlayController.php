@@ -47,6 +47,10 @@ class PlayController extends Controller
         //Получаем количество сыгранных матчей для формирования меню для перехода по турам!
         $playCount = Play::find()->where(['league_id' => $id])->orderBy('id')->count();
 
+        /* Проверяем матчи какого чемпионата нам нужно отобразить! Если это Германия($id=3), то передаём в limit
+        9 матчей - по кол-ву игр в туре, в остальных случаях 10 и передаём во view 'champ' для отображения таблицы выбора тура чемпионата*/
+        $limit = $id == 3 ? 9 : 10;
+
         if (empty($play)) {
             throw new HttpException('404', 'Указанная Вами лига отсутствует');
         }
@@ -54,7 +58,8 @@ class PlayController extends Controller
         return $this->render('champ', [
             'playCount' => $playCount,
             'id' => $id,
-            'play' => $play,
+            'limit' => $limit,
+            'play' => $play
         ]);
     }
 
@@ -69,19 +74,17 @@ class PlayController extends Controller
 
         /* Проверяем матчи какого чемпионата нам нужно отобразить! Если это Германия($id=3), то передаём в limit
         9 матчей - по кол-ву игр в туре, в остальных случаях 10 */
-        if ($id == 3){
-            $limit = 9;
-        }else $limit = 10;
+        $limit = $id == 3 ? 9 : 10;
 
         $play = Play::find()->with('teamHome', 'teamAway', 'league')->indexBy('id')->asArray()->limit($limit)->where(['league_id' => $id])->orderBy(['date' => SORT_DESC])->all();
         //Рендерим аяксом view champ и выводим на главную страницу последние 10 матчей 3 чемпионатов по клику в tab'е
         $html = $this->renderAjax('champ', [
             'playCount' => 10,
             /*Объявляем переменную main_page и передаём в view champ! Если она объявлена, это значит мы на главной странице
-            и таблицу выбора тура чемпионата показывать не нужно*/
+            и таблицу выбора тура чемпионата не выводим*/
             'main_page' => 0,
             'id' => $id,
-            'play' => $play,
+            'play' => $play
         ]);
         return Json::encode($html);
     }
@@ -97,12 +100,10 @@ class PlayController extends Controller
 
         /* Отключаем лейаут для показа матча, т.к. будем показывать в модальном окне*/
         $this->layout = false;
-        $url = Yii::$app->request->referrer;
 
         return $this->render('match', [
             'match' => $match,
-            'id' => $id,
-            'url' => $url,
+            'id' => $id
         ]);
     }
 

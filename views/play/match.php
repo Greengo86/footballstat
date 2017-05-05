@@ -9,8 +9,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="container">
 
-    <?php debug($url) ;?>
-
     <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
     <h3 class="text-center"><?= $match['league']['league']?></h3>
 

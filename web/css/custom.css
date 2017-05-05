@@ -638,6 +638,12 @@ footer{
     margin-bottom: 25px;
 }
 
+
+#last-games div#w0-container.tabs-above.tab-align-center.tabs-krajee .tab-content.printable .tab-pane .container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 /*Стили таблиц чемпионата на главной странице*/
 .intro-table {
     background-position: -35px 0;

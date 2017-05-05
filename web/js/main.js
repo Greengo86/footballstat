@@ -232,30 +232,13 @@ jQuery(function($) {
         });
     });
 
-    $('.show-last').on('click', function(e){
-        e.preventDefault();
-        var id = $(this).data('id');
-        $.ajax({
-            url: '/play/match',
-            data: {id: id},
-            type: 'GET',
-            success: function(res){
-                // console.log(res);
-                showStat(res);
-            },
-            error: function(){
-                alert('Ошибка выдачи подробной статистики матча');
-            }
-        });
-    });
-
-    $(document).ready(function(){
-        //при нажатию на любую кнопку, имеющую класс .btn
-        $(".btn").click(function() {
-            //открыть модальное окно с id="myModal"
-            $("#myModal").modal('show');
-        });
-    });
+    // $(document).ready(function(){
+    //     //при нажатию на любую кнопку, имеющую класс .btn
+    //     $(".inline").click(function() {
+    //         //открыть модальное окно с id="myModal"
+    //         $('.inline').modaal();
+    //     });
+    // });
 
     /** Функция для работы слайдера статистических фактов на главной странице*/
 
