@@ -80,6 +80,8 @@ AppAsset::register($this);
 
         <?= $content ?>
 
+
+
         <div class="page-buffer"></div>
 
     <footer>
@@ -119,6 +121,16 @@ AppAsset::register($this);
         'footer' => '<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>'
     ]);
     Modal::end();
+        Modal::begin([
+            'header' => '<h3 class="text-center">Подробная статистика<h3>',
+            'size' => 'modal-lg',
+            'id' => 'modal',
+            'footer' => '<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>'
+        ]);
+
+        echo "<div id='modalContent'></div>";
+
+        Modal::end();
 ?>
 
 <?php $this->endBody() ?>

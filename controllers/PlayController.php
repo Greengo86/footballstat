@@ -89,6 +89,11 @@ class PlayController extends Controller
         return Json::encode($html);
     }
 
+    public function actionShow()
+    {
+        return $this->render('show');
+    }
+
     /**
      * @param string $id - id матча! поле id в таблице play в бд
      * @return mixed - возвращаем в массиве матч $match и $id
