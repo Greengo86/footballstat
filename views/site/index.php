@@ -43,7 +43,6 @@ $this->title = 'Footballstat';
 
 
 <section id="last-games">
-    <div class="container">
         <div class="row text-center title">
             <h2 class="black">Последние матчи</h2>
             <h4 class="light muted">Кликните по эмблеме для просмотра последних матчей</h4>
@@ -73,7 +72,6 @@ $this->title = 'Footballstat';
             'encodeLabels'=>false
         ]);
         ?>
-    </div>
 </section>
 
 <section id="services" class="section section-padded">
