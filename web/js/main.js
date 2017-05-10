@@ -269,9 +269,9 @@ jQuery(function($) {
 });
 
 // Метод для отображения детальной статистики матча в "последние матчи" чемпионата на главной странице
-function popUp(u,w,h) {
-    var wc=parseInt((screen.availWidth-w)/2);
-    var hc=parseInt((screen.availHeight-h)/2);
-    childform = window.open(u,'form','width='+w+',height='+h+',top='+hc+',screenY='+hc+',left='+wc+',screenX='+wc+' Toolbar=0, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Copyhistory=1');
-}
+// function popUp(u,w,h) {
+//     var wc=parseInt((screen.availWidth-w)/2);
+//     var hc=parseInt((screen.availHeight-h)/2);
+//     childform = window.open(u,'form','width='+w+',height='+h+',top='+hc+',screenY='+hc+',left='+wc+',screenX='+wc+' Toolbar=0, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Copyhistory=1');
+// }
 

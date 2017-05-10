@@ -25,18 +25,18 @@ class TeamController extends AppController
     public function behaviors()
     {
         return [
-//            [
-//                'class' => 'yii\filters\PageCache',
-//                'only' => ['team'],
-//                'duration' => 3600 * 24 * 30,
-//                'variations' => [
-//                    \Yii::$app->request->get('t'),
-//                ],
-//                'dependency' => [
-//                    'class' => 'yii\caching\DbDependency',
-//                    'sql' => 'SELECT MAX(created_at) FROM play',
-//                ],
-//            ],
+            [
+                'class' => 'yii\filters\PageCache',
+                'only' => ['team'],
+                'duration' => 3600 * 24 * 30,
+                'variations' => [
+                    \Yii::$app->request->get('t'),
+                ],
+                'dependency' => [
+                    'class' => 'yii\caching\DbDependency',
+                    'sql' => 'SELECT MAX(created_at) FROM play',
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

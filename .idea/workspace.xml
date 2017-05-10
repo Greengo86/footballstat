@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="befce524-f27b-4010-94b0-3405c9b2f0bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/footstat_10_05.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/img/header2.jpg" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/inputmask/inputmask.dependencyLib.jquery.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bower/jquery.inputmask/dist/min/inputmask/inputmask.dependencyLib.jquery.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" afterPath="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/TeamController.php" afterPath="$PROJECT_DIR$/controllers/TeamController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/CONTRIBUTING.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/LICENSE.md" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/LICENSE.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/README.md" afterPath="$PROJECT_DIR$/vendor/2amigos/yii2-date-time-picker-widget/README.md" />
@@ -134,7 +137,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/README.md" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/composer.json" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/index.php" afterPath="$PROJECT_DIR$/views/site/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/custom.css" afterPath="$PROJECT_DIR$/web/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/main.js" afterPath="$PROJECT_DIR$/web/js/main.js" />
     </list>
     <ignored path="vendor/" />
     <ignored path="runtime/" />
@@ -159,10 +162,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ParsePlay.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ParsePlay.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/commands/models/ParsePlay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="427">
               <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="299" selection-end-column="34" />
               <folding />
             </state>
@@ -172,8 +175,8 @@
       <file leaf-file-name="PlayController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="50" column="63" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="50" selection-end-column="63" />
+            <state relative-caret-position="540">
+              <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
               <folding>
                 <element signature="e#35#56#0#PHP" expanded="true" />
               </folding>
@@ -181,11 +184,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/main.js">
+      <file leaf-file-name="TeamController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/TeamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4176">
-              <caret line="232" column="7" lean-forward="false" selection-start-line="232" selection-start-column="7" selection-end-line="232" selection-end-column="7" />
+            <state relative-caret-position="49">
+              <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Team.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/Team.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4608">
+              <caret line="348" column="69" lean-forward="false" selection-start-line="348" selection-start-column="69" selection-end-line="348" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -194,7 +207,7 @@
       <file leaf-file-name="champ.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/play/champ.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
+            <state relative-caret-position="594">
               <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
               <folding>
                 <element signature="e#7#28#0#PHP" expanded="true" />
@@ -216,23 +229,13 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="73" column="10" lean-forward="false" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+            <state relative-caret-position="216">
+              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding>
                 <element signature="e#38#59#0#PHP" expanded="true" />
-                <marker date="1494004818940" expanded="true" signature="658:690" ph="SELECT MAX(c... play" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1314">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding>
-                <element signature="e#66#88#0#PHP" expanded="true" />
+                <marker date="1494439465756" expanded="true" signature="606:638" ph="SELECT MAX(c... play" />
+                <marker date="1494439465756" expanded="true" signature="2286:3013" ph="..." />
+                <marker date="1494439465756" expanded="true" signature="2314:3002" ph="..." />
               </folding>
             </state>
           </provider>
@@ -286,8 +289,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/RouterPanel.php" />
-        <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/TimelinePanel.php" />
         <option value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug/panels/UserPanel.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/commands/HelloController.php" />
@@ -298,7 +299,6 @@
         <option value="$PROJECT_DIR$/controllers/ScorerContoller.php" />
         <option value="$PROJECT_DIR$/controllers/ScorerController.php" />
         <option value="$PROJECT_DIR$/controllers/SiteController.php" />
-        <option value="$PROJECT_DIR$/controllers/TeamController.php" />
         <option value="$PROJECT_DIR$/views/team/team.php" />
         <option value="$PROJECT_DIR$/models/League.php" />
         <option value="$PROJECT_DIR$/models/LoginForm.php" />
@@ -331,12 +331,15 @@
         <option value="$PROJECT_DIR$/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/views/play/match.php" />
         <option value="$PROJECT_DIR$/assets/AppAsset.php" />
-        <option value="$PROJECT_DIR$/web/js/main.js" />
         <option value="$PROJECT_DIR$/controllers/PlayController.php" />
         <option value="$PROJECT_DIR$/views/play/champ.php" />
-        <option value="$PROJECT_DIR$/views/site/index.php" />
         <option value="$PROJECT_DIR$/web/css/custom.css" />
         <option value="$PROJECT_DIR$/commands/models/ParsePlay.php" />
+        <option value="$PROJECT_DIR$/views/site/index.php" />
+        <option value="$PROJECT_DIR$/web/js/main.js" />
+        <option value="$PROJECT_DIR$/controllers/TeamController.php" />
+        <option value="$PROJECT_DIR$/runtime/logs/app.log" />
+        <option value="$PROJECT_DIR$/web/css/bazi.css" />
       </list>
     </option>
   </component>
@@ -445,7 +448,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -469,7 +471,39 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="footballstat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="footballstat" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="footballstat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="footballstat" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,6 +523,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -621,7 +656,8 @@
       <workItem from="1493961097452" duration="14197000" />
       <workItem from="1493995615678" duration="2113000" />
       <workItem from="1494243968530" duration="943000" />
-      <workItem from="1494353576985" duration="3171000" />
+      <workItem from="1494353576985" duration="3237000" />
+      <workItem from="1494425846508" duration="3328000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1490013436151</created>
@@ -791,23 +827,30 @@
       <option name="project" value="LOCAL" />
       <updated>1493757280789</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="+sql dump">
+      <created>1494364855976</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1494364855976</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367754000" />
+    <option name="totallyTimeSpent" value="371148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="31" width="1692" height="1025" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18437119" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18620269" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21627648" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3130734" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25688073" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25688073" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -891,7 +934,8 @@
     <MESSAGE value="+modal 0.5" />
     <MESSAGE value="+modal 0.6" />
     <MESSAGE value="+modal 0.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="+modal 0.8" />
+    <MESSAGE value="+sql dump" />
+    <option name="LAST_COMMIT_MESSAGE" value="+sql dump" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -900,8 +944,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/play/_form.php" />
-    <entry file="file://$PROJECT_DIR$/views/play/create.php" />
     <entry file="file://$PROJECT_DIR$/views/play/index.php" />
     <entry file="file://$PROJECT_DIR$/views/play/_search.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -934,13 +976,6 @@
     <entry file="file://$PROJECT_DIR$/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-874">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/TeamController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-366">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1033,13 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2112">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Team.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-925">
-          <caret line="348" column="69" lean-forward="false" selection-start-line="348" selection-start-column="69" selection-end-line="348" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1168,27 +1196,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/main.js">
+    <entry file="file://$PROJECT_DIR$/web/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4176">
-          <caret line="232" column="7" lean-forward="false" selection-start-line="232" selection-start-column="7" selection-end-line="232" selection-end-column="7" />
+        <state relative-caret-position="11484">
+          <caret line="638" column="1" lean-forward="false" selection-start-line="638" selection-start-column="1" selection-end-line="638" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
+    <entry file="file://$PROJECT_DIR$/commands/models/ParsePlay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="50" column="63" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="50" selection-end-column="63" />
+        <state relative-caret-position="427">
+          <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="299" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="e#35#56#0#PHP" expanded="true" />
+            <element signature="e#66#88#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#38#59#0#PHP" expanded="true" />
+            <marker date="1494439465756" expanded="true" signature="606:638" ph="SELECT MAX(c... play" />
+            <marker date="1494439465756" expanded="true" signature="2286:3013" ph="..." />
+            <marker date="1494439465756" expanded="true" signature="2314:3002" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/play/champ.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
+        <state relative-caret-position="594">
           <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
           <folding>
             <element signature="e#7#28#0#PHP" expanded="true" />
@@ -1204,39 +1253,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+    <entry file="file://$PROJECT_DIR$/controllers/PlayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="73" column="10" lean-forward="false" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+        <state relative-caret-position="540">
+          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
           <folding>
-            <element signature="e#38#59#0#PHP" expanded="true" />
-            <marker date="1494004818940" expanded="true" signature="658:690" ph="SELECT MAX(c... play" />
+            <element signature="e#35#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layouts/main.php">
+    <entry file="file://$PROJECT_DIR$/runtime/logs/app.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#66#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11484">
-          <caret line="638" column="1" lean-forward="false" selection-start-line="638" selection-start-column="1" selection-end-line="638" selection-end-column="1" />
+        <state relative-caret-position="-311">
+          <caret line="23593" column="63" lean-forward="false" selection-start-line="23593" selection-start-column="63" selection-end-line="23593" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/models/ParsePlay.php">
+    <entry file="file://$PROJECT_DIR$/controllers/TeamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="288" column="0" lean-forward="false" selection-start-line="288" selection-start-column="0" selection-end-line="299" selection-end-column="34" />
+        <state relative-caret-position="49">
+          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="244" column="36" lean-forward="true" selection-start-line="244" selection-start-column="36" selection-end-line="244" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/bazi.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="115" column="41" lean-forward="true" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4608">
+          <caret line="348" column="69" lean-forward="false" selection-start-line="348" selection-start-column="69" selection-end-line="348" selection-end-column="69" />
           <folding />
         </state>
       </provider>
