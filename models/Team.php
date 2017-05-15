@@ -70,14 +70,14 @@ class Team extends ActiveRecord
         foreach($teamEngland as $team){
             $arrayEngland[] = [
                 'label' =>$team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
-                'url'=>['team/team', 'id' => 1, 't' => $team['team_id']]
+                'url'=>['team/team', 'id' => 2, 't' => $team['team_id']]
             ];
         }
 
         foreach($teamGermany as $team){
             $arrayGermany[] = [
                 'label' =>$team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
-                'url'=>['team/team', 'id' => 1, 't' => $team['team_id']]
+                'url'=>['team/team', 'id' => 3, 't' => $team['team_id']]
             ];
         }
 
