@@ -106,12 +106,6 @@ AppAsset::register($this);
         </div>
     </footer>
 
-<!-- Holder for mobile navigation -->
-<div class="mobile-nav">
-    <ul>
-    </ul>
-    <a href="#" class="close-link"><i class="fa fa-close"></i></a>
-</div>
 
 <?php
     Modal::begin([

@@ -5,6 +5,13 @@
     margin-top: 2px;
 }
 
+/* Стиль отображения фоновой картинки хедера*/
+header {
+    background: rgba(0, 0, 0, 0) url("../img/header.jpg") no-repeat;
+    background-size: cover;
+    min-height: 780px;
+}
+
 /* Крутящийся мячик слева от меню */
 .fa-2x{
     font-size: 2.2em;
