@@ -522,6 +522,11 @@ hr.style3 {
     text-align: center;
 }
 
+/* Курсор для просмотра виджета статистических фактов*/
+#services .owl-carousel .owl-stage-outer {
+    cursor: e-resize;
+}
+
 .owl-carousel .block-head{
     height: 95px;
     display: block;

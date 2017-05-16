@@ -12,9 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <h3 class="text-center"><?= Html::encode($this->title) ?></h3>
     <h3 class="text-center"><?= $match['league']['league']?></h3>
 
-    <?php //debug($match['date']);?>
-    <?php //debug($match) ;?>
-
 
     <?php if(empty($match)){
         echo 'Указанный Вами матч отсутствует';
