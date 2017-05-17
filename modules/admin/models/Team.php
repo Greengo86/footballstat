@@ -54,11 +54,13 @@ class Team extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getPlayHome(){
+    public function getPlayHome()
+    {
         return $this->hasOne(Play::className(), ['home_team_id' => 'team_id']);
     }
 
-    public function getLeague(){
+    public function getLeague()
+    {
         return $this->hasOne(League::className(), ['id' => 'team_league']);
     }
 }

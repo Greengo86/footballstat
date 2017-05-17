@@ -13,10 +13,10 @@ $this->params['breadcrumbs'][] = 'Update';
 <div class="play-update container">
 
     <?php echo Html::button("<span class='glyphicon glyphicon-home' aria-hidden='true'></span>",
-        ['class'=>'kv-action-btn',
-            'onclick'=>"window.location.href = '" . 'index' . "';",
-            'data-toggle'=>'tooltip',
-            'title'=>'На главную админки',
+        ['class' => 'kv-action-btn',
+            'onclick' => "window.location.href = '" . 'index' . "';",
+            'data-toggle' => 'tooltip',
+            'title' => 'На главную админки',
         ])
     ?>
 

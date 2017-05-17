@@ -57,6 +57,16 @@ class Play extends ActiveRecord
     }
 
     /**
+     * Присоединяем обработчик события к статической функции method_Record_Insert(), где будем рассылать письма
+     * Здесь мы ловим, то событие из ParseController, которое инициируется при записи данных в бд и вызываем статическую ф-цию 'method_Record_Insert'
+     */
+    public function init()
+    {
+        $this->on(self::RECORD_INSERTED, [$this, 'method_Record_Insert']);
+
+    }
+
+    /**
      * Статический метод, который мы вызываем с помощью событие, а именно запись в базу данных из контроллера
      * ParseController и отправляем почту
      */
@@ -71,19 +81,6 @@ class Play extends ActiveRecord
             ->setHtmlBody('<b>текст сообщения в формате HTML</b>')
             ->send();
         var_dump($event->play_insert);
-    }
-
-    /**
-     * Присоединяем обработчик события к статической функции method_Record_Insert(), где будем рассылать письма
-     * Здесь мы ловим, то событие из ParseController, которое инициируется при записи данных в бд и вызываем статическую ф-цию 'method_Record_Insert'
-     */
-    public function init()
-    {
-//        $this->on(Play::RECORD_INSERTED, function($event){
-//            var_dump($event->play_insert);
-//        });
-        $this->on(self::RECORD_INSERTED, [$this, 'method_Record_Insert']);
-
     }
 
     /**

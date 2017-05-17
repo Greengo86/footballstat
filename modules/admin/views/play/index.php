@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'pager' => [
             'firstPageLabel' => '<<<',
-            'lastPageLabel'  => '>>>'
+            'lastPageLabel' => '>>>'
         ],
         'dataProvider' => $dataProvider,
         'tableOptions' => [
@@ -38,21 +38,21 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             [
                 'attribute' => 'date',
-                'value' => function($data){
-                    return  Yii::$app->formatter->asDatetime($data['date']);
+                'value' => function ($data) {
+                    return Yii::$app->formatter->asDatetime($data['date']);
                 },
                 'format' => 'html',
             ],
             [
                 'attribute' => 'delay',
-                'value' => function($data){
+                'value' => function ($data) {
                     return $data['delay'] == 0 ? 'Нет' : "<span class='text-danger'>Да</span>";
                 },
                 'format' => 'html',
             ],
             [
                 'attribute' => 'league_id',
-                'value' => function($data){
+                'value' => function ($data) {
                     $x = $data['league']['league'];
                     return "<span class='text-danger'>$x</span>";
                 },
@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'home_score_full',
             [
                 'attribute' => 'home_team_id',
-                'value' => function($data){
+                'value' => function ($data) {
                     $x = $data['teamHome']['team_name'];
                     return "<span class='text-primary'>$x</span>";
                 },
@@ -75,7 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute' => 'away_team_id',
-                'value' => function($data){
+                'value' => function ($data) {
                     $x = $data['teamAway']['team_name'];
                     return "<span class='text-primary'>$x</span>";
                 },
@@ -95,7 +95,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <div class="panel panel-default legend">
-        <span class="legend-stat">Хозяева</span> - домашняя команда; <span class="legend-stat">Гости</span> - гостевая команда;
+        <span class="legend-stat">Хозяева</span> - домашняя команда; <span class="legend-stat">Гости</span> - гостевая
+        команда;
         <span class="legend-stat">Голы х</span> - голы забитые домашней командой;
         <span class="legend-stat">Голы г</span> - голы забитые гостевой командой;<br>
         <span class="legend-stat">% вл. дом</span> - владение мячом домашней команды;

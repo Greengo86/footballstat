@@ -3,6 +3,7 @@
 namespace app\components;
 
 use Yii;
+
 /**
  * Alert widget renders a message from session flash. All flash messages are displayed
  * in the sequence they were assigned using setFlash. You can set message as following:
@@ -31,16 +32,17 @@ class AlertWidget extends \yii\bootstrap\Widget
      * - $value is the bootstrap alert type (i.e. danger, success, info, warning)
      */
     public $alertTypes = [
-        'error'   => 'alert-danger',
-        'danger'  => 'alert-danger',
+        'error' => 'alert-danger',
+        'danger' => 'alert-danger',
         'success' => 'alert-success',
-        'info'    => 'alert-info',
+        'info' => 'alert-info',
         'warning' => 'alert-warning'
     ];
     /**
      * @var array the options for rendering the close button tag.
      */
     public $closeButton = [];
+
     public function init()
     {
         parent::init();
@@ -49,7 +51,7 @@ class AlertWidget extends \yii\bootstrap\Widget
         $appendCss = isset($this->options['class']) ? ' ' . $this->options['class'] : '';
         foreach ($flashes as $type => $data) {
             if (isset($this->alertTypes[$type])) {
-                $data = (array) $data;
+                $data = (array)$data;
                 foreach ($data as $i => $message) {
                     /* initialize css class for each alert box */
                     $this->options['class'] = $this->alertTypes[$type] . $appendCss;

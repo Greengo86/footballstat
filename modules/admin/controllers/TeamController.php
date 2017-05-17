@@ -103,8 +103,7 @@ class TeamController extends Controller
 
 
             return $this->redirect(['view', 'id' => $model->team_id]);
-        }
-        else {
+        } else {
             return $this->render('create', [
                 'model' => $model,
             ]);

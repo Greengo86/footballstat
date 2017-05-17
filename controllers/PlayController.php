@@ -2,8 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\Parse;
-use app\models\Team;
+
 use Yii;
 use app\models\Play;
 use yii\helpers\Json;

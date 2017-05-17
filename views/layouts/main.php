@@ -16,28 +16,29 @@ use kartik\nav\NavX;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+    <!DOCTYPE html>
+    <html lang="<?= Yii::$app->language ?>">
 
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?= Html::csrfMetaTags() ?>
+        <title><?= Html::encode($this->title) ?></title>
+        <?php $this->head() ?>
+    </head>
 
-<body>
-<?php $this->beginBody() ?>
-<div class="preloader">
-    <img src="/img/loader.gif" alt="Preloader image">
-</div>
+    <body>
+    <?php $this->beginBody() ?>
+    <div class="preloader">
+        <img src="/img/loader.gif" alt="Preloader image">
+    </div>
 
     <div class="wrapper">
         <div class="navbar yamm navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -45,44 +46,43 @@ AppAsset::register($this);
                     </button>
                 </div>
                 <a class="navbar-brand black fa fa-futbol-o fa-spin fa-2x" href="<?= Url::to(['/']) ?>"></a>
-                
+
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<!--                Навигационный виджет NavX - лиги и команды-->
+                    <!--                Навигационный виджет NavX - лиги и команды-->
                     <?php echo NavX::widget(
-                    [
-                        'activateParents' => true,
-                        'activateItems' => false,
-                        'options' => [
-                            'class' => 'nav nav-pills navbar-nav navbar-right black main-nav'
-                        ],
-                        'items' => Team::teamMenu(),
-                        'encodeLabels' => false,
-                    ]
-                )?>
+                        [
+                            'activateParents' => true,
+                            'activateItems' => false,
+                            'options' => [
+                                'class' => 'nav nav-pills navbar-nav navbar-right black main-nav'
+                            ],
+                            'items' => Team::teamMenu(),
+                            'encodeLabels' => false,
+                        ]
+                    ) ?>
                 </div>
             </div>
         </div>
     </div>
-        <header id="intro">
-            <div class="container">
-                <div class="table">
-                    <div class="header-text">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <h3 class="light white">Football is a game about feelings and intelligence.</h3>
-                                <h1 class="white typed">FootballStat! Stat about football</h1>
-                            </div>
+    <header id="intro">
+        <div class="container">
+            <div class="table">
+                <div class="header-text">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h3 class="light white">Football is a game about feelings and intelligence.</h3>
+                            <h1 class="white typed">FootballStat! Stat about football</h1>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <?= $content ?>
+    <?= $content ?>
 
 
-
-        <div class="page-buffer"></div>
+    <div class="page-buffer"></div>
 
     <footer>
         <div class="container">
@@ -107,7 +107,7 @@ AppAsset::register($this);
     </footer>
 
 
-<?php
+    <?php
     Modal::begin([
         'header' => '<h3 class="text-center">Подробная статистика<h3>',
         'size' => 'modal-lg',
@@ -115,20 +115,20 @@ AppAsset::register($this);
         'footer' => '<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>'
     ]);
     Modal::end();
-        Modal::begin([
-            'header' => '<h3 class="text-center">Подробная статистика<h3>',
-            'size' => 'modal-lg',
-            'id' => 'modal',
-            'footer' => '<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>'
-        ]);
+    Modal::begin([
+        'header' => '<h3 class="text-center">Подробная статистика<h3>',
+        'size' => 'modal-lg',
+        'id' => 'modal',
+        'footer' => '<button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>'
+    ]);
 
-        echo "<div id='modalContent'></div>";
+    echo "<div id='modalContent'></div>";
 
-        Modal::end();
-?>
+    Modal::end();
+    ?>
 
-<?php $this->endBody() ?>
-</body>
+    <?php $this->endBody() ?>
+    </body>
 
-</html>
+    </html>
 <?php $this->endPage() ?>

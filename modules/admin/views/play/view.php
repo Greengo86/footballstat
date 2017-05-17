@@ -16,22 +16,22 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="play-view container">
 
     <?php echo Html::button("<span class='glyphicon glyphicon-home' aria-hidden='true'></span>",
-    ['class'=>'kv-action-btn',
-    'onclick'=>"window.location.href = '" . 'index' . "';",
-    'data-toggle'=>'tooltip',
-    'title'=>'На главную админки',
-    ]
-    )?>
+        ['class' => 'kv-action-btn',
+            'onclick' => "window.location.href = '" . 'index' . "';",
+            'data-toggle' => 'tooltip',
+            'title' => 'На главную админки',
+        ]
+    ) ?>
 
     <?php echo Html::button("<span class='glyphicon glyphicon-plus' aria-hidden='true'></span>",
-        ['class'=>'kv-action-btn',
-            'onclick'=>"window.location.href = '" . 'create' . "';",
-            'data-toggle'=>'tooltip',
-            'title'=> 'Создать матч'
+        ['class' => 'kv-action-btn',
+            'onclick' => "window.location.href = '" . 'create' . "';",
+            'data-toggle' => 'tooltip',
+            'title' => 'Создать матч'
         ]
-    )?>
+    ) ?>
 
-<!--    --><?php //echo Html::a('На Главную Админки', ['play/index'], ['btn btn-danger']); ?>
+    <!--    --><?php //echo Html::a('На Главную Админки', ['play/index'], ['btn btn-danger']); ?>
     <h1><?= ($this->title) ?></h1>
 
     <p>
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
-<!--    --><?php //var_dump($model) ?>
+    <!--    --><?php //var_dump($model) ?>
 
     <?= DetailView::widget([
         'model' => $model,

@@ -41,35 +41,35 @@ $this->title = 'Footballstat';
 
 
 <section id="last-games">
-        <div class="row text-center title">
-            <h2 class="black">Последние матчи</h2>
-            <h4 class="light muted">Кликните по эмблеме для просмотра последних матчей</h4>
-        </div>
-        <?php
+    <div class="row text-center title">
+        <h2 class="black">Последние матчи</h2>
+        <h4 class="light muted">Кликните по эмблеме для просмотра последних матчей</h4>
+    </div>
+    <?php
 
-        $opt = [
-            [
-                'label'=>'<img src="/web/img/champ/1.png"><h4 class="heading">Испания</h4> ',
-                'active'=>true,
-                'linkOptions'=>['data-url'=>Url::to(['play/last-games/1'])]
-            ],
-            [
-                'label'=>'<img src="/web/img/champ/2.png"><h4 class="heading">Англия</h4>',
-                'linkOptions'=>['data-url'=>Url::to(['play/last-games/2'])]
-            ],
-            [
-                'label'=>'<img src="/web/img/champ/3.png"><h4 class="heading">Германия</h4>',
-                'linkOptions'=>['data-url'=>Url::to(['play/last-games/3'])]
-            ],
-        ];
+    $opt = [
+        [
+            'label' => '<img src="/web/img/champ/1.png"><h4 class="heading">Испания</h4> ',
+            'active' => true,
+            'linkOptions' => ['data-url' => Url::to(['play/last-games/1'])]
+        ],
+        [
+            'label' => '<img src="/web/img/champ/2.png"><h4 class="heading">Англия</h4>',
+            'linkOptions' => ['data-url' => Url::to(['play/last-games/2'])]
+        ],
+        [
+            'label' => '<img src="/web/img/champ/3.png"><h4 class="heading">Германия</h4>',
+            'linkOptions' => ['data-url' => Url::to(['play/last-games/3'])]
+        ],
+    ];
 
-        echo TabsX::widget([
-            'items'=>$opt,
-            'position'=>TabsX::POS_ABOVE,
-            'align'=>TabsX::ALIGN_CENTER,
-            'encodeLabels'=>false
-        ]);
-        ?>
+    echo TabsX::widget([
+        'items' => $opt,
+        'position' => TabsX::POS_ABOVE,
+        'align' => TabsX::ALIGN_CENTER,
+        'encodeLabels' => false
+    ]);
+    ?>
 </section>
 
 <section id="services" class="section section-padded">
@@ -79,16 +79,16 @@ $this->title = 'Footballstat';
             <h4 class="light muted">Самое интересное из Ведущих Европейских чемпионатов</h4>
         </div>
         <?php
-            //Подключаем и кешируем виджет StatWidget
-            if ($this->beginCache('stat', ['duration' => $duration, 'dependency' => $dependency])) {
+        //Подключаем и кешируем виджет StatWidget
+        if ($this->beginCache('stat', ['duration' => $duration, 'dependency' => $dependency])) {
             StatWidget::begin(['champ' => '1']);
             StatWidget::end();
             StatWidget::begin(['champ' => '2']);
             StatWidget::end();
             StatWidget::begin(['champ' => '3']);
             StatWidget::end();
-                $this->endCache();
-            }
+            $this->endCache();
+        }
         ?>
     </div>
 </section>

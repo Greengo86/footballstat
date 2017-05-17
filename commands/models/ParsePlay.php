@@ -134,12 +134,11 @@ class ParsePlay extends Model
         }
 
         $time = explode(' ', $head_date)[$time];
-//        var_dump($time);
+
         $date = substr_replace((explode(' ', $head_date)[$date]), $this->stat['year'], 6);
-//        var_dump($date);
+
 
         $this->stat['datetime'] = Yii::$app->formatter->asDatetime($date . $time, 'php:Y-m-d H:i');
-//        var_dump($this->stat['datetime']);
 
         return $this->stat;
     }
@@ -282,9 +281,9 @@ class ParsePlay extends Model
                 $value['a_tid_red_cart'] = 0;
             }
 
-                /*Записываем данные в любом случае. Здесь мы получаем массив, который необходимо поместить в бд,
-                будь то перенесённые или сыгранный матч. Сюда попадают только сыгранные и не записанные в бд матчи*/
-                $conn = Yii::$app->db;
+            /*Записываем данные в любом случае. Здесь мы получаем массив, который необходимо поместить в бд,
+            будь то перенесённые или сыгранный матч. Сюда попадают только сыгранные и не записанные в бд матчи*/
+            $conn = Yii::$app->db;
 
 //                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
 //                    'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
@@ -298,7 +297,7 @@ class ParsePlay extends Model
 //                            $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
 //                        ]
 //                    ])->execute();
-            }
+        }
         return $array;
     }
 }

@@ -61,7 +61,7 @@ class Play extends \yii\db\ActiveRecord
 //    Функция для вывода лиги в detailView в admin/views/play/view
     public function getLeagueHtml($id)
     {
-        switch ($id){
+        switch ($id) {
             case 1:
                 return 'Испания';
             case 2:

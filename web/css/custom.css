@@ -1,4 +1,3 @@
-
 /* Панель навигации*/
 .navbar-header .black {
     color: #000;
@@ -13,10 +12,11 @@ header {
 }
 
 /* Крутящийся мячик слева от меню */
-.fa-2x{
+.fa-2x {
     font-size: 2.2em;
 }
-.navbar .menu-widget{
+
+.navbar .menu-widget {
     color: black;
 }
 
@@ -61,15 +61,17 @@ nav.navbar .navbar-nav li.active a:not(.btn) {
 
 /* Картинка-фон турнирных таблиц на главной странице
     Испания*/
-section .container .row .col-md-4:first-child .intro-table{
+section .container .row .col-md-4:first-child .intro-table {
     background-image: url("../img/table-1.jpg");
 }
+
 /*Англия*/
-section .container .row .col-md-4:nth-child(2n) .intro-table{
+section .container .row .col-md-4:nth-child(2n) .intro-table {
     background-image: url("../img/england.jpg");
 }
+
 /*Германия*/
-section .container .row .col-md-4:nth-child(3) .intro-table{
+section .container .row .col-md-4:nth-child(3) .intro-table {
     background-image: url("../img/germany.jpg");
 }
 
@@ -86,7 +88,7 @@ section .container .row .col-md-4:nth-child(3) .intro-table{
     padding-top: 150px;
 }
 
-.btn-success{
+.btn-success {
     color: black !important;
 }
 
@@ -94,19 +96,23 @@ section .container .row .col-md-4:nth-child(3) .intro-table{
 .decor-default {
     background-color: #ffffff;
 }
+
 .contact .controls {
     position: relative;
 }
+
 .contact .controls .cover {
     display: block;
     margin: 25px auto;
     max-width: 100%;
     min-height: 150px;
 }
+
 .cover {
     position: relative;
     overflow: hidden;
 }
+
 .contact .controls .cont {
     position: absolute;
     z-index: 2;
@@ -115,6 +121,7 @@ section .container .row .col-md-4:nth-child(3) .intro-table{
     right: 0;
     text-align: center;
 }
+
 .contact .controls .name {
     font-size: 20px;
     line-height: 36px;
@@ -123,6 +130,7 @@ section .container .row .col-md-4:nth-child(3) .intro-table{
     position: relative;
     z-index: 2;
 }
+
 .contact .controls .ui-mark {
     display: inline-block;
     border: 1px solid #ffffff;
@@ -140,27 +148,30 @@ section .container .row .col-md-4:nth-child(3) .intro-table{
 }
 
 /*раскрывающая панель с последними матчами команд в team/team*/
-.clickable
-{
+.clickable {
     cursor: pointer;
 }
 
-.clickable .glyphicon
-{
+.clickable .glyphicon {
     background: rgba(0, 0, 0, 0.15);
     display: inline-block;
     padding: 6px 12px;
     border-radius: 4px
 }
 
-.panel-heading span
-{
+.panel-heading span {
     margin-top: -23px;
     font-size: 15px;
     margin-right: -9px;
 }
-a.clickable { color: inherit; }
-a.clickable:hover { text-decoration:none; }
+
+a.clickable {
+    color: inherit;
+}
+
+a.clickable:hover {
+    text-decoration: none;
+}
 
 /*Классы для раскрывающего поля "Последние матчи"*/
 .panel-home {
@@ -195,7 +206,6 @@ a.clickable:hover { text-decoration:none; }
     color: white;
 }
 
-
 /*Стили вывода матчей чемпионата, статистики команды и отдельного матча*/
 .score {
     padding-top: 10px;
@@ -205,14 +215,13 @@ a.clickable:hover { text-decoration:none; }
     padding-bottom: 0;
 }
 
-.team-embl{
+.team-embl {
     height: 55px;
 }
 
 .team-stat {
-    padding-bottom: 40px!important;
+    padding-bottom: 40px !important;
 }
-
 
 /*Экшен и вид таблицы - Бомбардиры и ассисенты*/
 #scorers .table-wrap {
@@ -220,78 +229,97 @@ a.clickable:hover { text-decoration:none; }
     width: 50%;
     float: left;
 }
+
 #scorers .table {
     border: 5px solid #b04d4d;
 }
+
 @-moz-document url-prefix() {
     fieldset {
         display: table-cell;
     }
 }
+
 #scorers tr:nth-child(odd) {
     background: WhiteSmoke;
 }
+
 #scorers thead tr {
     background-color: #b04d4d !important;
     color: WhiteSmoke;
 }
+
 #scorers tfoot tr {
     background: SlateGray !important;
     color: WhiteSmoke;
 }
+
 #scorers td, th {
     padding-top: 1em !important;
     padding-bottom: 1em !important;
     border: 0px !important;
     vertical-align: middle !important;
 }
+
 #scorers tfoot td, tfoot th {
     padding: 1em !important;
 }
+
 #scorers th {
     font-family: 'Black Ops One', cursive;
 }
+
 #scorers tr {
     font-family: 'Boogaloo', cursive;
     font-size: 1.1em;
 
 }
+
 #scorers tr td:nth-child(2) {
     text-align: center;
 }
+
 #scorers tr td:nth-child(3) {
     text-align: center;
     width: 30%;
 }
+
 #scorers tr td:nth-child(4) {
     text-align: center;
 }
+
 #scorers tr th:nth-child(1) {
     width: 55%;
     padding-left: 1.5em !important;
     text-align: left;
 }
+
 #scorers tr th:nth-child(2) {
     width: 15%;
     padding-left: 0em !important;
 }
+
 #scorers tr th:nth-child(3) {
     text-align: right;
     width: 15%;
     padding-right: 1.5em !important;
 }
+
 #scorers tr th:nth-child(4) {
     width: 15%;
 }
+
 /*Правила для таблицы(столбцов) таблицы ассистентов*/
 #scorers .assist tr th:nth-child(2) {
     width: 25%;
     padding-left: 0em !important;
 }
+
 #scorers .assist tr th:nth-child(3) {
     width: 20%;
     padding-left: 0em !important;
 }
+
 #scorers .circle {
     font-family: 'Black Ops One', cursive;
     font-size: 1.5em;
@@ -304,16 +332,18 @@ a.clickable:hover { text-decoration:none; }
     text-align: center;
     border-radius: 100%;
 }
+
 #scorers .first {
     background: Coral;
 }
+
 #scorers .second {
     background: Goldenrod;
 }
+
 #scorers .third {
     background: Grey;
 }
-
 
 /*Правила css в team/team - статистика команды*/
 span,
@@ -322,7 +352,7 @@ span,
     color: #337ab7;
 }
 
-.date  {
+.date {
     color: #337ab7;
 }
 
@@ -335,12 +365,13 @@ span,
     font-weight: 700;
     color: #000;
 }
-.statistic{
+
+.statistic {
     font-weight: 700;
     color: #000
 }
 
-hr.style1{
+hr.style1 {
     border-top: 1px solid #8c8b8b;
 }
 
@@ -349,7 +380,7 @@ hr.style3 {
 }
 
 /*Горизонтальное меню для переключение и показа туров*/
-.menu-tour{
+.menu-tour {
     display: block;
     margin: 0;
 }
@@ -360,7 +391,7 @@ hr.style3 {
     padding-left: 0;
 }
 
-.menu-tour ul li{
+.menu-tour ul li {
     display: inline-block;
     position: relative;
 }
@@ -405,11 +436,11 @@ hr.style3 {
 }
 
 .play-index .btn {
-    color: #b22c29!important;
+    color: #b22c29 !important;
 }
 
 /*Цвет каретки в выпадающем списке чемпионата в админке*/
-.black .dropdown-toggle span{
+.black .dropdown-toggle span {
     color: black;
 }
 
@@ -451,7 +482,7 @@ hr.style3 {
 
 /*Кнопка "Создать игру" в админке*/
 .play-index .btn-danger:hover {
-    color: white!important;
+    color: white !important;
 }
 
 /*Кнопка войти в админке*/
@@ -520,11 +551,11 @@ hr.style3 {
 
 /* Стили для главной страницы - Статистические факты*/
 /*Устанавливаем ширину блоков Статистических фактов в 100% для более аккуратного отображения*/
-#services .owl-stage .owl-item .col-md-6{
+#services .owl-stage .owl-item .col-md-6 {
     width: 100%;
 }
 
-.owl-carousel .heading{
+.owl-carousel .heading {
     font-size: 20px;
     text-align: center;
 }
@@ -534,12 +565,12 @@ hr.style3 {
     cursor: e-resize;
 }
 
-.owl-carousel .block-head{
+.owl-carousel .block-head {
     height: 95px;
     display: block;
 }
 
-.owl-carousel .description{
+.owl-carousel .description {
     color: #ec2323;
     font-size: 20px;
     line-height: 1.5;
@@ -548,7 +579,7 @@ hr.style3 {
     margin-top: 20px;
 }
 
-.owl-carousel .description img{
+.owl-carousel .description img {
     margin: 0 auto;
     max-width: 30%;
 }
@@ -573,19 +604,22 @@ footer .container .row .col-sm-8 p {
     transition: 0.1s ease-in-out opacity;
     left: 0 !important;
 }
+
 .carousel .next.left,
 .carousel .prev.right {
     opacity: 1;
     z-index: 1;
 }
+
 .carousel .active.left,
 .carousel .active.right {
     opacity: 0;
     z-index: 2;
 }
+
 .carousel .carousel-control {
     z-index: 1000;
-    outline:none;
+    outline: none;
 }
 
 .carousel-control.right {
@@ -604,16 +638,18 @@ footer .container .row .col-sm-8 p {
     margin-right: -75px;
 }
 
-
 .yamm {
     margin-bottom: 45px;
 }
+
 .yamm .dropdown-menu {
     left: auto;
 }
+
 .yamm .yamm-content {
     padding: 20px 30px;
 }
+
 .yamm .dropdown.yamm-fw .dropdown-menu {
     left: 0;
     right: 0;
@@ -623,9 +659,8 @@ footer .container .row .col-sm-8 p {
     clear: none;
 }
 
-
 /*Футер*/
-footer{
+footer {
     clear: both;
     margin-top: 20px;
 }

@@ -53,74 +53,77 @@ class Team extends ActiveRecord
      * Метод для формирования массива для вывода меню на главной странице.
      */
 
-    public static function teamMenu(){
+    public static function teamMenu()
+    {
 
-        $item=[];
+        $item = [];
         $teamSpain = self::find()->asArray()->where(['team_league' => '1'])->all();
         $teamEngland = self::find()->asArray()->where(['team_league' => '2'])->all();
         $teamGermany = self::find()->asArray()->where(['team_league' => '3'])->all();
 
-        foreach($teamSpain as $team){
+        foreach ($teamSpain as $team) {
             $arraySpain[] = [
-                'label' =>$team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
-                'url'=>['team/team', 'id' => 1, 't' => $team['team_id']]
+                'label' => $team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
+                'url' => ['team/team', 'id' => 1, 't' => $team['team_id']]
             ];
         }
 
-        foreach($teamEngland as $team){
+        foreach ($teamEngland as $team) {
             $arrayEngland[] = [
-                'label' =>$team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
-                'url'=>['team/team', 'id' => 2, 't' => $team['team_id']]
+                'label' => $team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
+                'url' => ['team/team', 'id' => 2, 't' => $team['team_id']]
             ];
         }
 
-        foreach($teamGermany as $team){
+        foreach ($teamGermany as $team) {
             $arrayGermany[] = [
-                'label' =>$team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
-                'url'=>['team/team', 'id' => 3, 't' => $team['team_id']]
+                'label' => $team['team_name'] . '    ' . \yii\helpers\Html::img($team['team_embl']),
+                'url' => ['team/team', 'id' => 3, 't' => $team['team_id']]
             ];
         }
 
         $item[] = ['label' => 'Главная', 'url' => ['/']];
         $item[] = ['label' => 'Испания',
-                    'items' => [
-                        ['label' => 'Команды',
-                        'items' => $arraySpain],
-                        ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 1]],
-                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 1]]]
-                    ];
+            'items' => [
+                ['label' => 'Команды',
+                    'items' => $arraySpain],
+                ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 1]],
+                ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 1]]]
+        ];
         $item[] = ['label' => 'Германия',
-                    'items' => [
-                        ['label' => 'Команды',
-                        'items' => $arrayGermany],
-                        ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 3]],
-                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 3]]]
-                    ];
+            'items' => [
+                ['label' => 'Команды',
+                    'items' => $arrayGermany],
+                ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 3]],
+                ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 3]]]
+        ];
         $item[] = ['label' => 'Англия',
-                    'items' => [
-                        ['label' => 'Команды',
-                        'items' => $arrayEngland],
-                        ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 2]],
-                        ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 2]]]
-                ];
+            'items' => [
+                ['label' => 'Команды',
+                    'items' => $arrayEngland],
+                ['label' => 'h2h', 'url' => ['/play/champ', 'id' => 2]],
+                ['label' => 'Бомбардиры и ассисенты', 'url' => ['/scorer/scorers', 'id' => 2]]]
+        ];
         $item[] = Yii::$app->user->isGuest ?
-                    ['label' => 'Вход', 'url' => ['/admin']] :
-                    ['label' => 'Выход (' . Url::to(Yii::$app->user->identity['username']) . ' ' . FA::icon('user') . ' ' . ')',
-                        'url' => ['/site/logout']];
+            ['label' => 'Вход', 'url' => ['/admin']] :
+            ['label' => 'Выход (' . Url::to(Yii::$app->user->identity['username']) . ' ' . FA::icon('user') . ' ' . ')',
+                'url' => ['/site/logout']];
 
         $item[] = Yii::$app->user->isGuest ?
             ['label' => '', 'url' => ['']] :
             ['label' => 'Админка',
                 'url' => ['/admin']];
 
-            return $item;
+        return $item;
     }
 
-    public function getPlayHome(){
+    public function getPlayHome()
+    {
         return $this->hasOne(Play::className(), ['home_team_id' => 'team_id']);
     }
 
-    public function getLeague(){
+    public function getLeague()
+    {
         return $this->hasOne(League::className(), ['league' => 'team_league']);
     }
 
@@ -136,7 +139,7 @@ class Team extends ActiveRecord
      */
     public function average($stat, $qty)
     {
-           return round($stat / $qty, 2);
+        return round($stat / $qty, 2);
     }
 
     public function averageFull($statHome, $statAway, $qtyHome, $qtyAway = 0)
@@ -268,8 +271,8 @@ class Team extends ActiveRecord
         }
 
 //        Возвращаем ссылку на эмблему по названию команды - $team
-        foreach ($foo as $k => $game){
-            if ($k == $team){
+        foreach ($foo as $k => $game) {
+            if ($k == $team) {
                 $foo = $game;
             }
         }
@@ -395,9 +398,9 @@ class Team extends ActiveRecord
     {
 
         //суммируем значения дома и на выезде для каждой команды
-        foreach ($scoreHome as $k => $home){
-            foreach ($scoreAway as $n => $away){
-                if ($k == $n){
+        foreach ($scoreHome as $k => $home) {
+            foreach ($scoreAway as $n => $away) {
+                if ($k == $n) {
                     $array[$k] = $home + $away;
                 }
             }
@@ -405,13 +408,13 @@ class Team extends ActiveRecord
 
         if ($count == 0) {
             return $array;
-        }else
+        } else
             //Вычисляем среднее стат. значение за матч (делим на кол-во сыгранных матчей) и округляем до 2 знаков
             foreach ($array as &$value) {
-            //Вычисляем количество сыгранных матчей
-            $value = $value / round($count/10);
-            $value = round($value, 2);
-        }
+                //Вычисляем количество сыгранных матчей
+                $value = $value / round($count / 10);
+                $value = round($value, 2);
+            }
         return $array;
     }
 
@@ -430,19 +433,19 @@ class Team extends ActiveRecord
         //суммируем значения дома и на выезде для каждой команды
         foreach ($scoreOwnHome as $k => $home) {
             foreach ($scoreOwnAway as $n => $away) {
-                if ($k == $n){
+                if ($k == $n) {
                     $array[$k] = $home + $away;
                 }
             }
         }
 
-        if ($count == 0){
+        if ($count == 0) {
             return $array;
-        }else
+        } else
             //Вычисляем среднее стат. значение за матч (делим на сыгранных кол-во матчей) и округляем до 2 знаков
             foreach ($array as &$value) {
                 //Вычисляем количество сыгранных туров
-                $value = $value / round($count/10);
+                $value = $value / round($count / 10);
                 $value = round($value, 2);
             }
         return $array;
@@ -489,13 +492,13 @@ class Team extends ActiveRecord
         //Обнуляем статическое свойство перед каждый проходом
         self::$points = [];
         //        Получаем отсортированный массив в виде Команда => значение: игры => X, очки => X, голы => X, пропголы => X
-        foreach ($playHome as $game){
+        foreach ($playHome as $game) {
             //     подсчитываем очки для каждой команды в таблице
-            if ($game['home_score_full'] > $game['away_score_full']){
+            if ($game['home_score_full'] > $game['away_score_full']) {
                 self::$points[$game['teamHome']['team_name']]['points'] += 3;
-            }elseif ($game['home_score_full'] < $game['away_score_full']){
+            } elseif ($game['home_score_full'] < $game['away_score_full']) {
                 self::$points[$game['teamAway']['team_name']]['points'] += 3;
-            }elseif ($game['home_score_full'] == $game['away_score_full']){
+            } elseif ($game['home_score_full'] == $game['away_score_full']) {
                 self::$points[$game['teamHome']['team_name']]['points'] += 1;
                 self::$points[$game['teamAway']['team_name']]['points'] += 1;
             }
@@ -510,20 +513,20 @@ class Team extends ActiveRecord
             array_multisort($tmp['points'], SORT_DESC, self::$points);
 
             //        Подсчитываем количество сыгранных матчей каждой командой
-            if ($game['home_team_id']){
+            if ($game['home_team_id']) {
                 self::$points[$game['teamHome']['team_name']]['games'] += 1;
             }
 
-            if ($game['away_team_id']){
+            if ($game['away_team_id']) {
                 self::$points[$game['teamAway']['team_name']]['games'] += 1;
             }
 
             //        Подсчитываем количество забитых и пропущенных мячей каждой командой
-            if ($game['home_team_id']){
+            if ($game['home_team_id']) {
                 self::$points[$game['teamHome']['team_name']]['goal'] = $goal[$game['teamHome']['team_name']];
             }
 
-            if ($game['away_team_id']){
+            if ($game['away_team_id']) {
                 self::$points[$game['teamAway']['team_name']]['ownGoal'] = $ownGoal[$game['teamAway']['team_name']];
             }
         }
