@@ -1,4 +1,5 @@
 assets/*
+vendor/
 !assets/.gitignore
 protected/runtime/*
 config/db.php
