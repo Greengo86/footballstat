@@ -88,7 +88,7 @@ class ParseController extends Controller
     }
 
 
-    /** Экшен для парсинга матчей, которые завершились 2-3 назад - класс .block_body_nopadding:eq(1) */
+    /** Экшен для парсинга матчей, которые завершились 2-3 назад - класс .block_body_nopadding:eq(1) - метод уже не используется */
     public function actionChamp($url)
     {
 

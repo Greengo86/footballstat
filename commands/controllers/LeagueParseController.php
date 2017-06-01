@@ -2,8 +2,6 @@
 
 namespace app\commands\controllers;
 
-use yii\filters\AccessControl;
-
 
 class LeagueParseController extends ParseController
 {
