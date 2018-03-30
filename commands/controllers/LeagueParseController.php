@@ -39,7 +39,7 @@ class LeagueParseController extends ParseController
          * Передаём также строку 'spain' - В завимости от неё модель определит каким образом "разбирать" дату и время на странице матча.
          * У матчей разных чемпионатов разные формата разбора*/
         $k = 9;
-        $result = parent::actionLIVE($url, $k, self::LIVE, self::PRIMERA);
+        $result = parent::actionLive($url, $k, self::LIVE, self::PRIMERA);
 
         foreach ($result as $value) {
             var_dump($value);
@@ -70,7 +70,7 @@ class LeagueParseController extends ParseController
          * поэтому модель будет парсить под формат чемпионата Англии. В завимости от неё модель определит
          * каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
         $k = 9;
-        $result = parent::actionLive($url, $k, self::PLAY, self::PREMIRLIGA);
+        $result = parent::actionLive($url, $k, self::LIVE, self::PREMIRLIGA);
 
         foreach ($result as $value) {
             var_dump($value);
@@ -93,7 +93,7 @@ class LeagueParseController extends ParseController
         /** url странички с которой будем парсить - в данном случае "Германия" - даём ссылку со сдвигом временной
          * зоны на 3 часа - для временной зоны Европа/Москва
          * */
-        $url = 'http://soccer365.ru/competitions/17/';
+        $url = 'http://soccer365-1.xyz/competitions/17/2016-2017/results/';
         /** Устанавливаем счётчик $k переходов по матчам по количеству игр в туре! В Германии игр 9, отсчёт начиная с 0 - 9
          * Что парсим, зависит от передаваемой константы: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад
          * Здесь в отличии от Испании 4-ый аргумент не передаём, т.к. он не обязательный и
@@ -101,7 +101,7 @@ class LeagueParseController extends ParseController
          * каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
         $k = 8;
 
-        $result = parent::actionLive($url, $k, self::PLAY, self::BUNDESLIGA);
+        $result = parent::actionLive($url, $k, self::LIVE, self::BUNDESLIGA);
 
         foreach ($result as $value) {
             var_dump($value);

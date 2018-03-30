@@ -49,16 +49,16 @@ $this->title = 'Footballstat';
 
     $opt = [
         [
-            'label' => '<img src="/web/img/champ/1.png"><h4 class="heading">Испания</h4> ',
+            'label' => '<img src="img/champ/1.png"><h4 class="heading">Испания</h4> ',
             'active' => true,
             'linkOptions' => ['data-url' => Url::to(['play/last-games/1'])]
         ],
         [
-            'label' => '<img src="/web/img/champ/2.png"><h4 class="heading">Англия</h4>',
+            'label' => '<img src="img/champ/2.png"><h4 class="heading">Англия</h4>',
             'linkOptions' => ['data-url' => Url::to(['play/last-games/2'])]
         ],
         [
-            'label' => '<img src="/web/img/champ/3.png"><h4 class="heading">Германия</h4>',
+            'label' => '<img src="img/champ/3.png"><h4 class="heading">Германия</h4>',
             'linkOptions' => ['data-url' => Url::to(['play/last-games/3'])]
         ],
     ];

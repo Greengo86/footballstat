@@ -177,18 +177,18 @@ class ParsePlay extends Model
             будь то перенесённые или сыгранный матч. Сюда попадают только сыгранные и не записанные в бд матчи*/
             $conn = Yii::$app->db;
 
-//                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
-//                    'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
-//                    'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
-//                    'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
-//                    [
-//                        [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
-//                            $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
-//                            $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
-//                            $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
-//                            $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
-//                        ]
-//                    ])->execute();
+                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
+                    'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
+                    'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
+                    'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
+                    [
+                        [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
+                            $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
+                            $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
+                            $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
+                            $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
+                        ]
+                    ])->execute();
         }
         return $array;
     }
