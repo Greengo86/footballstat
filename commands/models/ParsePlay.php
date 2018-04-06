@@ -54,6 +54,8 @@ class ParsePlay extends Model
 
         $this->stat['tour'] = trim($team->find('.block_header:eq(' . $res . ')')->text(), "\x00..\x1F");
 
+//        var_dump($this->stat['tour']);
+
         foreach ($team->find('.block_body_nopadding:eq(' . $res . ')') as $game) {
 
             $game = pq($game);
@@ -69,6 +71,8 @@ class ParsePlay extends Model
             /** Обрезаем полученые результаты в виде строки - 2 символа в конце строки у 'team_away' */
             $this->stat['team_away'] = substr($game->find('.game_block:eq(' . $i . ') .game_at:eq(0) .game_team:eq(0)')->text(), 0, -2);
             $this->stat['team_away_score'] = trim($game->find('.game_block:eq(' . $i . ') .game_at:eq(0) .game_goals:eq(0)')->text(), "\x00..\x1F");
+
+//            var_dump($this->stat);
 
         }
 
@@ -86,8 +90,10 @@ class ParsePlay extends Model
      * пробелов и символов. Используется только для парсинга статистики.
      * По принятым переменным $time_stat и $date_stat определяем каким образом разобрать дату и время.
      */
-    public function parseStat($team, $i, $league)
+    public function parseStat($team, $i)
     {
+
+//        var_dump($team);
 
         $this->stat['h_tid_posses'] = $team[$i]->find('.stats_item:eq(2) .stats_inf:eq(0)')->text();
         $this->stat['a_tid_posses'] = $team[$i]->find('.stats_item:eq(2) .stats_inf:eq(1)')->text();
@@ -113,32 +119,25 @@ class ParsePlay extends Model
          * date снова обрезаем по пробелу и берём дату в формает "05.02.17" и заменяем
          * функцией substr_replace часть строки начиная с 6-ой позиции подставляя год в нужном формате
          * собираем из предыдущих кусков и форматируем $app->formatter->asDatetime ['datetime']
-         * под нужный формат в бд в виде "03.02.2017 22:45"
-         * По принятым переменным $time_stat и $date_stat определяем каким образом разобрать дату и время.
-        У матчей разных чемпионатов разный формат разбора даты и времени. В зависимости от принимаемых значений
-        устанавливаем переменные для разбора даты и времени, т.к. они разные в строке-заголовке спаршеной страницы*/
+         * под нужный формат в бд в виде "03.02.2017 22:45"*/
         $this->stat['year'] = '20' . explode(' ', explode('.', $head_date)[2])[0];
 
-        /*По принятой переменной $league определяем $time и $date. В завимости от них определяеv каким образом
-        "разбираем" дату и время на странице матча/ У матчей разных чемпионатов разный формат разбора даты и времен.
-         В зависимости от принимаемых констант от LeagueParseController устанавливаем переменные для парсинга в опред. лигах*/
-        if ($league == 'spain') {
-            $time = 4;
-            $date = 3;
-        } elseif ($league == 'england') {
-            $time = 7;
-            $date = 6;
-        } elseif ($league == 'germany') {
-            $time = 6;
-            $date = 5;
-        }
+//        var_dump($head_date);
 
-        $time = explode(' ', $head_date)[$time];
+//        $time = explode(' ', $head_date)[$time];
+        $date = substr($head_date, -14, 8);
+        $time = substr($head_date, -5, 5);
 
-        $date = substr_replace((explode(' ', $head_date)[$date]), $this->stat['year'], 6);
+//        var_dump($time);
 
+//        var_dump($date);
+        //Превращаем дату из 18.03.18 в 18.03.2018
+        $date = substr_replace($date, $this->stat['year'], 6);
+//        var_dump($date);
 
         $this->stat['datetime'] = Yii::$app->formatter->asDatetime($date . $time, 'php:Y-m-d H:i');
+
+//        var_dump($this->stat);
 
         return $this->stat;
     }
@@ -153,10 +152,12 @@ class ParsePlay extends Model
     public function playInsert($array)
     {
 
+ //var_dump($array);
+
         foreach ($array as &$value) {
 
             /* Если игра перенесена, то тем значениям, что null присваиваем нули до тех пор пока игра не будет сыграна */
-            if ($value['delay'] == 1) {
+            if ($value['date'] == 'Перенесен') {
                 $value['h_tid_posses'] = 0;
                 $value['a_tid_posses'] = 0;
                 $value['h_tid_shot_on_goal'] = 0;
@@ -171,24 +172,27 @@ class ParsePlay extends Model
                 $value['a_tid_yellow_cart'] = 0;
                 $value['h_tid_red_cart'] = 0;
                 $value['a_tid_red_cart'] = 0;
+                echo '11';
             }
 
             /*Записываем данные в любом случае. Здесь мы получаем массив, который необходимо поместить в бд,
             будь то перенесённые или сыгранный матч. Сюда попадают только сыгранные и не записанные в бд матчи*/
             $conn = Yii::$app->db;
 
-                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
-                    'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
-                    'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
-                    'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
-                    [
-                        [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
-                            $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
-                            $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
-                            $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
-                            $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
-                        ]
-                    ])->execute();
+//            var_dump($value);
+
+//                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
+//                    'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
+//                    'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
+//                    'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
+//                    [
+//                        [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
+//                            $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
+//                            $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
+//                            $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
+//                            $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
+//                        ]
+//                    ])->execute();
         }
         return $array;
     }

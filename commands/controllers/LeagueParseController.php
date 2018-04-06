@@ -38,11 +38,13 @@ class LeagueParseController extends ParseController
          * Что парсим, зависит от передаваемой константы LIVE или PLAY: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад
          * Передаём также строку 'spain' - В завимости от неё модель определит каким образом "разбирать" дату и время на странице матча.
          * У матчей разных чемпионатов разные формата разбора*/
-        $k = 3;
-        $result = parent::actionOld($url, $k, self::PLAY, self::PRIMERA);
+        $k = 9;
+        $result = parent::actionOld($url, $k, self::PLAY);
 
-        foreach ($result as $value) {
-            var_dump($value);
+        if(null != $result){
+            foreach ($result as $value) {
+//            var_dump($value);
+            }
         }
 
         return $this->render('spain', [
@@ -62,19 +64,22 @@ class LeagueParseController extends ParseController
         /** url странички с которой будем парсить - в данном случае "Англия" - даём ссылку со сдвигом временной
          * зоны на 3 часа - для временной зоны Европа/Москва
          */
-        $url = 'http://soccer365.ru/competitions/12/';
+        $url = 'http://soccer365-1.xyz/competitions/12/results/';
 
         /** Устанавливаем счётчик $k переходов по матчам по количеству игр в туре! В Англии игр 10, отсчёт начиная с 0 - 10
          * Что парсим, зависит от передаваемой константы: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад
          * Здесь в отличии от Испании 4-ый аргумент не передаём, т.к. он не обязательный и
          * поэтому модель будет парсить под формат чемпионата Англии. В завимости от неё модель определит
          * каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
-        $k = 9;
-        $result = parent::actionLive($url, $k, self::LIVE, self::PREMIRLIGA);
+        $k = 1;
+        $result = parent::actionLive($url, $k, self::LIVE);
 
-        foreach ($result as $value) {
-            var_dump($value);
+        if(null != $result){
+            foreach ($result as $value) {
+//                var_dump($value);
+            }
         }
+
 
         return $this->render('england', [
             'result' => $result,
@@ -93,18 +98,20 @@ class LeagueParseController extends ParseController
         /** url странички с которой будем парсить - в данном случае "Германия" - даём ссылку со сдвигом временной
          * зоны на 3 часа - для временной зоны Европа/Москва
          * */
-        $url = 'http://soccer365-1.xyz/competitions/17/2016-2017/results/';
+        $url = 'http://soccer365-1.xyz/competitions/17/results/';
         /** Устанавливаем счётчик $k переходов по матчам по количеству игр в туре! В Германии игр 9, отсчёт начиная с 0 - 9
          * Что парсим, зависит от передаваемой константы: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад
          * Здесь в отличии от Испании 4-ый аргумент не передаём, т.к. он не обязательный и
          * поэтому модель будет парсить под формат чемпионата Англии. В завимости от неё модель определит
          * каким образом "разбирать" дату и время на странице матча. У матчей разных чемпионатов разные формата разбора*/
-        $k = 8;
+        $k = 9;
 
-        $result = parent::actionLive($url, $k, self::LIVE, self::BUNDESLIGA);
+        $result = parent::actionOld($url, $k, self::PLAY);
 
-        foreach ($result as $value) {
-            var_dump($value);
+        if(null != $result){
+            foreach ($result as $value) {
+//            var_dump($value);
+            }
         }
 
         return $this->render('germany', [

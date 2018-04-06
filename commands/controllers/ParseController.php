@@ -35,7 +35,7 @@ class ParseController extends Controller
      * Экшен для ручной записи в базу данных матчей, которые уже прошли довольно давно! 2-3 недели назад. А именно для парсинга
      * со страницы "резульататы" - http://soccer365-1.xyz/competitions/16/results/ - Здесь, например, Испания!
      */
-    public function actionOld($url, $k, $res, $league)
+    public function actionOld($url, $k, $res)
     {
 
         /** Эмулируем работу браузера с помощью curl*/
@@ -56,10 +56,16 @@ class ParseController extends Controller
              * слово 'live' то также этот матч не записываем в бд до его окончания */
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
             if ($is_link !== null || strpos($this->stat[$i]['link'], 'live') == true) {
-                $i++;
-                continue;
+                return null;
             }
+
+//            var_dump($this->stat);
+
+//            if($this->stat[$i]['league_id'] !== null  && $this->stat[$i]['datetime'] !== '1970-01-01 03:00'){
+//
+//            }
             foreach ($this->stat as $link) {
+//                var_dump($this->stat);
                 /** "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
                 $dom1[$i] = self::DOMEN . $link['link'];
                 /** Эмулируем работу браузера с помощью curl*/
@@ -70,7 +76,7 @@ class ParseController extends Controller
                 /** Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
                  * в туре и записываем в массив $stat[$i]*/
                 /** В массив $this->to_record записываем полные стат данные, которых ещё нет в бд  */
-                $this->to_record[$i] = $model->parseStat($pq_m, $i, $league);
+                $this->to_record[$i] = $model->parseStat($pq_m, $i);
                 /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
                  * и дозаписываем в $this->to_record, для того, чтобы записать в базу данных (int) id команд,
                  * учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
@@ -200,7 +206,7 @@ class ParseController extends Controller
      * @return array - возвращаем массив, который будет записан в бд. Возвращаем только для тестирования
      * Экшен для парсинга матчей!
      */
-    public function actionLive($url, $k, $res, $league)
+    public function actionLive($url, $k, $res)
     {
 
         /** Эмулируем работу браузера с помощью curl*/
@@ -215,34 +221,54 @@ class ParseController extends Controller
          * в туре и записываем в массив $stat вызывая $play->parsePlay()*/
         while ($i <= $k) {
 
-            $this->stat[$i] = $model->parseLive($team, $i, $res);
+            $this->stat[$i] = $model->parseLive($team, $i, 1);
             /** Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
              * то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
              * слово 'live' то также этот матч не записываем в бд до его окончания */
+//            var_dump($this->stat[$i]);
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
-            if ($is_link !== null || strpos($this->stat[$i]['link'], 'live') == true) {
+
+//            if($this->stat[$i]['date'] == 'Перенесен'){
+//                $this->stat[$i]['delay'] = 1;
+//                $model->playInsert($this->stat[$i]);
+////                return null;
+//            }
+
+//            var_dump($is_link);
+
+
+
+            if($is_link !== null && $this->stat[$i]['date'] !== 'Перенесен'){
                 $i++;
+                echo '1';
+//                var_dump($is_link);
                 continue;
-            }
-            foreach ($this->stat as $link) {
-                /** "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
-                $dom1[$i] = self::DOMEN . $link['link'];
-                /** Эмулируем работу браузера с помощью curl*/
-                $game[$i] = curl_get($dom1[$i]);
-                /** Создаем объект phpQuery */
-                $match[$i] = \phpQuery::newDocumentHTML($game[$i]);
-                $pq_m[$i] = pq($match[$i]);
-                /** Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
-                 * в туре и записываем в массив $stat[$i]*/
-                /** В массив $this->to_record записываем полные стат данные, которых ещё нет в бд  */
-                $this->to_record[$i] = $model->parseStat($pq_m, $i, $league);
-                /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
-                 * и дозаписываем в $this->to_record, для того, чтобы записать в базу данных (int) id команд,
-                 * учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
-                $team_home[$i] = Team::find()->andWhere(['team_name' => $link['team_home']])->one();
-                $this->to_record[$i]['team_home'] = $team_home[$i]->team_id;
-                $team_away[$i] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
-                $this->to_record[$i]['team_away'] = $team_away[$i]->team_id;
+            }elseif(strpos($this->stat[$i]['link'], 'live') == true && $this->stat[$i]['date'] !== 'Перенесен'){
+                $i++;
+                echo '2';
+                continue;
+            }elseif($is_link == null && $this->stat[$i]['date'] == 'Перенесен'){
+//                Записываем в базу
+                foreach ($this->stat as $link) {
+                    /** "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
+                    $dom1[$i] = self::DOMEN . $link['link'];
+                    /** Эмулируем работу браузера с помощью curl*/
+                    $game[$i] = curl_get($dom1[$i]);
+                    /** Создаем объект phpQuery */
+                    $match[$i] = \phpQuery::newDocumentHTML($game[$i]);
+                    $pq_m[$i] = pq($match[$i]);
+                    /** Парсим данные по ссылкам - статистика! проходимся в цикле - по количеству ссылок
+                     * в туре и записываем в массив $stat[$i]*/
+                    /** В массив $this->to_record записываем полные стат данные, которых ещё нет в бд  */
+                    $this->to_record[$i] = $model->parseStat($pq_m, $i);
+                    /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
+                     * и дозаписываем в $this->to_record, для того, чтобы записать в базу данных (int) id команд,
+                     * учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
+                    $team_home[$i] = Team::find()->andWhere(['team_name' => $link['team_home']])->one();
+                    $this->to_record[$i]['team_home'] = $team_home[$i]->team_id;
+                    $team_away[$i] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
+                    $this->to_record[$i]['team_away'] = $team_away[$i]->team_id;
+                }
             }
             $i++;
         }
