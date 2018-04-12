@@ -221,7 +221,7 @@ class ParseController extends Controller
          * в туре и записываем в массив $stat вызывая $play->parsePlay()*/
         while ($i <= $k) {
 
-            $this->stat[$i] = $model->parseLive($team, $i, 1);
+            $this->stat[$i] = $model->parseLive($team, $i, $res);
             /** Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
              * то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
              * слово 'live' то также этот матч не записываем в бд до его окончания */
@@ -234,20 +234,15 @@ class ParseController extends Controller
 ////                return null;
 //            }
 
-//            var_dump($is_link);
-
-
-
             if($is_link !== null && $this->stat[$i]['date'] !== 'Перенесен'){
                 $i++;
-                echo '1';
 //                var_dump($is_link);
                 continue;
             }elseif(strpos($this->stat[$i]['link'], 'live') == true && $this->stat[$i]['date'] !== 'Перенесен'){
                 $i++;
                 echo '2';
                 continue;
-            }elseif($is_link == null && $this->stat[$i]['date'] == 'Перенесен'){
+            }else/*if($is_link == null && $this->stat[$i]['date'] == 'Перенесен')*/{
 //                Записываем в базу
                 foreach ($this->stat as $link) {
                     /** "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */

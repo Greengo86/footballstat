@@ -25,3 +25,21 @@ function curl_get($url, $referer = 'http://www.google.com'){
     return $data;
 
 }
+
+function getDateTo_Search(){
+
+    $year = date('Y');
+    $date = $year . '-' . Yii::$app->params['dateEndSeason'];
+    $date = new DateTime($date);
+
+    $d1 = new DateTime('now');
+
+    $a = date_diff($d1, $date);
+//    echo $a->format('%R%a дней');
+
+
+    $dateTo_Search = ($d1 < $date) ? ((int)$year - 1) . '-' . Yii::$app->params['dateEndSeason'] : $year . '-' . Yii::$app->params['dateEndSeason'];
+
+    echo $dateTo_Search;
+
+}

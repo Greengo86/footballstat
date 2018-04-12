@@ -3,8 +3,8 @@
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=footstat',
-    'username' => '{{username}}',
-    'password' => '{{password}}',
+    'username' => 'root',
+    'password' => '',
     'charset' => 'utf8',
     'enableSchemaCache' => true,
 ];
