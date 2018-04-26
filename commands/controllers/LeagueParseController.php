@@ -110,8 +110,28 @@ class LeagueParseController extends ParseController
             'result' => $result,
         ]);
 
-//        echo Yii::$app->params['adminEmail'];
+    }
 
+
+    public function actionItaly()
+    {
+
+
+        /** url странички с которой будем парсить - в данном случае "Италия" - даём ссылку со сдвигом временной
+         * зоны на 3 часа - для временной зоны Европа/Москва
+         * */
+        $url = 'http://soccer365-1.xyz/competitions/15/results/';
+        /** Устанавливаем счётчик $k переходов по матчам по количеству игр в туре! В Италии игр 9, отсчёт начиная с 0 - 9
+         * Что парсим, зависит от передаваемой константы: 0 - недавно сыгранные матчи, 1 - матчи, сыгранные 2-3 назад*/
+        $k = 9;
+
+        $result = parent::actionLive($url, $k, self::LIVE);
+
+//        if(null != $result){
+//            foreach ($result as $value) {
+////            var_dump($value);
+//            }
+//        }
 
     }
 

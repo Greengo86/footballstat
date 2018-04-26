@@ -26,6 +26,9 @@ function curl_get($url, $referer = 'http://www.google.com'){
 
 }
 
+/**
+ * @return string Возвращаем дату для запроса к бд для выбора записей текущего сезона
+ */
 function getDateTo_Search(){
 
     $year = date('Y');
@@ -40,6 +43,6 @@ function getDateTo_Search(){
 
     $dateTo_Search = ($d1 < $date) ? ((int)$year - 1) . '-' . Yii::$app->params['dateEndSeason'] : $year . '-' . Yii::$app->params['dateEndSeason'];
 
-    echo $dateTo_Search;
+    return $dateTo_Search;
 
 }

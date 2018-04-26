@@ -33,7 +33,10 @@ class ParsePlay extends Model
             $league = 2;
         } elseif (preg_match('/Бундеслига/', $champ)) {
             $league = 3;
+        } elseif (preg_match('/Серия А/', $champ)) {
+            $league = 4;
         }
+
         return $league;
 
     }
@@ -72,12 +75,22 @@ class ParsePlay extends Model
             $this->stat['team_away'] = substr($game->find('.game_block:eq(' . $i . ') .game_at:eq(0) .game_team:eq(0)')->text(), 0, -2);
             $this->stat['team_away_score'] = trim($game->find('.game_block:eq(' . $i . ') .game_at:eq(0) .game_goals:eq(0)')->text(), "\x00..\x1F");
 
+//            $this->stat['next'] = trim($team->find('.block_body_nopadding:eq(0) .game_block:eq(' . $i . ')')->next()->text(), "\x00..\x1F");
+
 //            var_dump($this->stat);
 
         }
 
         return $this->stat;
     }
+
+//    public function parseNext($team, $i){
+//        $this->stat['next'] = trim($team->find('.block_body_nopadding:eq(0) .game_block:eq(' . $i . ')')->next()->text(), "\x00..\x1F");
+//
+////        var_dump($this->stat['next']);
+//        return $this->stat['next'];
+//    }
+
 
     /**
      * @param $team - объект phpQuery переданный из контреллера
@@ -180,18 +193,18 @@ class ParsePlay extends Model
 
 //            var_dump($value);
 
-                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
-                    'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
-                    'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
-                    'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
-                    [
-                        [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
-                            $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
-                            $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
-                            $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
-                            $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
-                        ]
-                    ])->execute();
+//                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
+//            'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
+//                'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
+//                'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
+//                [
+//                    [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
+//                        $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
+//                        $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
+//                        $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
+//                        $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
+//                    ]
+//                ])->execute();
         }
         return $array;
     }

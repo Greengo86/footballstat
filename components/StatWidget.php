@@ -50,9 +50,11 @@ class StatWidget extends Widget
 
         parent::init();
 
-        $play['home'] = Play::find()->asArray()->with('teamHome', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
-        $play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
-        $play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
+        $dateToSearch = getDateTo_Search();
+
+        $play['home'] = Play::find()->asArray()->with('teamHome', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->andWhere(['>', 'created_at',$dateToSearch])->indexBy('id')->all();
+        $play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->andWhere(['>', 'created_at',$dateToSearch])->indexBy('id')->all();
+        $play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->andWhere(['>', 'created_at',$dateToSearch])->count();
 
 
 //        Получаем список статистических показателей дома и на выезде, в качестве параметров передаём какой

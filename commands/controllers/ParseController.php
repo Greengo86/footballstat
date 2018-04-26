@@ -87,6 +87,8 @@ class ParseController extends Controller
             }
             $i++;
         }
+
+        \phpQuery::unloadDocuments($team);
         /** вызываем метод, который запишет подготовленные данные в бд */
         $model->playInsert($this->to_record);
 
@@ -219,24 +221,28 @@ class ParseController extends Controller
 
         /** Парсим данные с сайта - тур, названия команд, счёт, дата и ссылка!проходимся в цикле 9 или 10 раз - по количеству игр
          * в туре и записываем в массив $stat вызывая $play->parsePlay()*/
+
+//        $this->stat[$i]['next'] = 'StartParse';
+
         while ($i <= $k) {
 
-            $this->stat[$i] = $model->parseLive($team, $i, $res);
+
+//            var_dump($this->stat[$i]['next']);
+//            if(empty($this->stat[$i]['next'])){
+//                break;
+//            }
+
+            $this->stat[$i] = $model->parseLive($team, $i, 0);
+
             /** Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
              * то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
              * слово 'live' то также этот матч не записываем в бд до его окончания */
 //            var_dump($this->stat[$i]);
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
 
-//            if($this->stat[$i]['date'] == 'Перенесен'){
-//                $this->stat[$i]['delay'] = 1;
-//                $model->playInsert($this->stat[$i]);
-////                return null;
-//            }
-
             if($is_link !== null && $this->stat[$i]['date'] !== 'Перенесен'){
                 $i++;
-//                var_dump($is_link);
+//                echo '2';
                 continue;
             }elseif(strpos($this->stat[$i]['link'], 'live') == true && $this->stat[$i]['date'] !== 'Перенесен'){
                 $i++;
@@ -256,6 +262,11 @@ class ParseController extends Controller
                      * в туре и записываем в массив $stat[$i]*/
                     /** В массив $this->to_record записываем полные стат данные, которых ещё нет в бд  */
                     $this->to_record[$i] = $model->parseStat($pq_m, $i);
+                    if($this->to_record[$i]['league_id'] == null && $this->to_record[$i]['datetime'] == '1970-01-01 03:00'){
+                        unset($this->to_record[$i]);
+                        $i++;
+                        continue;
+                    }
                     /** Берём спаршенные названия команд в виде строк, запрашиваем связанные данные из таблицы Team
                      * и дозаписываем в $this->to_record, для того, чтобы записать в базу данных (int) id команд,
                      * учавствующей в матче номер названия команды и id лиги для записи в базу данных*/
@@ -265,8 +276,13 @@ class ParseController extends Controller
                     $this->to_record[$i]['team_away'] = $team_away[$i]->team_id;
                 }
             }
+
+//            $this->stat[$i]['next'] = $model->parseNext($team, $i);
             $i++;
+
         }
+
+        \phpQuery::unloadDocuments($team);
         /* вызываем метод, который запишет подготовленные данные в бд */
         $model->playInsert($this->to_record);
 
