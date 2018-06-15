@@ -191,10 +191,9 @@ class ParsePlay extends Model
             будь то перенесённые или сыгранный матч. Сюда попадают только сыгранные и не записанные в бд матчи*/
             $conn = Yii::$app->db;
 
-//            var_dump($value);
 
 //                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
-//            'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
+//                'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
 //                'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
 //                'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
 //                [

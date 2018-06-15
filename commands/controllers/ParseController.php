@@ -232,7 +232,7 @@ class ParseController extends Controller
 //                break;
 //            }
 
-            $this->stat[$i] = $model->parseLive($team, $i, 0);
+            $this->stat[$i] = $model->parseLive($team, $i, 4);
 
             /** Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
              * то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует

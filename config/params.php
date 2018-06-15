@@ -2,5 +2,5 @@
 
 return [
     'adminEmail' => 'admin@example.com',
-    'dateEndSeason' => '06-12'
+    'dateEndSeason' => '06-30'
 ];

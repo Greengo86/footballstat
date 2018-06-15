@@ -43,6 +43,11 @@ class Play extends \yii\db\ActiveRecord
         return 'play';
     }
 
+//    public function getTeam()
+//    {
+//        return $this->hasOne(Team::className(), ['team_league' => 'league_id']);
+//    }
+
     public function getTeamHome()
     {
         return $this->hasOne(Team::className(), ['team_id' => 'home_team_id']);

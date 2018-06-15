@@ -9,3 +9,5 @@ protected/data/*.db
 themes/classic/views/
 .idea/inspectionProfiles/
 assets/
+puphpet/config-custom.yaml
+

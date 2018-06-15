@@ -38,7 +38,10 @@ class PlayController extends AppAdminController
     {
         //Создаём запрос в виде массива и используем жадную загрузку со связями! В итоге 14 запросов к базе данных вместо 41 - без массива
         //и 10 в ввиде массива.
-        $query = Play::find()->with('teamHome', 'teamAway', 'league')->asArray()->indexBy('id');
+
+        $dateToSearch = getDateTo_Search();
+
+        $query = Play::find()->with('teamHome', 'teamAway', 'league')->andWhere(['>', 'created_at',$dateToSearch])->asArray()->indexBy('id');
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
@@ -54,8 +57,11 @@ class PlayController extends AppAdminController
     public function actionChamp($id)
     {
 
+        $dateToSearch = getDateTo_Search();
+
         //Выводим определённый чемпионат в админке через ActiveDataProvider
-        $query = Play::find()->with('teamHome', 'teamAway', 'league')->asArray()->where(['league_id' => $id]);
+        $query = Play::find()->with('teamHome', 'teamAway', 'league', 'team')->andWhere(['>', 'created_at',$dateToSearch])->andWhere(['=', 'is_active', 1])->asArray()->where(['league_id' => $id]);
+        var_dump($query);
         /** $page - устанавливаем переменную в пагинацию. По умолчанию, это 10 - матчей на одной странице
          Если же $id, который к нам приходит в качестве параметра 3 - то есть это Германия, то 9 матчей на стр-цу*/
         $page = 10;
