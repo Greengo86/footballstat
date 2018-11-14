@@ -88,8 +88,6 @@ class LeagueParseController extends ParseController
      */
     public function actionGermany()
     {
-
-
         /** url странички с которой будем парсить - в данном случае "Германия" - даём ссылку со сдвигом временной
          * зоны на 3 часа - для временной зоны Европа/Москва
          * */
