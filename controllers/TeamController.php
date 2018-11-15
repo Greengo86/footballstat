@@ -57,7 +57,7 @@ class TeamController extends AppController
      */
     public function actionTeam()
     {
-        //$id - id чемпионата, $t - id команды
+        //$id - id чемпионата, $t - id команд
         $id = Yii::$app->request->get('id');
         $t = Yii::$app->request->get('t');
 //        Все матчи дома и на выезде
