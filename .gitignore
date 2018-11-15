@@ -10,3 +10,5 @@ themes/classic/views/
 .idea/
 .vagrant/
 assets/
+puphpet/config-custom.yaml
+

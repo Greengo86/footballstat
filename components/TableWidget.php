@@ -23,15 +23,33 @@ class TableWidget extends Widget
 
         parent::init();
 
-        $this->play['home'] = Play::find()->asArray()->with('teamHome', 'teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
-        $this->play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->indexBy('id')->all();
-        $this->play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->count();
+        $dateToSearch = getDateTo_Search();
+
+        $array['home'] = Play::find()->asArray()->with('teamHome', 'teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->andWhere(['>', 'created_at',$dateToSearch])->indexBy('id')->all();
+
+        foreach ($array['home'] as $value){
+            if($value['teamHome']['is_active'] == 1){
+                $this->play['home'][] = $value;
+                $this->champ = $value['league'];
+            }
+//            var_dump($value);
+//            var_dump($this->play['home']);
+//            var_dump($this->champ);
+        }
+
+
+        $this->play['away'] = Play::find()->asArray()->with('teamAway', 'league')->where(['league_id' => $this->champ, 'delay' => 0])->andWhere(['>', 'created_at',$dateToSearch])->indexBy('id')->all();
+        $this->play['count'] = Play::find()->orderBy('id')->where(['league_id' => $this->champ, 'delay' => 0])->andWhere(['>', 'created_at',$dateToSearch])->count();
+        var_dump($this->play['home']);
+//        die;
+
+//        var_dump($this->play['home']);
 
         /** Записываем в переменную $this->champ используя цикл foreach строку с названием выводимой во view Лиги */
-        foreach ($this->play['home'] as $game) {
-            $this->champ = $game['league']['league'];
-            break;
-        }
+//        foreach ($this->play['home'] as $game) {
+//            $this->champ = $game['league']['league'];
+//            break;
+//        }
 
 //        Получаем список статистических показателей дома и на выезде - Голы в матче
         $goalHome = team::statHome($this->play['home'], self::HOME_GOAL, 'goalHome');

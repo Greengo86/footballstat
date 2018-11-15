@@ -546,6 +546,7 @@ class Team extends ActiveRecord
             'team_embl' => 'Эмблема команды',
             'team_stadium' => 'Стадион',
             'team_league' => 'Чемпионат',
+            'is_active' => 'Команда в высшем дивизионе'
         ];
     }
 }
