@@ -226,13 +226,7 @@ class ParseController extends Controller
 
         while ($i <= $k) {
 
-
-//            var_dump($this->stat[$i]['next']);
-//            if(empty($this->stat[$i]['next'])){
-//                break;
-//            }
-
-            $this->stat[$i] = $model->parseLive($team, $i, 4);
+            $this->stat[$i] = $model->parseLive($team, $i, 0);
 
             /** Если в массиве $this->stat['link'], есть ссылка, что и в базе данных,
              * то берём ссылки на матчи и проходимся по ним по очереди, парся статистику.Если там присутствует
@@ -240,15 +234,13 @@ class ParseController extends Controller
 //            var_dump($this->stat[$i]);
             $is_link = Play::find()->asArray()->andWhere(['link' => $this->stat[$i]['link']])->one();
 
-            if($is_link !== null && $this->stat[$i]['date'] !== 'Перенесен'){
+            if ($is_link !== null && $this->stat[$i]['date'] !== 'Перенесен'){
                 $i++;
-//                echo '2';
                 continue;
-            }elseif(strpos($this->stat[$i]['link'], 'live') == true && $this->stat[$i]['date'] !== 'Перенесен'){
+            } elseif(strpos($this->stat[$i]['link'], 'live') == true && $this->stat[$i]['date'] !== 'Перенесен'){
                 $i++;
-                echo '2';
                 continue;
-            }else/*if($is_link == null && $this->stat[$i]['date'] == 'Перенесен')*/{
+            } else/*if($is_link == null && $this->stat[$i]['date'] == 'Перенесен')*/{
 //                Записываем в базу
                 foreach ($this->stat as $link) {
                     /** "Склеиваем" домен(главная страница сайта) и ссылку на каждый отдельный матч */
@@ -274,6 +266,7 @@ class ParseController extends Controller
                     $this->to_record[$i]['team_home'] = $team_home[$i]->team_id;
                     $team_away[$i] = Team::find()->andWhere(['team_name' => $link['team_away']])->one();
                     $this->to_record[$i]['team_away'] = $team_away[$i]->team_id;
+//                    var_dump($this->to_record[$i]);
                 }
             }
 
@@ -281,6 +274,7 @@ class ParseController extends Controller
             $i++;
 
         }
+//        var_dump($this->to_record);
 
         \phpQuery::unloadDocuments($team);
         /* вызываем метод, который запишет подготовленные данные в бд */
@@ -301,7 +295,6 @@ class ParseController extends Controller
         }
 
         return $this->to_record;
-
     }
 
 }

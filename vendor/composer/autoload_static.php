@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
+class ComposerStaticInit3cd119fd1117e2f64380b63a0dae21bd
 {
     public static $files = array (
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
@@ -71,16 +71,24 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         array (
             'Faker\\' => 6,
         ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 22,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'yii\\swiftmailer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer/src',
         ),
         'yii\\jui\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui/src',
         ),
         'yii\\gii\\' => 
         array (
@@ -88,11 +96,11 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         ),
         'yii\\faker\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-faker',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-faker/src',
         ),
         'yii\\debug\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-debug',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-debug/src',
         ),
         'yii\\composer\\' => 
         array (
@@ -104,7 +112,7 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         ),
         'yii\\bootstrap\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
         ),
         'yii\\' => 
         array (
@@ -116,23 +124,23 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         ),
         'kartik\\widgets\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets/src',
         ),
         'kartik\\typeahead\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead/src',
         ),
         'kartik\\touchspin\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-touchspin',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-touchspin/src',
         ),
         'kartik\\time\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker/src',
         ),
         'kartik\\tabs\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-tabs-x',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tabs-x/src',
         ),
         'kartik\\switchinput\\' => 
         array (
@@ -140,7 +148,7 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         ),
         'kartik\\spinner\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner/src',
         ),
         'kartik\\sidenav\\' => 
         array (
@@ -148,15 +156,15 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         ),
         'kartik\\select2\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2/src',
         ),
         'kartik\\rating\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rating',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rating/src',
         ),
         'kartik\\range\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rangeinput',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rangeinput/src',
         ),
         'kartik\\plugins\\tabs\\' => 
         array (
@@ -172,27 +180,27 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         ),
         'kartik\\nav\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-nav-x',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-nav-x/src',
         ),
         'kartik\\helpers\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers/src',
         ),
         'kartik\\growl\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl/src',
         ),
         'kartik\\form\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform/src',
         ),
         'kartik\\file\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput/src',
         ),
         'kartik\\field\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-field-range',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-field-range/src',
         ),
         'kartik\\dropdown\\' => 
         array (
@@ -200,27 +208,27 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         ),
         'kartik\\depdrop\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop/src',
         ),
         'kartik\\datetime\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker/src',
         ),
         'kartik\\date\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker/src',
         ),
         'kartik\\color\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput/src',
         ),
         'kartik\\base\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
         ),
         'kartik\\alert\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-alert',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-alert/src',
         ),
         'kartik\\affix\\' => 
         array (
@@ -237,6 +245,14 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
     );
 
@@ -282,10 +298,10 @@ class ComposerStaticInita947b36985fbda3c32c2bfc855c35109
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita947b36985fbda3c32c2bfc855c35109::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita947b36985fbda3c32c2bfc855c35109::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita947b36985fbda3c32c2bfc855c35109::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInita947b36985fbda3c32c2bfc855c35109::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3cd119fd1117e2f64380b63a0dae21bd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3cd119fd1117e2f64380b63a0dae21bd::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3cd119fd1117e2f64380b63a0dae21bd::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3cd119fd1117e2f64380b63a0dae21bd::$classMap;
 
         }, null, ClassLoader::class);
     }

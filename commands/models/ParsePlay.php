@@ -108,20 +108,20 @@ class ParsePlay extends Model
 
 //        var_dump($team);
 
-        $this->stat['h_tid_posses'] = $team[$i]->find('.stats_item:eq(2) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_posses'] = $team[$i]->find('.stats_item:eq(2) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_posses'] = $team[$i]->find('.stats_item:eq(4) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_posses'] = $team[$i]->find('.stats_item:eq(4) .stats_inf:eq(1)')->text();
         $this->stat['h_tid_shot_on_goal'] = $team[$i]->find('.stats_item:eq(1) .stats_inf:eq(0)')->text();
         $this->stat['a_tid_shot_on_goal'] = $team[$i]->find('.stats_item:eq(1) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_foul'] = $team[$i]->find('.stats_item:eq(4) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_foul'] = $team[$i]->find('.stats_item:eq(4) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_corner'] = $team[$i]->find('.stats_item:eq(3) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_corner'] = $team[$i]->find('.stats_item:eq(3) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_offside'] = $team[$i]->find('.stats_item:eq(5) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_offside'] = $team[$i]->find('.stats_item:eq(5) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_yellow_cart'] = $team[$i]->find('.stats_item:eq(6) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_yellow_cart'] = $team[$i]->find('.stats_item:eq(6) .stats_inf:eq(1)')->text();
-        $this->stat['h_tid_red_cart'] = $team[$i]->find('.stats_item:eq(7) .stats_inf:eq(0)')->text();
-        $this->stat['a_tid_red_cart'] = $team[$i]->find('.stats_item:eq(7) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_foul'] = $team[$i]->find('.stats_item:eq(6) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_foul'] = $team[$i]->find('.stats_item:eq(6) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_corner'] = $team[$i]->find('.stats_item:eq(5) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_corner'] = $team[$i]->find('.stats_item:eq(5) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_offside'] = $team[$i]->find('.stats_item:eq(7) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_offside'] = $team[$i]->find('.stats_item:eq(7) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_yellow_cart'] = $team[$i]->find('.stats_item:eq(8) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_yellow_cart'] = $team[$i]->find('.stats_item:eq(8) .stats_inf:eq(1)')->text();
+        $this->stat['h_tid_red_cart'] = $team[$i]->find('.stats_item:eq(9) .stats_inf:eq(0)')->text();
+        $this->stat['a_tid_red_cart'] = $team[$i]->find('.stats_item:eq(9) .stats_inf:eq(1)')->text();
         /* Определения чемпионата! Ищем в спарсенной строке и в зависимости от неё подготавливаем переменную для базы данных*/
         $this->stat['league_id'] = self::parseChamp($team[$i]);
         $head_date = trim($team[$i]->find('.live_body #game_events .block_header')->text(), "\x00..\x1F");
@@ -135,18 +135,16 @@ class ParsePlay extends Model
          * под нужный формат в бд в виде "03.02.2017 22:45"*/
         $this->stat['year'] = '20' . explode(' ', explode('.', $head_date)[2])[0];
 
-//        var_dump($head_date);
-
 //        $time = explode(' ', $head_date)[$time];
-        $date = substr($head_date, -14, 8);
-        $time = substr($head_date, -5, 5);
+        $date = trim(substr($head_date, -14, 9));
+        $time = trim(substr($head_date, -5, 5));
 
-//        var_dump($time);
+//        var_dump($head_date, $date, $time);die();
 
 //        var_dump($date);
         //Превращаем дату из 18.03.18 в 18.03.2018
         $date = substr_replace($date, $this->stat['year'], 6);
-//        var_dump($date);
+//        var_dump($date);die();
 
         $this->stat['datetime'] = Yii::$app->formatter->asDatetime($date . $time, 'php:Y-m-d H:i');
 
@@ -191,19 +189,18 @@ class ParsePlay extends Model
             будь то перенесённые или сыгранный матч. Сюда попадают только сыгранные и не записанные в бд матчи*/
             $conn = Yii::$app->db;
 
-
-//                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
-//                'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
-//                'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
-//                'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
-//                [
-//                    [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
-//                        $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
-//                        $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
-//                        $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
-//                        $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
-//                    ]
-//                ])->execute();
+                $conn->createCommand()->batchInsert('play', ['year', 'link', 'date', 'delay', 'league_id', 'home_team_id', 'away_team_id',
+                'home_score_full', 'away_score_full', 'h_tid_posses', 'a_tid_posses', 'h_tid_shot_on_goal', 'a_tid_shot_on_goal',
+                'h_tid_foul', 'a_tid_foul', 'h_tid_corner', 'a_tid_corner', 'h_tid_offside', 'a_tid_offside',
+                'h_tid_yellow_cart', 'a_tid_yellow_cart', 'h_tid_red_cart', 'a_tid_red_cart'],
+                [
+                    [$value['year'], $value['link'], $value['datetime'], $value['delay'], $value['league_id'], $value['team_home'], $value['team_away'],
+                        $value['team_home_score'], $value['team_away_score'], $value['h_tid_posses'], $value['a_tid_posses'],
+                        $value['h_tid_shot_on_goal'], $value['a_tid_shot_on_goal'], $value['h_tid_foul'], $value['a_tid_foul'],
+                        $value['h_tid_corner'], $value['a_tid_corner'], $value['h_tid_offside'], $value['a_tid_offside'],
+                        $value['h_tid_yellow_cart'], $value['a_tid_yellow_cart'], $value['h_tid_red_cart'], $value['a_tid_red_cart']
+                    ]
+                ])->execute();
         }
         return $array;
     }
