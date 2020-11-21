@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'team_league')->dropDownList(['1' => 'Испания', '2' => 'Англия', '3' => 'Германия']) ?>
+    <?= $form->field($model, 'team_league')->dropDownList(['1' => 'Испания', '2' => 'Англия', '3' => 'Германия', '4' => 'Италия']) ?>
 
     <?= $form->field($model, 'team_name')->textInput(['maxlength' => true]) ?>
 

@@ -38,7 +38,7 @@ class AppAsset extends AssetBundle
         'css/custom.css'
     ];
     public $js = [
-//       'js/jquery-1.11.1.min.js',
+       'js/jquery-1.11.1.min.js',
         'js/wow.min.js',
         'js/typewriter.js',
         'js/jquery.onepagenav.js',
@@ -48,9 +48,13 @@ class AppAsset extends AssetBundle
 //        'js/jquery.mousewheel.min.js',
 //       'js/bootstrap.min.js',
     ];
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_HEAD
+    ];
     public $depends = [
 //        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
+//        'yii\web\JqueryAsset',
+//        'yii\bootstrap\BootstrapPluginAsset',
 //        'rmrevin\yii\fontawesome\AssetBundle'
     ];
 }

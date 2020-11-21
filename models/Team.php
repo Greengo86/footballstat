@@ -299,7 +299,8 @@ class Team extends ActiveRecord
     public static function statMaxTeam($array)
     {
         //Определяем команду, с наибольшим коэфициентом
-        return $team = array_search(max($array), $array);
+//        var_dump($array); die();
+        return array_search(max($array), $array);
     }
 
 //    Методы для формирования турнирных таблиц для каждого чемпионата на главной странице
@@ -318,9 +319,20 @@ class Team extends ActiveRecord
         $param = [];
         //Формируем массив из названий команд(ключи) и статистическими значениями дома
         foreach ($playHome as $game) {
-            $param[$game['teamHome']['team_name']] += $game[$value];
+//            var_dump($game['teamHome']['team_name']); die();
+            if (isset($game['teamHome']['team_name'])) {
+                $param[$game['teamHome']['team_name']] += $game[$value];
+            }
+//            array_flip($param);
         }
-
+//        var_dump($param); die();
+//        foreach ($playHome as $game) {
+//            var_dump($game['teamHome']['team_name']); die();
+//            if (isset($game['teamHome']['team_name'])) {
+//                $param[$game['teamHome']['team_name']] += $game[$value];
+//            }
+//        }
+//        var_dump($param); die();
         return $param;
 
     }
@@ -398,6 +410,7 @@ class Team extends ActiveRecord
     {
 
         //суммируем значения дома и на выезде для каждой команды
+//        var_dump($scoreHome, $scoreAway); die();
         foreach ($scoreHome as $k => $home) {
             foreach ($scoreAway as $n => $away) {
                 if ($k == $n) {
@@ -488,7 +501,6 @@ class Team extends ActiveRecord
      */
     public static function getTable($playHome, $goal, $ownGoal)
     {
-
         //Обнуляем статическое свойство перед каждый проходом
         self::$points = [];
         //        Получаем отсортированный массив в виде Команда => значение: игры => X, очки => X, голы => X, пропголы => X
@@ -546,6 +558,7 @@ class Team extends ActiveRecord
             'team_embl' => 'Эмблема команды',
             'team_stadium' => 'Стадион',
             'team_league' => 'Чемпионат',
+            'is_active' => 'Команда в высшем дивизионе'
         ];
     }
 }

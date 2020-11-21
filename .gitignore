@@ -7,5 +7,8 @@ config/db.php
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
-.idea/inspectionProfiles/
+.idea/
+.vagrant/
 assets/
+puphpet/config-custom.yaml
+

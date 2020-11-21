@@ -36,10 +36,13 @@ use yii\helpers\Url;
  * @property integer $a_tid_red_cart
  */
 class Play extends ActiveRecord
+    implements \Countable
 {
 
     //Устанавливаем константу для консольного приложения(парсинга мачтей), как признак, что игра добавлена в бд
     const RECORD_INSERTED = 'RECORD_INSERTED';
+
+    protected $id = [];
 
     public function behaviors()
     {
@@ -90,6 +93,11 @@ class Play extends ActiveRecord
     {
         return 'play';
     }
+
+//    public function getTeam()
+//    {
+//        return $this->hasOne(Team::className(), ['team_league' => 'league_id']);
+//    }
 
     public function getTeamHome()
     {
@@ -153,5 +161,19 @@ class Play extends ActiveRecord
             'a_tid_red_cart' => 'A Tid Red Cart',
             'delay' => 'Match Delayed',
         ];
+    }
+
+    /**
+     * Count elements of an object
+     * @link http://php.net/manual/en/countable.count.php
+     * @return int The custom count as an integer.
+     * </p>
+     * <p>
+     * The return value is cast to an integer.
+     * @since 5.1.0
+     */
+    public function count()
+    {
+        return ++$this->id;
     }
 }

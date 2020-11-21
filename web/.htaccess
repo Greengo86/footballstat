@@ -1,4 +1,7 @@
-RewriteBase /
+Options +FollowSymLinks
+IndexIgnore */*
+
+RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
